@@ -78,3 +78,16 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Uniform random sampling: Over 74% of the golden set would have been `other_unclear`, leaving $\le 1$ example for `billing_subscriptions` and `software_update`, destroying the ability to evaluate technical classifiers.
   - Automatically populating `humanLabel` from candidate rules: Completely circular and invalidates external benchmark evaluation.
 - **Why Rejected**: A rigorous evaluation benchmark requires non-circular human ground truth and intentional stress-testing on ambiguous boundaries.
+
+---
+
+### Decision 8: AI-Assisted Human Annotation Protocol with Isolated Proposal Metadata
+- **Context**: Manually annotating 200 noisy, ambiguous customer tweets from scratch is time-intensive and prone to human fatigue, yet directly assigning automatic labels violates evaluation integrity.
+- **Decision**: Designed an AI-assisted review protocol:
+  1. Generated AI proposals, confidences, and rationale stored strictly in `automaticProposedLabel`, `automaticConfidence`, and `automaticReason`.
+  2. Created an interactive CLI workflow (`scripts/annotate-golden.js`) where the human annotator can review each proposal and accept with a single keystroke (`Enter`) or override with a numeric key (`1-10`).
+  3. Prohibits copying proposals to `humanLabel` without explicit human review.
+- **Alternatives Considered**:
+  - Pure manual labeling without proposals: Substantially slower and results in drift on complex boundary cases.
+  - Blindly accepting proposals as ground truth: Invalidates benchmark credibility.
+- **Why Rejected**: Combines the speed and consistency of automated proposal generation with the rigorous verification of authentic human oversight.

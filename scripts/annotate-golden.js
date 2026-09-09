@@ -33,17 +33,17 @@ function saveGoldenSet(items) {
 }
 
 async function startAnnotation() {
-  const annotatorName = process.argv[2] || 'human_annotator';
+  const annotatorName = process.argv[2] || 'Varshith';
   const items = loadGoldenSet();
 
   const total = items.length;
   let labelledCount = items.filter(it => it.humanLabel !== null).length;
 
   console.log('===============================================================');
-  console.log('APPLE SUPPORT GOLDEN SET — HUMAN ANNOTATION CLI');
+  console.log('APPLE SUPPORT GOLDEN SET — HUMAN ANNOTATION & REVIEW CLI');
   console.log('===============================================================');
-  console.log(`Annotator: ${annotatorName}`);
-  console.log(`Progress: ${labelledCount} / ${total} labelled (${((labelledCount / total) * 100).toFixed(1)}%)\n`);
+  console.log(`Reviewing Annotator: ${annotatorName}`);
+  console.log(`Current Progress: ${labelledCount} / ${total} human-labelled (${((labelledCount / total) * 100).toFixed(1)}%)\n`);
 
   const rl = readline.createInterface({
     input: process.stdin,
@@ -54,24 +54,29 @@ async function startAnnotation() {
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
-    if (item.humanLabel !== null) continue; // skip already labelled
+    if (item.humanLabel !== null) continue; // Skip already verified/labelled records
 
     console.log('---------------------------------------------------------------');
     console.log(`[Item ${i + 1} of ${total}] — Golden ID: ${item.goldenId} (Tweet: ${item.tweetId})`);
     console.log('---------------------------------------------------------------');
     console.log(`Customer Message:\n"${item.customerTextClean}"\n`);
 
-    console.log('Select Intent:');
+    const proposedIndex = INTENTS.findIndex(it => it.key === item.automaticProposedLabel) + 1;
+    console.log(`AI Proposed: [${proposedIndex}] ${item.automaticProposedLabel} (Conf: ${item.automaticConfidence})`);
+    console.log(`Rationale:   ${item.automaticReason}\n`);
+
+    console.log('Choose Option:');
+    console.log(`  [Enter] Accept AI proposal (${item.automaticProposedLabel})`);
     INTENTS.forEach((intent, idx) => {
-      console.log(`  [${idx + 1}] ${intent.key.padEnd(24)} (${intent.name})`);
+      console.log(`  [${idx + 1}]     Override: ${intent.key.padEnd(24)} (${intent.name})`);
     });
-    console.log(`  [s] Skip this item`);
-    console.log(`  [r] View raw tweet text`);
-    console.log(`  [q] Save & Quit`);
+    console.log(`  [s]     Skip this item`);
+    console.log(`  [r]     View raw tweet text`);
+    console.log(`  [q]     Save & Quit`);
 
     let doneWithItem = false;
     while (!doneWithItem) {
-      const ans = (await question('\nEnter selection (1-10, s, r, q): ')).trim().toLowerCase();
+      const ans = (await question('\nSelection (Enter, 1-10, s, r, q): ')).trim().toLowerCase();
 
       if (ans === 'q') {
         console.log('\nProgress saved. Exiting...');
@@ -90,25 +95,41 @@ async function startAnnotation() {
         continue;
       }
 
-      const num = parseInt(ans, 10);
-      if (num >= 1 && num <= 10) {
-        const chosenIntent = INTENTS[num - 1].key;
-        item.humanLabel = chosenIntent;
+      if (ans === '') {
+        // Accept proposal
+        item.humanLabel = item.automaticProposedLabel;
+        item.labelReason = item.automaticReason;
         item.annotator = annotatorName;
         item.annotatedAt = new Date().toISOString();
 
         saveGoldenSet(items);
         labelledCount++;
-        console.log(`-> Assigned: ${chosenIntent} (Saved!)`);
+        console.log(`-> Approved: ${item.humanLabel} (Saved!)`);
+        console.log(`Progress: ${labelledCount} / ${total} (${((labelledCount / total) * 100).toFixed(1)}%)\n`);
+        doneWithItem = true;
+        continue;
+      }
+
+      const num = parseInt(ans, 10);
+      if (num >= 1 && num <= 10) {
+        const chosenIntent = INTENTS[num - 1].key;
+        item.humanLabel = chosenIntent;
+        item.labelReason = `Manual human assignment overriding proposal`;
+        item.annotator = annotatorName;
+        item.annotatedAt = new Date().toISOString();
+
+        saveGoldenSet(items);
+        labelledCount++;
+        console.log(`-> Overridden with: ${chosenIntent} (Saved!)`);
         console.log(`Progress: ${labelledCount} / ${total} (${((labelledCount / total) * 100).toFixed(1)}%)\n`);
         doneWithItem = true;
       } else {
-        console.log('Invalid option. Please enter 1-10, s, r, or q.');
+        console.log('Invalid option. Press Enter to accept proposal, 1-10 to override, s to skip, or q to quit.');
       }
     }
   }
 
-  console.log('\n🎉 All 200 items have been labelled!');
+  console.log('\n🎉 All 200 golden evaluation items have been human-reviewed and labelled!');
   rl.close();
 }
 
