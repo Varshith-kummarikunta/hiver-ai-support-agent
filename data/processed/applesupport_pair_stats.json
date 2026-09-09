@@ -1,0 +1,23 @@
+{
+  "totalAppleSupportOutboundTweets": 106860,
+  "outboundWithoutParentId": 141,
+  "duplicateInResponseToCount": 23,
+  "uniqueTargetCustomerTweetIds": 106696,
+  "totalInboundTweetsInDataset": 1537843,
+  "inboundMentioningAppleSupport": 97896,
+  "validPairsConstructed": 105742,
+  "initialInquiryPairs": 74426,
+  "initialInquiryPercent": 70.38,
+  "followUpInquiryPairs": 31316,
+  "unmatchedSupportTweets": 1118,
+  "unmatchedInboundMentions": -7846,
+  "emptyOrInvalidTextPairs": 881,
+  "multiResponseCount": 8017,
+  "normalizationStats": {
+    "htmlEntitiesUnescaped": 3866,
+    "urlsStripped": 15804,
+    "mentionsStripped": 106556,
+    "glitchCharsStripped": 11025
+  },
+  "processedTimestamp": "2026-09-09T17:33:00.928Z"
+}

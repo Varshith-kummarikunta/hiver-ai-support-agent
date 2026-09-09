@@ -1,0 +1,470 @@
+{
+  "totalInquiries": 74426,
+  "classifiedCount": 49540,
+  "classifiedPercent": 66.56,
+  "unclassifiedCount": 24886,
+  "unclassifiedPercent": 33.44,
+  "intents": [
+    {
+      "rank": 1,
+      "id": "software_update",
+      "name": "OS Update & Installation Issues",
+      "count": 11750,
+      "percentage": 15.79,
+      "keywords": [
+        "update",
+        "updated",
+        "updating",
+        "ios11",
+        "ios 11",
+        "high sierra",
+        "upgrade",
+        "install",
+        "installing",
+        "firmware",
+        "restore",
+        "restoring",
+        "downgrade",
+        "unable to verify",
+        "an error occurred"
+      ],
+      "examples": [
+        {
+          "tweetId": "736",
+          "customerText": "Thank you I updated my phone and now it is even slower and barely works. Thank you for ruining my phone.😤",
+          "supportText": "We'd like to help, but we'll need more details. What's happening on your device and which model is it? Do you have iOS 11.1?"
+        },
+        {
+          "tweetId": "758",
+          "customerText": "Hey ! Last time I downloaded an update my freaking phone gave me hell. Any recommendations?",
+          "supportText": "We're here to help. Meet us in DM and we can check on available options."
+        },
+        {
+          "tweetId": "2650",
+          "customerText": "really needs to fix this update. My phone has never been slower, for real.",
+          "supportText": "We're here to help with any issues you may having with performance. Let us know the exact iOS version to get started."
+        },
+        {
+          "tweetId": "2684",
+          "customerText": "live photo keeps turning on in the camera even when it’s set to stay off. Please fix in next update.",
+          "supportText": "Hey, we can work together to figure out a solution. Send us a DM and we'll continue from there."
+        },
+        {
+          "tweetId": "3770",
+          "customerText": "this is my top bar every time I open messages on my SE after updating to iOS 11.1",
+          "supportText": "Thank you for reaching out to us. Have you tried to restart the device? Let us know to get started."
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "battery_power",
+      "name": "Battery & Power Performance",
+      "count": 8519,
+      "percentage": 11.45,
+      "keywords": [
+        "battery",
+        "drain",
+        "draining",
+        "drained",
+        "charge",
+        "charging",
+        "charger",
+        "overheating",
+        "overheat",
+        "dies",
+        "dying",
+        "powers off",
+        "shut off",
+        "shutting off",
+        "percentage"
+      ],
+      "examples": [
+        {
+          "tweetId": "767",
+          "customerText": "I just need to do something about the battery life because it sucks ass",
+          "supportText": "We want to help you get your battery life back on track. Please DM and we'll look at it together."
+        },
+        {
+          "tweetId": "1761",
+          "customerText": "iOS 11 is killing my battery . Fix it.",
+          "supportText": "We're here to help. Which exact iOS version is your device running? This info can be found under Settings > General > About."
+        },
+        {
+          "tweetId": "2616",
+          "customerText": "why is my battery life short? I updated to 11.1, my battery is poor. Wife didn’t she likes her battery life",
+          "supportText": "Let’s work together on this situation. To clarify, did this start after updating to iOS 11.1? Also, which device are you using?"
+        },
+        {
+          "tweetId": "2628",
+          "customerText": "Question- my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?",
+          "supportText": "We know how important your battery is & we'll be happy to help. Which iOS version are you using? Also, when did this issue begin?"
+        },
+        {
+          "tweetId": "3767",
+          "customerText": "I’m no expert in battery life but 40% doesn’t go to 7% in 5minutes",
+          "supportText": "We understand your concerns, and want to help. Which device is this happening on?"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "display_hardware",
+      "name": "Screen, Touch & Physical Freeze",
+      "count": 6428,
+      "percentage": 8.64,
+      "keywords": [
+        "screen",
+        "touch",
+        "display",
+        "freeze",
+        "freezes",
+        "freezing",
+        "frozen",
+        "unresponsive",
+        "black screen",
+        "glitch",
+        "glitching",
+        "cracked",
+        "shattered",
+        "home button",
+        "face id"
+      ],
+      "examples": [
+        {
+          "tweetId": "756",
+          "customerText": "MY HOME BUTTON DOESN’T WORK #IOS11",
+          "supportText": "Let us help with your Home button. Did this issue start right after iOS 11? Which version of iOS 11 are you running?"
+        },
+        {
+          "tweetId": "765",
+          "customerText": "After update #ios1103 no spotify on my lock screen?",
+          "supportText": "Thanks for reaching out to us. Are you experiencing the missing app after restating your device?"
+        },
+        {
+          "tweetId": "1783",
+          "customerText": "if my words even mean a thing to you; I am an iPhone 7 owner and have updated to your latest software and now am having the most dropped calls in history and glitch’s such as apps randomly opening and more ... #iHelp",
+          "supportText": "We want to help. Send us a DM letting us know if you are updated to iOS 11.1"
+        },
+        {
+          "tweetId": "2624",
+          "customerText": "It’s been a few days since made me update my phone’s operating system. Now constantly glitching, hmm 🤔 I’m shocked!",
+          "supportText": "Hi there! iOS 11.1 was released earlier today containing some bug fixes. Let's back up and update:"
+        },
+        {
+          "tweetId": "2678",
+          "customerText": "Any idea why icons show up like this? I did force reset to no avail. After initial notification display, they show up.",
+          "supportText": "We're here for you. DM us, and we'll look into this together."
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "keyboard_typing",
+      "name": "Keyboard, Typing & Autocorrect Bug",
+      "count": 6111,
+      "percentage": 8.21,
+      "keywords": [
+        "keyboard",
+        "autocorrect",
+        "auto correct",
+        "typing",
+        "type",
+        "predictive",
+        "question mark",
+        "mark box",
+        "letter i",
+        "capital i",
+        "capital \"i\"",
+        "capital “i”",
+        "emoji",
+        "emojis",
+        "spacebar"
+      ],
+      "examples": [
+        {
+          "tweetId": "719",
+          "customerText": "Tf is wrong with my keyboard",
+          "supportText": "Fill us in on what is happening, then we can help out from there."
+        },
+        {
+          "tweetId": "730",
+          "customerText": "Hello, internet. Can someone explain why this symbol keeps appearing on my phone and when I try to type the letter I? Also",
+          "supportText": "You're in the right place; we'll do all we can to help. To start, let us know what iOS version is installed via DM:"
+        },
+        {
+          "tweetId": "1755",
+          "customerText": "Why does my I not work ?! please fix this!!!",
+          "supportText": "We'd like to look into this with you. Please DM us your current iOS version and your iPhone model."
+        },
+        {
+          "tweetId": "3773",
+          "customerText": "iOS 11.1 - keyboard lag. 🤨",
+          "supportText": "We'd like to take a look into that with you. Would you please join us in DM to get started?"
+        },
+        {
+          "tweetId": "4882",
+          "customerText": "tell me why I’I’ve updated my phone twice and I can’t type letter I without getting a letter A and a question mark",
+          "supportText": "We're here for you. What is the exact version of the iOS you're running? Check by tapping Settings > General > About."
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "apps_appstore",
+      "name": "App Store Downloads & App Performance",
+      "count": 4109,
+      "percentage": 5.52,
+      "keywords": [
+        "app store",
+        "apps",
+        "app",
+        "download",
+        "downloading",
+        "installing app",
+        "crashing",
+        "crashes",
+        "youtube",
+        "whatsapp",
+        "instagram",
+        "twitter app",
+        "spotify"
+      ],
+      "examples": [
+        {
+          "tweetId": "714",
+          "customerText": "Hey and anyone else who upgraded to ios11.1, are y’all having issues with capital “I” in the Mail app? As it puts in “A”?",
+          "supportText": "Hey, let's work together to figure out what's going on. Meet us in DM and we'll continue from there."
+        },
+        {
+          "tweetId": "749",
+          "customerText": "Hi! What is going on? Has Youtube lost it? What can be done about it? Thanks for the support!",
+          "supportText": "We want to help! DM us and let us know more about the issues you are having."
+        },
+        {
+          "tweetId": "1779",
+          "customerText": "my PHONE app doesn’t work. Thank you for updating my #iPhone to an #ipod",
+          "supportText": "We want you to be able to make calls on the iPhone. What exactly is going on with the Phone app?"
+        },
+        {
+          "tweetId": "1791",
+          "customerText": "why won’t my apps fuccin download or update",
+          "supportText": "Apps are important and we want you to get back to enjoying them. Which model do you have? Is iOS 11.1 installed on it?"
+        },
+        {
+          "tweetId": "2645",
+          "customerText": "when will the bug in the calendar app be fixed? I upgraded to iOS 11.1 and it still crashes when iOS 11.03",
+          "supportText": "We'd like to help. What is going on with the app?"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "audio_media",
+      "name": "Apple Music, Audio & Media Playback",
+      "count": 3860,
+      "percentage": 5.19,
+      "keywords": [
+        "music",
+        "itunes",
+        "song",
+        "songs",
+        "playlist",
+        "playlists",
+        "album",
+        "sound",
+        "speaker",
+        "speakers",
+        "volume",
+        "headphone",
+        "headphones",
+        "earpod",
+        "earpods",
+        "airpod",
+        "airpods"
+      ],
+      "examples": [
+        {
+          "tweetId": "1781",
+          "customerText": "why can’t I change ringer volume with the buttons? Whose dumb idea was it to change that and how do they still have a job?",
+          "supportText": "Let us look into that. What device and OS version are you using?"
+        },
+        {
+          "tweetId": "2620",
+          "customerText": "watchOs4 made my watch pointless Browsing music on my phone via the watch was 80% reason for buying it now it’s useless.",
+          "supportText": "You should still be able to control Music on your iPhone from the watch. Check out the user guide here:"
+        },
+        {
+          "tweetId": "2632",
+          "customerText": "And why is my music NEVER in my control center?!",
+          "supportText": "We're here to help out! Which device is this on and which version of iOS is currently installed?"
+        },
+        {
+          "tweetId": "2682",
+          "customerText": "ios 11.0.3 on 6s. Cannot adjust alarm volume so waking up all in my house and neighbours despite ringer being set to minimum!",
+          "supportText": "We'd love to help with your alarm volume. Is the option to \"Change with Buttons\" disabled under Settings > Sounds?"
+        },
+        {
+          "tweetId": "11101",
+          "customerText": "music and podcast “skip” around like a CD, then distorts and clears up in few seconds, only happens after iOS 11",
+          "supportText": "We're here to help. Did this happen after a specific update, or just recently? Thanks!"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "id": "account_icloud",
+      "name": "Apple ID, iCloud & Account Security",
+      "count": 3459,
+      "percentage": 4.65,
+      "keywords": [
+        "icloud",
+        "apple id",
+        "appleid",
+        "account",
+        "password",
+        "passcode",
+        "locked",
+        "unlock",
+        "verification",
+        "verify",
+        "backup",
+        "back up",
+        "storage",
+        "two factor",
+        "2fa",
+        "security question"
+      ],
+      "examples": [
+        {
+          "tweetId": "1764",
+          "customerText": "Hello, I need some help regarding the region change on my Apple ID",
+          "supportText": "This article should help with that:"
+        },
+        {
+          "tweetId": "2635",
+          "customerText": "Just updated iOS on iPhone7, now iCloud backup greyed out, cannot be turned on, says “Last Backup Never”",
+          "supportText": "Check out this link: Send us a DM if it doesn't help."
+        },
+        {
+          "tweetId": "6554",
+          "customerText": "how long does it take usually for account recovery to get back to you? It’s been about a week now.",
+          "supportText": "Having access to your Apple ID is important. Did you receive an email with a confirmation of your request? DM us here:"
+        },
+        {
+          "tweetId": "8297",
+          "customerText": "Hello there i need help with the use of an administartors name and password on my imac",
+          "supportText": "Hi! We're happy to help. Join us in DM with the macOS version installed on your iMac and more details about what's going on."
+        },
+        {
+          "tweetId": "8437",
+          "customerText": "suck! Upgrade phone & I lose my Apple ID. Can’t get new id without old & can’t book Genius bar help appointment without ID!!! #stupid",
+          "supportText": "We're happy you reached out so we can find you the info you need. If you forgot your Apple ID, go to the Apple ID account page: From here, click \"Forgot Apple ID or password?\" then click \"look it up.\" From here, follow the on screen prompts."
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "id": "connectivity_network",
+      "name": "Connectivity, Wi-Fi & Bluetooth",
+      "count": 3365,
+      "percentage": 4.52,
+      "keywords": [
+        "wifi",
+        "wi fi",
+        "bluetooth",
+        "connect",
+        "connecting",
+        "connection",
+        "cellular",
+        "signal",
+        "service",
+        "airdrop",
+        "hotspot",
+        "lte",
+        "network",
+        "sim",
+        "pairing",
+        "pair"
+      ],
+      "examples": [
+        {
+          "tweetId": "2642",
+          "customerText": "still no reliable Bluetooth on my iPhone 8+.",
+          "supportText": "Thanks for reaching out. DM which Bluetooth device you are trying to connect to so we can help."
+        },
+        {
+          "tweetId": "2659",
+          "customerText": "Is anyone else having problems with there iPhone 7 saying no service?",
+          "supportText": "We want to help with this. Let's start troubleshooting by trying the steps here:"
+        },
+        {
+          "tweetId": "4879",
+          "customerText": "I can’t download songs. Progress icon keeps spinning. On both data + WiFi. Stream works though. Can’t add songs to playlists.",
+          "supportText": "We want to help. Does restarting help at all? DM us which iOS version you're on and we'll continue support there."
+        },
+        {
+          "tweetId": "4906",
+          "customerText": "The ‘Overlapping url over TIME on Free WiFi hotspots’ remains. v11.0.3. Not a WiFi problem; two different hotspots shown.",
+          "supportText": "We'd like to have you backup and update your iPhone to iOS 11.1 and let us know if that helps:"
+        },
+        {
+          "tweetId": "5849",
+          "customerText": "I updated to iOS 11 and my iPhone 6 stopped connecting to wi-fi. Already restored the phone and the network connections",
+          "supportText": "We are here to help. So we can best isolate the cause, could you verify your exact iOS version?"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "id": "billing_subscriptions",
+      "name": "Billing, App Store Purchases & Refunds",
+      "count": 1939,
+      "percentage": 2.61,
+      "keywords": [
+        "charge",
+        "charged",
+        "charges",
+        "billing",
+        "bill",
+        "subscription",
+        "subscribe",
+        "refund",
+        "purchase",
+        "purchased",
+        "receipt",
+        "card",
+        "payment",
+        "paid",
+        "declined"
+      ],
+      "examples": [
+        {
+          "tweetId": "9180",
+          "customerText": "I bought an iTunes gift card worth £15 a week ago, and the email still hasn’t come into my inbox to tell me the code. Helpppp",
+          "supportText": "We're here for you. You'll need to contact our iTunes Store group for help with iTunes codes:"
+        },
+        {
+          "tweetId": "13588",
+          "customerText": "Why do I need a sim card when I’m joined to the WiFi? I’m only using this phone to test websites.",
+          "supportText": "You'll need to insert a SIM and activate the iPhone, once that's done you can remove the SIM and use the iPhone on Wi-Fi."
+        },
+        {
+          "tweetId": "14324",
+          "customerText": "just purchased iTunes movie on ATV in HD. Stops to buffer and stream every 5 minutes. Very unpleasant experience. Never had issues with movies. showing 30+ mbps DL🤷🏻♂",
+          "supportText": "We want to help with your Apple TV. Click here to reach our team that can assist with your Apple TV:"
+        },
+        {
+          "tweetId": "18872",
+          "customerText": "the screen on our iPad Pro has stopped working 😔. I've read a few articles about weak screens on some models - is there anywhere I can check the model number, or will it be a £400 repair bill? Thanks",
+          "supportText": "Thank you for reaching out to us. We'd be happy to try everything possible to provide the best support options. First, let's work as a team as we gather more information. DM us if you noticed any changes before the screen went black. What iOS is the device running?"
+        },
+        {
+          "tweetId": "22988",
+          "customerText": "Trying to download an app to a family member's phone that I purchased as the family group organizer. Being asked to purchase it, but I don't want to be charged again. Suggestions?",
+          "supportText": "We can help. As long as this app supports Family Sharing, you'll be able to download it by following the steps in our article. Give them a shot, and let us know if this continues:"
+        }
+      ]
+    }
+  ]
+}

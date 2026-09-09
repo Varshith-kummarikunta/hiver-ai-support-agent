@@ -1,0 +1,363 @@
+{
+  "totalInquiries": 74426,
+  "singleIntentCount": 31470,
+  "multiIntentCount": 16865,
+  "zeroIntentCount": 26091,
+  "intentCounts": {
+    "battery_power": 8852,
+    "software_update": 26493,
+    "keyboard_input": 7448,
+    "display_touch": 8399,
+    "audio_media": 5210,
+    "connectivity_network": 3953,
+    "account_icloud": 4450,
+    "billing_purchases": 3208
+  },
+  "intentExclusiveCounts": {
+    "battery_power": 2656,
+    "software_update": 13507,
+    "keyboard_input": 4968,
+    "display_touch": 3141,
+    "audio_media": 2404,
+    "connectivity_network": 1631,
+    "account_icloud": 2246,
+    "billing_purchases": 917
+  },
+  "intentSamples": {
+    "battery_power": [
+      {
+        "id": "767",
+        "text": "I just need to do something about the battery life because it sucks ass",
+        "reply": "We want to help you get your battery life back on track. Please DM and we'll look at it together."
+      },
+      {
+        "id": "3767",
+        "text": "I’m no expert in battery life but 40% doesn’t go to 7% in 5minutes",
+        "reply": "We understand your concerns, and want to help. Which device is this happening on?"
+      },
+      {
+        "id": "4871",
+        "text": "Really considering getting a new kind of phone since my iPhone dies with 90% while using my camera 😤",
+        "reply": "We want to help! What model of iOS device are you using? Do you have the most recent version of iOS 11.1 downloaded?"
+      },
+      {
+        "id": "4917",
+        "text": ". why my iPhone keep dying at 30% quit playing games I'm not getting no new damn phone or iPhone x",
+        "reply": "We'd like to help. What iOS version are you on?"
+      },
+      {
+        "id": "9160",
+        "text": "I got my phone yesterday and it’s already not charging thanks 🙃",
+        "reply": "We want to make sure you can charge and enjoy your new phone. Is it not showing as connected to power when plugged in?"
+      }
+    ],
+    "software_update": [
+      {
+        "id": "736",
+        "text": "Thank you I updated my phone and now it is even slower and barely works. Thank you for ruining my phone.😤",
+        "reply": "We'd like to help, but we'll need more details. What's happening on your device and which model is it? Do you have iOS 11.1?"
+      },
+      {
+        "id": "756",
+        "text": "MY HOME BUTTON DOESN’T WORK #IOS11",
+        "reply": "Let us help with your Home button. Did this issue start right after iOS 11? Which version of iOS 11 are you running?"
+      },
+      {
+        "id": "758",
+        "text": "Hey ! Last time I downloaded an update my freaking phone gave me hell. Any recommendations?",
+        "reply": "We're here to help. Meet us in DM and we can check on available options."
+      },
+      {
+        "id": "1779",
+        "text": "my PHONE app doesn’t work. Thank you for updating my #iPhone to an #ipod",
+        "reply": "We want you to be able to make calls on the iPhone. What exactly is going on with the Phone app?"
+      },
+      {
+        "id": "1791",
+        "text": "why won’t my apps fuccin download or update",
+        "reply": "Apps are important and we want you to get back to enjoying them. Which model do you have? Is iOS 11.1 installed on it?"
+      }
+    ],
+    "keyboard_input": [
+      {
+        "id": "719",
+        "text": "Tf is wrong with my keyboard",
+        "reply": "Fill us in on what is happening, then we can help out from there."
+      },
+      {
+        "id": "730",
+        "text": "Hello, internet. Can someone explain why this symbol keeps appearing on my phone and when I try to type the letter I? Also",
+        "reply": "You're in the right place; we'll do all we can to help. To start, let us know what iOS version is installed via DM:"
+      },
+      {
+        "id": "5823",
+        "text": "creates amazing technology..... but talk to text still messes up 90% of what I will it to type..... #fixyourcrap",
+        "reply": "Let’s work together on this. How long has this been happening? Do you experience similar behavior with Siri?"
+      },
+      {
+        "id": "5825",
+        "text": "excuse me, can someone explain to me why when I type an “I” alone I get an A and a question mark???????",
+        "reply": "We'll be happy to take a look into it with you. Please send us a DM with what version of iOS you have."
+      },
+      {
+        "id": "8561",
+        "text": "hey what’s going on with the letter I . When i start to. Type this happens below",
+        "reply": "Let's look at this together. To begin, are you completely updated to iOS 11.1?"
+      }
+    ],
+    "display_touch": [
+      {
+        "id": "2678",
+        "text": "Any idea why icons show up like this? I did force reset to no avail. After initial notification display, they show up.",
+        "reply": "We're here for you. DM us, and we'll look into this together."
+      },
+      {
+        "id": "3764",
+        "text": "not only does my phone keep freezing but when i screenshot things it turns out white... really not liking this iphone 8 plus",
+        "reply": "Let's look at this together. Are you updated to iOS 11.1?"
+      },
+      {
+        "id": "6483",
+        "text": "Hello what’s happening to my screen",
+        "reply": "We'd love to take a look into this concern. Is the screen stuck this way have you restarted it? Send us a DM."
+      },
+      {
+        "id": "6928",
+        "text": "my iPhone is a fully up to date so why does my phone keep freezing 🙃???",
+        "reply": "We want to help in any way we can. Which iPhone are you using? Let us know in DM, and we’ll work with you there."
+      },
+      {
+        "id": "8542",
+        "text": "needs to figure it’s shit out. My phone won’t stop freezing & closing apps 🙄😡",
+        "reply": "Let us help. Does this happen while using any specific app? Also, which version of iOS are you currently running?"
+      }
+    ],
+    "audio_media": [
+      {
+        "id": "1781",
+        "text": "why can’t I change ringer volume with the buttons? Whose dumb idea was it to change that and how do they still have a job?",
+        "reply": "Let us look into that. What device and OS version are you using?"
+      },
+      {
+        "id": "2620",
+        "text": "watchOs4 made my watch pointless Browsing music on my phone via the watch was 80% reason for buying it now it’s useless.",
+        "reply": "You should still be able to control Music on your iPhone from the watch. Check out the user guide here:"
+      },
+      {
+        "id": "2632",
+        "text": "And why is my music NEVER in my control center?!",
+        "reply": "We're here to help out! Which device is this on and which version of iOS is currently installed?"
+      },
+      {
+        "id": "13197",
+        "text": "Écran d’iPhone cassé. Impossible à connecter sur iTunes ... des astuces svp ?",
+        "reply": "We offer support via Twitter in English. Contact us for help in your preferred language here:"
+      },
+      {
+        "id": "15501",
+        "text": "My phone is so god damn jank, it’s turning all my snapchats volume all the way up, not alerting me with sound or vibration with texts and messages, and all my notifications come in all at once every hour...",
+        "reply": "You've come to the right place for help with your iPhone. We'd like to take a look at what's happening in greater detail. Send us a DM with what type of iPhone you're using, along with your current iOS version."
+      }
+    ],
+    "connectivity_network": [
+      {
+        "id": "2642",
+        "text": "still no reliable Bluetooth on my iPhone 8+.",
+        "reply": "Thanks for reaching out. DM which Bluetooth device you are trying to connect to so we can help."
+      },
+      {
+        "id": "2659",
+        "text": "Is anyone else having problems with there iPhone 7 saying no service?",
+        "reply": "We want to help with this. Let's start troubleshooting by trying the steps here:"
+      },
+      {
+        "id": "4906",
+        "text": "The ‘Overlapping url over TIME on Free WiFi hotspots’ remains. v11.0.3. Not a WiFi problem; two different hotspots shown.",
+        "reply": "We'd like to have you backup and update your iPhone to iOS 11.1 and let us know if that helps:"
+      },
+      {
+        "id": "9840",
+        "text": "mi iPhone no se puede conectar a la red wifi privadas pero si a las free, que hago 😢",
+        "reply": "We offer support via Twitter in English. Get help in Spanish here: or join"
+      },
+      {
+        "id": "17292",
+        "text": "So you spend over one thousand pounds on a new #Apple laptop, it breaks, goes in for a two week repair and then comes out... BROKEN AGAIN. I can’t even get through to customer service now. #rippedoff",
+        "reply": "We're happy to help you out here. Let's meet up in DM, and we can work together. Please let us now a few more details about the issue as well as the type of Mac and your current country as our options are a little different around the globe."
+      }
+    ],
+    "account_icloud": [
+      {
+        "id": "1764",
+        "text": "Hello, I need some help regarding the region change on my Apple ID",
+        "reply": "This article should help with that:"
+      },
+      {
+        "id": "6554",
+        "text": "how long does it take usually for account recovery to get back to you? It’s been about a week now.",
+        "reply": "Having access to your Apple ID is important. Did you receive an email with a confirmation of your request? DM us here:"
+      },
+      {
+        "id": "8297",
+        "text": "Hello there i need help with the use of an administartors name and password on my imac",
+        "reply": "Hi! We're happy to help. Join us in DM with the macOS version installed on your iMac and more details about what's going on."
+      },
+      {
+        "id": "8557",
+        "text": "is that safe if we disable passcode for unlock iphone? i mean,is the fingerprint still worked out? i think dat would be enough",
+        "reply": "We want to make sure we understand the issue. Are you wanting to disable the passcode and still use Touch ID?"
+      },
+      {
+        "id": "11139",
+        "text": "I get prompted for a system administrator password on a MBP MacOS but there is no system administrator account I’m aware of!!",
+        "reply": "Let's take a closer look together. Which macOS version is installed currently? Where does this screen come up on your Mac?"
+      }
+    ],
+    "billing_purchases": [
+      {
+        "id": "22988",
+        "text": "Trying to download an app to a family member's phone that I purchased as the family group organizer. Being asked to purchase it, but I don't want to be charged again. Suggestions?",
+        "reply": "We can help. As long as this app supports Family Sharing, you'll be able to download it by following the steps in our article. Give them a shot, and let us know if this continues:"
+      },
+      {
+        "id": "31931",
+        "text": "Can I pay for  Care + online with an Apple Store gift card or do I have go into the store?",
+        "reply": "We'll get you pointed in the right direction. Please DM us so we can go over all options."
+      },
+      {
+        "id": "41589",
+        "text": "At the apple store in Paris, can I buy an iPad by paying half in cash and half in credit card?",
+        "reply": "Let's help get you into the right hands. Please reach out to us via: and we can go from there."
+      },
+      {
+        "id": "47995",
+        "text": "hi there, I need to inquire something regarding he refund of an item",
+        "reply": "For questions about refunds, our iTunes Store would be the best team to help. Reach out to them here:"
+      },
+      {
+        "id": "61323",
+        "text": "I accidentally bought something is there anyway I can get a refund",
+        "reply": "We're happy to help. Take a look here:"
+      }
+    ]
+  },
+  "topCoOccurrences": [
+    [
+      "battery_power + software_update",
+      3697
+    ],
+    [
+      "display_touch + software_update",
+      2669
+    ],
+    [
+      "keyboard_input + software_update",
+      1504
+    ],
+    [
+      "connectivity_network + software_update",
+      1104
+    ],
+    [
+      "audio_media + software_update",
+      1020
+    ],
+    [
+      "battery_power + billing_purchases",
+      657
+    ],
+    [
+      "account_icloud + software_update",
+      607
+    ],
+    [
+      "display_touch + keyboard_input",
+      522
+    ],
+    [
+      "battery_power + billing_purchases + software_update",
+      421
+    ],
+    [
+      "audio_media + billing_purchases",
+      329
+    ]
+  ],
+  "unmatchedSamples": [
+    {
+      "id": "723",
+      "text": "hello are all the lines closed for tonight #help",
+      "reply": "What's going on? We're hapy to help if we can."
+    },
+    {
+      "id": "733",
+      "text": "I’ve got a screenshot saying my #iPhoneX is reserved for the 3rd then an email saying it’s the 18th... what happened?",
+      "reply": "Go ahead and send us a DM please. Let us know the country you're in."
+    },
+    {
+      "id": "747",
+      "text": "Hola necesito urgente la actualización de software. La batería me dura literal medio día 🙍🏼🙇🏼♀",
+      "reply": "We offer support via Twitter in English. Get help in Spanish here: or join"
+    },
+    {
+      "id": "749",
+      "text": "Hi! What is going on? Has Youtube lost it? What can be done about it? Thanks for the support!",
+      "reply": "We want to help! DM us and let us know more about the issues you are having."
+    },
+    {
+      "id": "1755",
+      "text": "Why does my I not work ?! please fix this!!!",
+      "reply": "We'd like to look into this with you. Please DM us your current iOS version and your iPhone model."
+    },
+    {
+      "id": "1759",
+      "text": "Why is “I” keep changing to this and how do I stop it🤦🏽♀ #anybody",
+      "reply": "We definitely understand your concern. Please backup your iPhone, update and let us know the result:"
+    },
+    {
+      "id": "1770",
+      "text": "why is my home sharing not working and how do i fix it",
+      "reply": "We're happy to help. Has Home Sharing worked with these devices before?"
+    },
+    {
+      "id": "1785",
+      "text": "epıl bana yardımcı olur musun telefon internet konusunda çok yakıyo napcaz ?",
+      "reply": "We offer support via Twitter in English. Contact us for help in your preferred language here:"
+    },
+    {
+      "id": "2613",
+      "text": "Cupertino, we have a problem. . . . .",
+      "reply": "We'd like to see what we can do to assist. What version of iOS are you currently running? We released iOS 11.1 today."
+    },
+    {
+      "id": "2648",
+      "text": "do you have any apps for epilepsy so I can detect my seizures thanks in advance",
+      "reply": "Hey, we can provide some guidance. Let's meet in DM and we'll go from there."
+    },
+    {
+      "id": "2656",
+      "text": "My iPhone has erased and re-added emails dating back from 2013 til now twice in the past 24 hours. Wth???",
+      "reply": "We'll be happy to look into this with you. To clarify, which iPhone model do you have and what's the exact iOS version?"
+    },
+    {
+      "id": "2662",
+      "text": "So why is this happening I I I",
+      "reply": "We'd be glad to see what we can do for you. Let's meet up in DM first. Thanks!"
+    },
+    {
+      "id": "2666",
+      "text": "I keep getting this error message saying “the item can’t be played” and idk how to fix it...",
+      "reply": "We'd like to look into this with you. Does the song appear to be greyed out?"
+    },
+    {
+      "id": "2676",
+      "text": "HELP ME. I have a problem with my iPhone 7😑",
+      "reply": "We're happy to help. What seems to be the problem?"
+    },
+    {
+      "id": "3761",
+      "text": "Listen I’m having issues with my phone so like can you @ me so we can talk",
+      "reply": "We're here to help. Send us a DM with the issue and we'll follow up from there."
+    }
+  ]
+}
