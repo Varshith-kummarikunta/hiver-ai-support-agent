@@ -1,0 +1,206 @@
+{
+  "totalRows": 2811774,
+  "inboundCount": 1537843,
+  "outboundCount": 1273931,
+  "inboundPercent": 54.69,
+  "outboundPercent": 45.31,
+  "uniqueBrandsCount": 108,
+  "missingCounts": {
+    "tweet_id": 0,
+    "author_id": 0,
+    "inbound": 0,
+    "created_at": 0,
+    "text": 0,
+    "response_tweet_id": 1040629,
+    "in_response_to_tweet_id": 794335
+  },
+  "linkage": {
+    "outboundWithInResponseTo": 1266942,
+    "outboundDirectPercent": 99.45,
+    "inboundWithResponseTweetId": 1303829,
+    "inboundResponsePercent": 84.78,
+    "multiResponseCount": 222426
+  },
+  "topBrands": [
+    {
+      "brand": "AmazonHelp",
+      "totalReplies": 169840,
+      "directReplies": 169287,
+      "multiRepliesTriggered": 11143
+    },
+    {
+      "brand": "AppleSupport",
+      "totalReplies": 106860,
+      "directReplies": 106719,
+      "multiRepliesTriggered": 3191
+    },
+    {
+      "brand": "Uber_Support",
+      "totalReplies": 56270,
+      "directReplies": 56261,
+      "multiRepliesTriggered": 2680
+    },
+    {
+      "brand": "SpotifyCares",
+      "totalReplies": 43265,
+      "directReplies": 43243,
+      "multiRepliesTriggered": 1054
+    },
+    {
+      "brand": "Delta",
+      "totalReplies": 42253,
+      "directReplies": 42197,
+      "multiRepliesTriggered": 1457
+    },
+    {
+      "brand": "Tesco",
+      "totalReplies": 38573,
+      "directReplies": 38501,
+      "multiRepliesTriggered": 1041
+    },
+    {
+      "brand": "AmericanAir",
+      "totalReplies": 36764,
+      "directReplies": 36598,
+      "multiRepliesTriggered": 2239
+    },
+    {
+      "brand": "TMobileHelp",
+      "totalReplies": 34317,
+      "directReplies": 34287,
+      "multiRepliesTriggered": 1272
+    },
+    {
+      "brand": "comcastcares",
+      "totalReplies": 33031,
+      "directReplies": 33007,
+      "multiRepliesTriggered": 812
+    },
+    {
+      "brand": "British_Airways",
+      "totalReplies": 29361,
+      "directReplies": 29315,
+      "multiRepliesTriggered": 1428
+    },
+    {
+      "brand": "SouthwestAir",
+      "totalReplies": 28977,
+      "directReplies": 28889,
+      "multiRepliesTriggered": 843
+    },
+    {
+      "brand": "VirginTrains",
+      "totalReplies": 27817,
+      "directReplies": 27522,
+      "multiRepliesTriggered": 1971
+    },
+    {
+      "brand": "Ask_Spectrum",
+      "totalReplies": 25860,
+      "directReplies": 25807,
+      "multiRepliesTriggered": 1000
+    },
+    {
+      "brand": "XboxSupport",
+      "totalReplies": 24557,
+      "directReplies": 24341,
+      "multiRepliesTriggered": 1515
+    },
+    {
+      "brand": "sprintcare",
+      "totalReplies": 22381,
+      "directReplies": 22335,
+      "multiRepliesTriggered": 1092
+    },
+    {
+      "brand": "hulu_support",
+      "totalReplies": 21872,
+      "directReplies": 21783,
+      "multiRepliesTriggered": 878
+    },
+    {
+      "brand": "sainsburys",
+      "totalReplies": 19466,
+      "directReplies": 19417,
+      "multiRepliesTriggered": 743
+    },
+    {
+      "brand": "GWRHelp",
+      "totalReplies": 19364,
+      "directReplies": 19294,
+      "multiRepliesTriggered": 1441
+    },
+    {
+      "brand": "AskPlayStation",
+      "totalReplies": 19098,
+      "directReplies": 18694,
+      "multiRepliesTriggered": 1254
+    },
+    {
+      "brand": "ChipotleTweets",
+      "totalReplies": 18749,
+      "directReplies": 18612,
+      "multiRepliesTriggered": 448
+    },
+    {
+      "brand": "VerizonSupport",
+      "totalReplies": 17966,
+      "directReplies": 17851,
+      "multiRepliesTriggered": 1613
+    },
+    {
+      "brand": "UPSHelp",
+      "totalReplies": 17817,
+      "directReplies": 17772,
+      "multiRepliesTriggered": 669
+    },
+    {
+      "brand": "ATVIAssist",
+      "totalReplies": 17650,
+      "directReplies": 17531,
+      "multiRepliesTriggered": 1976
+    },
+    {
+      "brand": "O2",
+      "totalReplies": 16212,
+      "directReplies": 16091,
+      "multiRepliesTriggered": 785
+    },
+    {
+      "brand": "Safaricom_Care",
+      "totalReplies": 16077,
+      "directReplies": 15471,
+      "multiRepliesTriggered": 915
+    },
+    {
+      "brand": "idea_cares",
+      "totalReplies": 15724,
+      "directReplies": 15617,
+      "multiRepliesTriggered": 1241
+    },
+    {
+      "brand": "AskTarget",
+      "totalReplies": 13218,
+      "directReplies": 13218,
+      "multiRepliesTriggered": 447
+    },
+    {
+      "brand": "AirAsiaSupport",
+      "totalReplies": 12829,
+      "directReplies": 12735,
+      "multiRepliesTriggered": 726
+    },
+    {
+      "brand": "BofA_Help",
+      "totalReplies": 12683,
+      "directReplies": 12654,
+      "multiRepliesTriggered": 407
+    },
+    {
+      "brand": "SW_Help",
+      "totalReplies": 12231,
+      "directReplies": 11792,
+      "multiRepliesTriggered": 1144
+    }
+  ]
+}

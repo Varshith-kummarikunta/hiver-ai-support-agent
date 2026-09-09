@@ -1,0 +1,112 @@
+{
+  "amazonhelp": {
+    "brand": "AmazonHelp",
+    "inboundTotal": 135160,
+    "initialInquiries": 22354,
+    "sampleInquiries": [
+      {
+        "tweet_id": "634",
+        "author_id": "115831",
+        "text": "@115821 @AmazonHelp why is my order at my local courier for the last 6 days and still hasn’t been delivered to me?? Over 1 week late 😡"
+      },
+      {
+        "tweet_id": "643",
+        "author_id": "115834",
+        "text": "Bought an @115821 Echo Show and it won’t recognize a single @AmazonHelp account in our household. WTF, guys?"
+      },
+      {
+        "tweet_id": "646",
+        "author_id": "115835",
+        "text": ".@AmazonHelp Item has not been delivered but tracking says it was handed to me over an hour ago... 2nd time this has happened. Sort it out https://t.co/42W82GcARk"
+      }
+    ]
+  },
+  "applesupport": {
+    "brand": "AppleSupport",
+    "inboundTotal": 97896,
+    "initialInquiries": 51517,
+    "sampleInquiries": [
+      {
+        "tweet_id": "700",
+        "author_id": "115854",
+        "text": "@AppleSupport why are my I️’s changing not showing up correctly on any of my social media platforms? https://t.co/GyRvpyVnkE"
+      },
+      {
+        "tweet_id": "714",
+        "author_id": "115856",
+        "text": "Hey @AppleSupport and anyone else who upgraded to ios11.1, are y’all having issues with capital “I️” in the Mail app? As it puts in “A”?"
+      },
+      {
+        "tweet_id": "723",
+        "author_id": "115859",
+        "text": "@115858 @AppleSupport hello are all the lines closed for tonight #help"
+      }
+    ]
+  },
+  "uber_support": {
+    "brand": "Uber_Support",
+    "inboundTotal": 46624,
+    "initialInquiries": 19730,
+    "sampleInquiries": [
+      {
+        "tweet_id": "775",
+        "author_id": "115875",
+        "text": "@Uber_Support I’m not getting your texts. https://t.co/GhefNjQTfg"
+      },
+      {
+        "tweet_id": "782",
+        "author_id": "115878",
+        "text": "Literally stranded because of @115873 and because there is no support phone number I have to wait from a message from @Uber_Support Smh 🤦🏾‍♂️"
+      },
+      {
+        "tweet_id": "1803",
+        "author_id": "116111",
+        "text": "Bruh can someone at @115873 @Uber_Support get back to me on my Dms 😒😒😒😒"
+      }
+    ]
+  },
+  "spotifycares": {
+    "brand": "SpotifyCares",
+    "inboundTotal": 31353,
+    "initialInquiries": 13476,
+    "sampleInquiries": [
+      {
+        "tweet_id": "862",
+        "author_id": "115889",
+        "text": "@SpotifyCares @115890 Groove Music quits &amp; redirect to Spotify. But the W10M App is a bugfest.. Any further Updates possible?"
+      },
+      {
+        "tweet_id": "866",
+        "author_id": "115891",
+        "text": "is there a way to find non-explicit songs that are explicit @SpotifyCares"
+      },
+      {
+        "tweet_id": "2804",
+        "author_id": "116375",
+        "text": "So @115888 @3493 @SpotifyCares: three days later you’re still advertising a sale to me for which I’m geographically  ineligible, this time on Facebook. You know you can choose where you want your ads to display on FB, don’t you? https://t.co/AHEZ1EtC57"
+      }
+    ]
+  },
+  "delta": {
+    "brand": "Delta",
+    "inboundTotal": 44838,
+    "initialInquiries": 25873,
+    "sampleInquiries": [
+      {
+        "tweet_id": "611",
+        "author_id": "115818",
+        "text": "@DELTA i booked my flight using delta amex card. Checking in now &amp; was being charged for baggage"
+      },
+      {
+        "tweet_id": "792",
+        "author_id": "115882",
+        "text": "@Delta why wasn't earlier flight offered when I tried to rebook, not cool at all. Just happened to look at moniter after deplaning."
+      },
+      {
+        "tweet_id": "801",
+        "author_id": "115883",
+        "text": "@Delta The \"change flight\" search option on your website is broken once again.  😑"
+      }
+    ]
+  }
+}
