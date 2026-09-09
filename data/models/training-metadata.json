@@ -1,0 +1,76 @@
+{
+  "trainedAt": "2026-09-09T18:30:51.347Z",
+  "randomSeed": 20260909,
+  "quarantinedGoldenTweetCount": 200,
+  "totalInitialInquiriesInCorpus": 74426,
+  "eligibleTrainingPoolSize": 74226,
+  "majorityBaseline": {
+    "modelType": "MajorityClassClassifier",
+    "trainingSize": 74226,
+    "majorityClass": "other_unclear",
+    "majorityShare": 0.7450354323282947
+  },
+  "tfidfNaiveBayesBaseline": {
+    "modelType": "MultinomialNaiveBayesClassifier",
+    "trainingSize": 8557,
+    "maxSamplesPerIntent": 1000,
+    "samplingStats": {
+      "other_unclear": {
+        "available": 55301,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "battery_power": {
+        "available": 7310,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "keyboard_typing": {
+        "available": 4641,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "audio_media": {
+        "available": 2172,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "apps_appstore": {
+        "available": 1138,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "display_hardware": {
+        "available": 1069,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "account_icloud": {
+        "available": 1038,
+        "sampled": 1000,
+        "shareInTraining": 11.69
+      },
+      "connectivity_network": {
+        "available": 895,
+        "sampled": 895,
+        "shareInTraining": 10.46
+      },
+      "billing_subscriptions": {
+        "available": 426,
+        "sampled": 426,
+        "shareInTraining": 4.98
+      },
+      "software_update": {
+        "available": 236,
+        "sampled": 236,
+        "shareInTraining": 2.76
+      }
+    },
+    "vocabularySize": 10373,
+    "alpha": 0.5,
+    "classPriorMode": "uniform",
+    "useBigrams": true,
+    "minDocFreq": 3,
+    "sublinearTf": true
+  }
+}

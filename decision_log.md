@@ -107,3 +107,24 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Stalling the project until 196 items were manually reviewed: Blocked autonomous progress contrary to explicit user instructions.
 - **Why Rejected**: Complete attribution transparency maintains high scientific ethics, avoids fabricated claims, and delivers a deterministic, reproducible benchmark for downstream classifier and agent evaluation.
 
+---
+
+### Decision 10: Classical Baseline Model Architecture, Pure Node.js Implementation, and Strict Data Quarantine
+- **Context**: Prior to developing the LLM-powered support agent in Phase 6, we required established, measurable baselines to assess the difficulty of intent classification and establish a quantitative performance floor on our 200-item evaluation set.
+- **Decision**:
+  1. **Strict Data Quarantine**: Filtered the 74,426 initial inquiry corpus by excluding all 200 Golden Evaluation tweet IDs, yielding an eligible training population of 74,226 items with verified 0% data leakage.
+  2. **Baseline 1 (Majority Class)**: Measured class distribution across all 74,226 non-golden tweets, identifying `other_unclear` as the empirical majority class (74.50% share). Evaluated on the golden set: achieves 24.50% accuracy, but collapses to 3.94% Macro F1 with 0% precision and 0% recall across all 9 technical categories.
+  3. **Baseline 2 (Lexical TF-IDF + Multinomial Naive Bayes)**:
+     - Implemented entirely in native Node.js without Python, LLMs, or external machine learning libraries.
+     - Extracted unigrams and bigrams with apostrophe preservation, domain tokenization (`wifi`, `appleid`, `appstore`), sublinear TF ($1 + \ln(\text{tf})$), smoothed IDF, and L2 normalization, yielding a 10,373-feature vocabulary.
+     - Sampled a deterministic stratified training set capped at 1,000 items per class (8,557 items total, PRNG seed `20260909`) to prevent the 74.5% majority class from dominating technical decision boundaries.
+     - Configured log-space Multinomial Naive Bayes with Laplace smoothing ($\alpha = 0.5$) and uniform class priors.
+     - Measured results on the 200-item evaluation set: **69.50% accuracy**, **74.16% macro precision**, **74.07% macro recall**, and **68.27% Macro F1**.
+  4. **Scientific Transparency**: Documented that training labels derive from Phase 2 taxonomy rules rather than human labels, and that the evaluation set consists of 4 author-reviewed labels and 196 AI proposals.
+- **Alternatives Considered**:
+  - Training on a Python/scikit-learn pipeline: Rejected to keep the local workspace unified, pure Node.js, and directly runnable without external environment management or IPC bridges.
+  - Training directly on the 200 golden examples: Violates fundamental ML data cleanliness (test set contamination).
+  - Unbalanced Naive Bayes training with empirical priors: Caused Naive Bayes to overpredict `other_unclear`, dropping Macro F1 below 45%.
+- **Why Rejected**: The pure Node.js implementation runs in $<15$ milliseconds, produces deterministic cross-platform results, and illuminates the exact blind spots of classical bag-of-words classifiers (e.g. inability to distinguish temporal update backstories from functional symptoms) that motivate an LLM-based agent.
+
+

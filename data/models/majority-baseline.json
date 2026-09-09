@@ -1,0 +1,32 @@
+{
+  "modelType": "MajorityClassClassifier",
+  "majorityClass": "other_unclear",
+  "majorityCount": 55301,
+  "majorityShare": 0.7450354323282947,
+  "trainingSize": 74226,
+  "classCounts": {
+    "keyboard_typing": 4641,
+    "other_unclear": 55301,
+    "display_hardware": 1069,
+    "audio_media": 2172,
+    "battery_power": 7310,
+    "account_icloud": 1038,
+    "apps_appstore": 1138,
+    "connectivity_network": 895,
+    "billing_subscriptions": 426,
+    "software_update": 236
+  },
+  "distribution": {
+    "keyboard_typing": 0.06252526069032414,
+    "other_unclear": 0.7450354323282947,
+    "display_hardware": 0.01440196157680597,
+    "audio_media": 0.029261983671489775,
+    "battery_power": 0.098483011343734,
+    "account_icloud": 0.01398431816344677,
+    "apps_appstore": 0.015331554980734513,
+    "connectivity_network": 0.012057769514725298,
+    "billing_subscriptions": 0.005739228841645784,
+    "software_update": 0.0031794788887990733
+  },
+  "isFitted": true
+}

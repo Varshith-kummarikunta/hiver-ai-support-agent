@@ -8,6 +8,8 @@
     "inspect-data": "node scripts/inspect-data.js",
     "analyze-brands": "node scripts/analyze-brands.js",
     "prepare-data": "node scripts/prepare-data.js",
+    "train:baselines": "node scripts/train-baselines.js",
+    "evaluate:baselines": "node scripts/run-baselines.js",
     "baselines": "node scripts/run-baselines.js",
     "agent": "node scripts/run-agent.js",
     "evaluate": "node scripts/run-evaluation.js"

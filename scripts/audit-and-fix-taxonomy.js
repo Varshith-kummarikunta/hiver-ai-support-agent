@@ -1,4 +1,4 @@
-﻿import fs from 'fs';
+import fs from 'fs';
 import readline from 'readline';
 import path from 'path';
 import config from '../src/config/index.js';
@@ -243,4 +243,6 @@ async function run() {
   console.log('Saved data/processed/audited_intent_classification.json');
 }
 
-run().catch(console.error);
+if (process.argv[1] && (process.argv[1].endsWith('audit-and-fix-taxonomy.js') || process.argv[1].endsWith('audit-and-fix-taxonomy'))) {
+  run().catch(console.error);
+}
