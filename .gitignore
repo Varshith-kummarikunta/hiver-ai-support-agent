@@ -1,0 +1,22 @@
+﻿# Dependencies
+node_modules/
+
+# Environment and Secrets
+.env
+.env.local
+.env.*.local
+
+# Raw large datasets (do not commit ~700MB Kaggle CSV to Git)
+data/raw/*
+!data/raw/.gitkeep
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

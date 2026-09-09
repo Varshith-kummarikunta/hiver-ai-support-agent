@@ -1,0 +1,27 @@
+{
+  "name": "hiver-ai-support-agent",
+  "version": "1.0.0",
+  "description": "Production-grade, grounded AI customer support agent and rigorous evaluation harness for Hiver assignment",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "inspect-data": "node scripts/inspect-data.js",
+    "analyze-brands": "node scripts/analyze-brands.js",
+    "prepare-data": "node scripts/prepare-data.js",
+    "baselines": "node scripts/run-baselines.js",
+    "agent": "node scripts/run-agent.js",
+    "evaluate": "node scripts/run-evaluation.js"
+  },
+  "keywords": [
+    "ai-agent",
+    "customer-support",
+    "evaluation-harness",
+    "hiver"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.2.1",
+    "dotenv": "^17.4.2"
+  }
+}
