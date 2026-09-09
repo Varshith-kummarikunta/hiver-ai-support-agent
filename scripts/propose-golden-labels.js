@@ -10,7 +10,6 @@ const reviewReportPath = path.join(config.projectRoot, 'docs/golden-proposals-re
  */
 function analyzeInquiry(cleanText, rawText) {
   const text = (cleanText || '').toLowerCase().replace(/["“”]/g, ' ').replace(/[‘’]/g, "'").replace(/\s+/g, ' ').trim();
-  const raw = (rawText || '').toLowerCase();
 
   // 1. BILLING & PURCHASES (Strictly guarded)
   const isRepairBill = /\b(repair\s+bill|repair\s+cost|cost\s+to\s+repair|fix\s+my\s+screen|broken\s+screen|replace\s+my\s+screen|screen\s+repair)\b/.test(text);
@@ -222,7 +221,6 @@ function analyzeInquiry(cleanText, rawText) {
   }
 
   // 10. OTHER_UNCLEAR (Explicit Fallback)
-  // Short vague queries, retail/store questions, shipment pre-orders, emotional venting
   const isVeryShort = text.length < 25;
   const isRetailOrShipment = /\b(store|hours|open|reservation|reserved|shipment|shipped|delivery|order|tracking|trade-?in)\b/.test(text);
   const isVenting = /\b(suck|garbage|trash|worst|fuck|shit|ruined|hate)\b/.test(text) && !/\b(battery|screen|keyboard|sound|wifi)\b/.test(text);
@@ -243,7 +241,7 @@ function analyzeInquiry(cleanText, rawText) {
 
 async function runProposals() {
   console.log('===============================================================');
-  console.log('GENERATING AI PROPOSALS FOR 200 GOLDEN EVALUATION EXAMPLES');
+  console.log('PHASE 3: AUDITING AI PROPOSALS & CREATING EVALUATION LABELS');
   console.log('===============================================================\n');
 
   if (!fs.existsSync(goldenPath)) {
@@ -257,19 +255,15 @@ async function runProposals() {
   console.log(`Loaded ${items.length} records from ${goldenPath}`);
 
   let proposalCount = 0;
-  let humanLabelCount = 0;
+  let genuineHumanLabelCount = 0;
   let lowConfidenceCount = 0;
   const proposedCounts = {};
   const lowConfidenceItems = [];
+  const authorDisagreements = [];
 
   const updatedItems = items.map(item => {
-    if (item.humanLabel !== null) {
-      humanLabelCount++;
-    }
-
     const analysis = analyzeInquiry(item.customerTextClean, item.customerTextRaw);
     proposalCount++;
-
     proposedCounts[analysis.proposedLabel] = (proposedCounts[analysis.proposedLabel] || 0) + 1;
 
     if (analysis.confidence < 0.75) {
@@ -284,7 +278,29 @@ async function runProposals() {
       });
     }
 
-    // Preserve all existing fields and populate proposal fields separately
+    const hasHumanLabel = item.humanLabel !== null && item.annotator !== null;
+    if (hasHumanLabel) {
+      genuineHumanLabelCount++;
+      // Compare proposed label vs author-reviewed label
+      if (item.humanLabel !== analysis.proposedLabel) {
+        authorDisagreements.push({
+          goldenId: item.goldenId,
+          text: item.customerTextClean,
+          authorLabel: item.humanLabel,
+          authorAnnotator: item.annotator,
+          aiProposedLabel: analysis.proposedLabel,
+          aiReason: analysis.reason
+        });
+      }
+    }
+
+    // Evaluation label rules:
+    // 1. Use genuine humanLabel where it exists
+    // 2. Otherwise use automaticProposedLabel
+    // 3. Mark evaluationLabelSource explicitly
+    const evaluationLabel = hasHumanLabel ? item.humanLabel : analysis.proposedLabel;
+    const evaluationLabelSource = hasHumanLabel ? `human_author (${item.annotator})` : 'automatic_proposal';
+
     return {
       goldenId: item.goldenId,
       tweetId: item.tweetId,
@@ -297,16 +313,19 @@ async function runProposals() {
       isAmbiguousCase: item.isAmbiguousCase,
       hasUrl: item.hasUrl,
       charLength: item.charLength,
-      // AI Proposal Fields (strictly distinct from human labels)
+      // AI Proposal Fields
       automaticProposedLabel: analysis.proposedLabel,
       automaticConfidence: analysis.confidence,
       automaticReason: analysis.reason,
       automaticAlternativeLabel: analysis.alternative,
-      // Human annotation fields (MUST REMAIN UNCHANGED / NULL)
+      // Human label fields (PRESERVED AS-IS — NO FABRICATION)
       humanLabel: item.humanLabel,
       labelReason: item.labelReason,
       annotator: item.annotator,
-      annotatedAt: item.annotatedAt
+      annotatedAt: item.annotatedAt,
+      // Evaluation-Ready Target Field (Transparently Sourced)
+      evaluationLabel,
+      evaluationLabelSource
     };
   });
 
@@ -314,77 +333,125 @@ async function runProposals() {
   const outputLines = updatedItems.map(it => JSON.stringify(it)).join('\n') + '\n';
   fs.writeFileSync(goldenPath, outputLines, 'utf8');
 
-  console.log(`Proposals generated: ${proposalCount} / 200`);
-  console.log(`Human labels already present: ${humanLabelCount} (0 confirmed - no fabrication)`);
+  console.log(`Automatic proposals generated: ${proposalCount} / 200`);
+  console.log(`Genuine human labels preserved: ${genuineHumanLabelCount} / 200`);
+  console.log(`Automatic-proposal evaluation labels: ${200 - genuineHumanLabelCount} / 200`);
   console.log(`Low-confidence proposals (<0.75): ${lowConfidenceCount}\n`);
 
-  console.log('--- Proposed Label Distribution ---');
+  console.log('--- AI Proposal vs. Author-Reviewed Comparison (4 Examples) ---');
+  console.log(`Total Author-Reviewed Records: ${genuineHumanLabelCount}`);
+  console.log(`Disagreement Count: ${authorDisagreements.length} / ${genuineHumanLabelCount} (${((authorDisagreements.length / genuineHumanLabelCount) * 100).toFixed(1)}%)`);
+  if (authorDisagreements.length > 0) {
+    authorDisagreements.forEach(d => {
+      console.log(`  [Disagreement on ${d.goldenId}]`);
+      console.log(`    Text: "${d.text}"`);
+      console.log(`    Author Human Label:    ${d.authorLabel} (${d.authorAnnotator})`);
+      console.log(`    AI Proposed Label:      ${d.aiProposedLabel}`);
+      console.log(`    AI Proposed Rationale:  ${d.aiReason}\n`);
+    });
+  }
+
+  console.log('--- Evaluation-Ready Label Distribution (200 records) ---');
   console.log('-----------------------------------------------------------------------------------------');
   console.log(
     '#'.padStart(2) + ' ' +
-    'Proposed Intent ID'.padEnd(26) +
+    'Evaluation Label ID'.padEnd(26) +
     'Count'.padStart(10) +
-    'Share %'.padStart(10)
+    'Share %'.padStart(10) +
+    'Human Sourced'.padStart(16) +
+    'AI Sourced'.padStart(14)
   );
   console.log('-----------------------------------------------------------------------------------------');
-  const sortedIntents = Object.keys(proposedCounts).sort((a, b) => proposedCounts[b] - proposedCounts[a]);
-  sortedIntents.forEach((id, idx) => {
-    const count = proposedCounts[id];
-    const pct = ((count / proposalCount) * 100).toFixed(1) + '%';
+
+  const evalCounts = {};
+  const humanCounts = {};
+  const aiCounts = {};
+  updatedItems.forEach(it => {
+    evalCounts[it.evaluationLabel] = (evalCounts[it.evaluationLabel] || 0) + 1;
+    if (it.evaluationLabelSource.startsWith('human_author')) {
+      humanCounts[it.evaluationLabel] = (humanCounts[it.evaluationLabel] || 0) + 1;
+    } else {
+      aiCounts[it.evaluationLabel] = (aiCounts[it.evaluationLabel] || 0) + 1;
+    }
+  });
+
+  const sortedEval = Object.keys(evalCounts).sort((a, b) => evalCounts[b] - evalCounts[a]);
+  sortedEval.forEach((id, idx) => {
+    const total = evalCounts[id];
+    const pct = ((total / 200) * 100).toFixed(1) + '%';
+    const h = humanCounts[id] || 0;
+    const a = aiCounts[id] || 0;
     console.log(
       String(idx + 1).padStart(2) + ' ' +
       id.padEnd(26) +
-      count.toString().padStart(10) +
-      pct.padStart(10)
+      total.toString().padStart(10) +
+      pct.padStart(10) +
+      h.toString().padStart(16) +
+      a.toString().padStart(14)
     );
   });
   console.log('-----------------------------------------------------------------------------------------');
 
   // Generate Review Report Markdown
-  generateReviewReport(updatedItems, lowConfidenceItems, proposedCounts);
+  generateReviewReport(updatedItems, lowConfidenceItems, evalCounts, authorDisagreements, genuineHumanLabelCount);
   console.log(`\nReview report saved to: ${reviewReportPath}`);
 }
 
-function generateReviewReport(items, lowConfidenceItems, proposedCounts) {
-  let md = `# Golden Evaluation Set — AI Label Proposals Review Report\n\n`;
-  md += `This document provides the complete, transparent listing of all **200 AI-proposed labels** for the Golden Evaluation Set.\n\n`;
-  md += `> [!IMPORTANT]\n`;
-  md += `> **Audit Notice**: These labels are **proposals only** generated to streamline annotation. They are stored in \`automaticProposedLabel\` and have **NOT** been copied to \`humanLabel\`. They will only become official ground-truth labels once reviewed and approved by Varshith.\n\n`;
-  md += `## 1. Summary Statistics\n\n`;
-  md += `- **Total Golden Records**: 200\n`;
-  md += `- **AI Proposals Generated**: 200 (100%)\n`;
-  md += `- **Pre-existing Human Labels**: 0 (no premature labels)\n`;
-  md += `- **Low-Confidence Proposals (<0.75)**: ${lowConfidenceItems.length}\n\n`;
+function generateReviewReport(items, lowConfidenceItems, evalCounts, authorDisagreements, genuineHumanCount) {
+  let md = `# Golden Evaluation Set — Transparent AI Proposal & Evaluation Label Report\n\n`;
+  md += `> [!WARNING]\n`;
+  md += `> **Evaluation Limitation & Honesty Disclosure**:\n`;
+  md += `> **The 200-example evaluation set was automatically labelled using the project's taxonomy, with 4 examples additionally reviewed by the author. It is NOT a fully hand-labelled gold set.**\n`;
+  md += `> \n`;
+  md += `> Out of 200 examples, **4 examples** have genuine human labels assigned by Varshith. The remaining **196 examples** contain AI-proposed labels stored with explicit confidence and rationale. Benchmark results evaluated against this set measure consistency with our documented taxonomy rather than true human agreement.\n\n`;
 
-  md += `### Proposed Label Breakdown\n\n`;
-  md += `| Proposed Intent | Count | Share % |\n`;
-  md += `| :--- | :-: | :-: |\n`;
-  for (const [id, count] of Object.entries(proposedCounts).sort((a, b) => b[1] - a[1])) {
+  md += `## 1. Composition & Transparency Summary\n\n`;
+  md += `- **Total Evaluation Records**: 200\n`;
+  md += `- **Genuine Author Human Labels**: ${genuineHumanCount} (2.0%)\n`;
+  md += `- **AI-Proposed Labels**: ${items.length - genuineHumanCount} (98.0%)\n`;
+  md += `- **Total \`evaluationLabel\` Records**: 200 (100%)\n`;
+  md += `- **Disagreements on Author-Reviewed Sample**: ${authorDisagreements.length} / ${genuineHumanCount} (${((authorDisagreements.length / genuineHumanCount) * 100).toFixed(1)}%)\n`;
+  md += `- **Low-Confidence Proposals (<0.75)**: ${lowConfidenceItems.length} (18.0%)\n\n`;
+
+  md += `### Evaluation Label Distribution\n\n`;
+  md += `| Intent ID | Total Count | Share % | Human-Sourced | AI-Sourced |\n`;
+  md += `| :--- | :-: | :-: | :-: | :-: |\n`;
+  for (const [id, count] of Object.entries(evalCounts).sort((a, b) => b[1] - a[1])) {
     const pct = ((count / items.length) * 100).toFixed(1) + '%';
-    md += `| \`${id}\` | **${count}** | ${pct} |\n`;
+    const h = items.filter(it => it.evaluationLabel === id && it.evaluationLabelSource.startsWith('human_author')).length;
+    const a = items.filter(it => it.evaluationLabel === id && it.evaluationLabelSource === 'automatic_proposal').length;
+    md += `| \`${id}\` | **${count}** | ${pct} | ${h} | ${a} |\n`;
   }
   md += `\n---\n\n`;
 
-  md += `## 2. Low-Confidence & Ambiguous Items (${lowConfidenceItems.length} Cases)\n\n`;
-  if (lowConfidenceItems.length === 0) {
-    md += `*None — all items met confidence threshold.*\n\n`;
-  } else {
-    md += `| Golden ID | Customer Text | Proposed Label | Conf | Reason & Potential Alternative |\n`;
-    md += `| :--- | :--- | :--- | :-: | :--- |\n`;
-    lowConfidenceItems.forEach(item => {
-      const altText = item.alternative ? ` *(Alternative: \`${item.alternative}\`)*` : '';
-      md += `| **${item.goldenId}** | "${item.text.replace(/\|/g, '\\|')}" | \`${item.proposed}\` | ${item.confidence} | ${item.reason}${altText} |\n`;
-    });
-    md += `\n`;
-  }
+  md += `## 2. Author-Reviewed vs. AI-Proposal Comparison (4 Examples)\n\n`;
+  items.slice(0, 4).forEach(it => {
+    const isDisagreement = it.humanLabel !== it.automaticProposedLabel;
+    md += `### ${it.goldenId} ${isDisagreement ? '(Disagreement ⚠️)' : '(Agreement ✅)'}\n`;
+    md += `- **Customer Text**: "${it.customerTextClean}"\n`;
+    md += `- **Author Human Label**: \`${it.humanLabel}\` (by ${it.annotator})\n`;
+    md += `- **AI Proposed Label**: \`${it.automaticProposedLabel}\` (Conf: ${it.automaticConfidence.toFixed(2)})\n`;
+    md += `- **AI Rationale**: ${it.automaticReason}\n`;
+    md += `- **Evaluation Label Assigned**: \`${it.evaluationLabel}\` *(Source: ${it.evaluationLabelSource})*\n\n`;
+  });
 
-  md += `\n---\n\n`;
-  md += `## 3. Complete Item-by-Item Review Listing (200 Records)\n\n`;
-  md += `| Golden ID | Customer Text | Proposed Intent | Conf | Short Rationale |\n`;
+  md += `---\n\n`;
+  md += `## 3. Low-Confidence Proposals (<0.75, ${lowConfidenceItems.length} Cases)\n\n`;
+  md += `| Golden ID | Customer Text | Proposed Label | Conf | Reason & Potential Alternative |\n`;
   md += `| :--- | :--- | :--- | :-: | :--- |\n`;
+  lowConfidenceItems.forEach(item => {
+    const altText = item.alternative ? ` *(Alternative: \`${item.alternative}\`)*` : '';
+    md += `| **${item.goldenId}** | "${item.text.replace(/\|/g, '\\|')}" | \`${item.proposed}\` | ${item.confidence} | ${item.reason}${altText} |\n`;
+  });
+  md += `\n`;
+
+  md += `---\n\n`;
+  md += `## 4. Complete Item Listing (All 200 Records)\n\n`;
+  md += `| Golden ID | Customer Text | Target \`evaluationLabel\` | Source | Conf | Rationale |\n`;
+  md += `| :--- | :--- | :--- | :--- | :-: | :--- |\n`;
   items.forEach(it => {
     const textSnippet = it.customerTextClean.replace(/\|/g, '\\|').replace(/\n/g, ' ');
-    md += `| **${it.goldenId}** | "${textSnippet}" | \`${it.automaticProposedLabel}\` | ${it.automaticConfidence.toFixed(2)} | ${it.automaticReason} |\n`;
+    md += `| **${it.goldenId}** | "${textSnippet}" | \`${it.evaluationLabel}\` | ${it.evaluationLabelSource} | ${it.automaticConfidence.toFixed(2)} | ${it.automaticReason} |\n`;
   });
 
   fs.writeFileSync(reviewReportPath, md, 'utf8');

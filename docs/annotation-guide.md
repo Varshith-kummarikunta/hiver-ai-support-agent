@@ -1,4 +1,4 @@
-﻿# AppleSupport Human Annotation Guide
+# AppleSupport Human Annotation Guide
 
 This guide is for human annotators labelling the **200-example Golden Evaluation Set** for the `@AppleSupport` AI agent.
 
@@ -53,3 +53,17 @@ This guide is for human annotators labelling the **200-example Golden Evaluation
 
 ### F. `other_unclear` vs. Technical Intents
 - **Rule**: If the customer says *"Apple sucks, fix your phones"*, *"Help me please"*, or asks about shipping/retail store hours, label as **`other_unclear`**.
+
+---
+
+## 4. Benchmark Attribution & Integrity Policy
+
+1. **AI Proposals vs. Human Judgments**:
+   - `automaticProposedLabel` records the rule engine's recommendation.
+   - `humanLabel` is only populated when an actual human explicitly verifies the tweet via `scripts/annotate-golden.js`.
+2. **Benchmark Field (`evaluationLabel`)**:
+   - Downstream benchmark tests compare predictions against `evaluationLabel`.
+   - Records annotated by human reviewers have `evaluationLabelSource: "human_author"`.
+   - Records with AI-generated proposals have `evaluationLabelSource: "automatic_proposal"`.
+   - This prevents conflation between human ground truth and machine-generated labels.
+

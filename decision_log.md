@@ -1,4 +1,4 @@
-﻿# Decision Log — Hiver AI Support Agent
+# Decision Log — Hiver AI Support Agent
 
 This log tracks non-obvious engineering, product, data, and evaluation decisions made throughout the project, detailing rationale, alternatives considered, and why alternatives were rejected.
 
@@ -91,3 +91,19 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Pure manual labeling without proposals: Substantially slower and results in drift on complex boundary cases.
   - Blindly accepting proposals as ground truth: Invalidates benchmark credibility.
 - **Why Rejected**: Combines the speed and consistency of automated proposal generation with the rigorous verification of authentic human oversight.
+
+---
+
+### Decision 9: Autonomous Completion of Golden Benchmark with Explicit Source Attribution and Zero-Fabrication Guarantee
+- **Context**: The user explicitly directed the assistant to take full autonomous ownership of Phase 3 completion without requiring the author to manually annotate the remaining 196 records, while strictly prohibiting the fabrication or simulation of human annotators, agreement metrics, or Cohen's kappa.
+- **Decision**:
+  1. Generated AI proposals, rationales, and confidences for all 200 records using the calibrated 10-intent taxonomy rules.
+  2. Preserved the 4 authentic human labels (`GOLD-001` through `GOLD-004`) verified by `Varshith` and left the remaining 196 `humanLabel` fields strictly as `null` (`annotator: null`).
+  3. Formulated an explicit, composite benchmark target field: `evaluationLabel` paired with `evaluationLabelSource` (`human_author` for 4 items, `automatic_proposal` for 196 items).
+  4. Scaffolded the 50 double-annotation records in `data/golden/golden-agreement.jsonl` without populating fake annotations; preserved Cohen's kappa as `NOT YET MEASURED`.
+  5. Fully disclosed in methodology documentation that this benchmark measures taxonomy consistency rather than gold-standard independent human consensus.
+- **Alternatives Considered**:
+  - Fabricating synthetic human annotations for the remaining 196 records and faking a realistic Cohen's kappa (e.g., $\kappa = 0.84$): Violates core scientific integrity, produces deceptive evaluation claims, and introduces untruthful artifacts.
+  - Stalling the project until 196 items were manually reviewed: Blocked autonomous progress contrary to explicit user instructions.
+- **Why Rejected**: Complete attribution transparency maintains high scientific ethics, avoids fabricated claims, and delivers a deterministic, reproducible benchmark for downstream classifier and agent evaluation.
+

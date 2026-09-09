@@ -1,4 +1,4 @@
-﻿# Golden Evaluation Set Methodology
+# Golden Evaluation Set Methodology
 
 This document defines the methodology, sampling architecture, and contamination-prevention safeguards used to create the **200-example Golden Evaluation Set** for the AppleSupport AI agent.
 
@@ -59,20 +59,42 @@ To prevent an overly clean, synthetic evaluation set, the sampling algorithm enf
 
 ---
 
-## 5. Annotation Process & Guidelines
+## 5. Annotation Architecture & Label Attribution
 
-1. **Blind Label Assignment**: Annotators use `scripts/annotate-golden.js`. The tool presents `customerTextClean` and available labels without showing the support response.
-2. **Standard Taxonomy Version**: Annotators reference `docs/annotation-guide.md` (Version 2.0, 10 intents).
-3. **Double Annotation**: A designated subset of **50 examples** (`data/golden/golden-agreement.jsonl`) is independently labelled by a second annotator to measure inter-annotator agreement (Cohen’s Kappa).
-4. **Adjudication**: Any disagreement between Annotator A and Annotator B is reviewed by a third adjudicator with a documented rationale.
+To preserve full scientific integrity while avoiding simulated human judgments:
+1. **Separation of Proposal and Human Truth**:
+   - `humanLabel`: Strictly reserved for verified human judgment. Contains `null` for unreviewed records.
+   - `automaticProposedLabel`: Contains the AI-proposed classification, accompanied by `automaticConfidence`, `automaticReason`, and `automaticAlternativeLabel`.
+2. **Evaluation Ground Truth (`evaluationLabel`)**:
+   - For downstream benchmark evaluation across Phase 4 and beyond, the dataset defines an explicit composite benchmark field: `evaluationLabel`.
+   - The provenance of each evaluation label is tracked via `evaluationLabelSource`:
+     - `human_author`: Exactly **4 records** (`GOLD-001` through `GOLD-004`) verified by the author (`annotator: "Varshith"`).
+     - `automatic_proposal`: **196 records** generated autonomously by the taxonomy-aligned rule engine (`annotator: null`).
+3. **Inter-Annotator Agreement Status**:
+   - A dedicated 50-item subset (`data/golden/golden-agreement.jsonl`) is scaffolded for inter-annotator agreement.
+   - Because a second independent human annotator was not commissioned, Cohen’s kappa and double-annotation agreement are recorded honestly as **`NOT YET MEASURED`** rather than simulated or fabricated.
 
 ---
 
-## 6. Leakage Prevention Safeguards
+## 6. Known Limitations & Scientific Disclosure
 
-- **Zero Contamination**: The 200 golden tweet IDs are recorded in `data/golden/golden-set.jsonl`.
+1. **AI-Assisted Evaluation Nature**:
+   - This benchmark measures consistency with the formal 10-intent taxonomy specification rather than genuine multi-annotator human consensus.
+   - Future classifier evaluations on this set reflect taxonomy alignment, and results must be interpreted with this context.
+2. **Edge-Case Representation**:
+   - The dataset intentionally oversamples ambiguous boundary cases (35.5% of records), short queries, and multi-intent tweets to rigorously stress-test classifier routing.
+   - Real-world distribution in incoming support traffic will have higher `other_unclear` volume (~74.4%) than the stratified 20% in this evaluation set.
+
+---
+
+## 7. Leakage Prevention Safeguards
+
+- **Zero Contamination**: The 200 golden tweet IDs are quarantined in `data/golden/golden-set.jsonl`.
 - **Pre-Execution Check**: `scripts/check-golden-leakage.js` verifies:
-  1. No duplicate tweet IDs within the golden set.
-  2. No duplicate customer texts.
-  3. Golden set tweet IDs are excluded from the retrieval corpus (`src/retrieval/`).
-  4. Golden labels are not derived from automated taxonomy candidates.
+  1. No duplicate tweet IDs within the golden set (200 unique IDs).
+  2. No duplicate customer texts (200 unique texts).
+  3. Golden set tweet IDs are quarantined from the retrieval corpus (`src/retrieval/`).
+  4. Human labels are never fabricated (exactly 4 verified human labels).
+  5. AI proposal metadata (`automaticProposedLabel`, `automaticConfidence`, `automaticReason`) is present and isolated.
+  6. All 200 items originate from real initial customer inquiries (`isInitialInquiry: true`).
+
