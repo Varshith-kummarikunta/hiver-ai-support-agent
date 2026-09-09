@@ -125,6 +125,6 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Training on a Python/scikit-learn pipeline: Rejected to keep the local workspace unified, pure Node.js, and directly runnable without external environment management or IPC bridges.
   - Training directly on the 200 golden examples: Violates fundamental ML data cleanliness (test set contamination).
   - Unbalanced Naive Bayes training with empirical priors: Caused Naive Bayes to overpredict `other_unclear`, dropping Macro F1 below 45%.
-- **Why Rejected**: The pure Node.js implementation runs in $<15$ milliseconds, produces deterministic cross-platform results, and illuminates the exact blind spots of classical bag-of-words classifiers (e.g. inability to distinguish temporal update backstories from functional symptoms) that motivate an LLM-based agent.
+- **Why Rejected**: The pure Node.js implementation achieves ultra-low inference latency (measured mean 0.0720 ms per query across 2,000 runs, ~14.4 ms to evaluate the entire 200-item benchmark), produces deterministic cross-platform results, and illuminates the exact blind spots of classical bag-of-words classifiers (e.g. inability to distinguish temporal update backstories from functional symptoms) that motivate an LLM-based agent.
 
 

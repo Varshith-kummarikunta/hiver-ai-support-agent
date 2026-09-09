@@ -22,7 +22,7 @@ This report documents the design, implementation, and empirical evaluation of **
 
 ### Key Findings:
 1. **Baseline 1 (Majority Class)** achieves **24.50% accuracy** by unconditionally predicting `other_unclear`. However, its **Macro F1 is only 3.94%** because it has 0% recall and 0% precision across all 9 technical support intents. This clearly illustrates why Macro F1 is essential for customer support triage.
-2. **Baseline 2 (TF-IDF + Naive Bayes)** achieves **69.50% accuracy** and **68.27% Macro F1**, demonstrating strong lexical signal across technical categories while running deterministically in pure Node.js in under 15 milliseconds.
+2. **Baseline 2 (TF-IDF + Naive Bayes)** achieves **69.50% accuracy** and **68.27% Macro F1**, demonstrating strong lexical signal across technical categories while running deterministically in pure Node.js (measured mean latency 0.072 ms per query).
 
 ---
 
@@ -99,7 +99,7 @@ This report documents the design, implementation, and empirical evaluation of **
 - **Features**: Unigrams + Bigrams, Sublinear TF ($1 + \ln(\text{tf})$), Smoothed IDF ($\ln((1+N)/(1+df)) + 1$), L2 vector normalization.
 - **Vocabulary Size**: 10,373 terms (min document frequency $\ge 3$, max ratio $0.85$).
 - **Classifier**: Multinomial Naive Bayes with Laplace smoothing ($\alpha = 0.5$) and uniform class priors for balanced classification.
-- **Execution Speed**: Inference takes $<0.08$ ms per query on standard CPU.
+- **Execution Speed**: Empirically measured via `scripts/measure-timing.js` across 2,000 queries: mean inference latency is **0.0720 ms per query** (median 0.0545 ms, p95 0.1550 ms); model training on 8,557 documents takes **1,160.73 ms (~1.16 s)**.
 
 ---
 
