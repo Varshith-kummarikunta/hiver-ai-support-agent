@@ -1,0 +1,801 @@
+{
+  "totalInquiries": 74426,
+  "reconciledSum": 74426,
+  "isReconciled": true,
+  "intentCounts": {
+    "other_unclear": 55341,
+    "battery_power": 7335,
+    "keyboard_typing": 4666,
+    "audio_media": 2192,
+    "display_hardware": 1089,
+    "account_icloud": 1056,
+    "connectivity_network": 913,
+    "apps_appstore": 1154,
+    "billing_subscriptions": 436,
+    "software_update": 244
+  },
+  "percentages": {
+    "other_unclear": 74.36,
+    "battery_power": 9.86,
+    "keyboard_typing": 6.27,
+    "audio_media": 2.95,
+    "display_hardware": 1.46,
+    "account_icloud": 1.42,
+    "connectivity_network": 1.23,
+    "apps_appstore": 1.55,
+    "billing_subscriptions": 0.59,
+    "software_update": 0.33
+  },
+  "examples": {
+    "other_unclear": [
+      {
+        "tweetId": "723",
+        "customerText": "hello are all the lines closed for tonight #help",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "733",
+        "customerText": "I’ve got a screenshot saying my #iPhoneX is reserved for the 3rd then an email saying it’s the 18th... what happened?",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "736",
+        "customerText": "Thank you I updated my phone and now it is even slower and barely works. Thank you for ruining my phone.😤",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "747",
+        "customerText": "Hola necesito urgente la actualización de software. La batería me dura literal medio día 🙍🏼🙇🏼♀",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "749",
+        "customerText": "Hi! What is going on? Has Youtube lost it? What can be done about it? Thanks for the support!",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "758",
+        "customerText": "Hey ! Last time I downloaded an update my freaking phone gave me hell. Any recommendations?",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "1770",
+        "customerText": "why is my home sharing not working and how do i fix it",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "1785",
+        "customerText": "epıl bana yardımcı olur musun telefon internet konusunda çok yakıyo napcaz ?",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2613",
+        "customerText": "Cupertino, we have a problem. . . . .",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2620",
+        "customerText": "watchOs4 made my watch pointless Browsing music on my phone via the watch was 80% reason for buying it now it’s useless.",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2624",
+        "customerText": "It’s been a few days since made me update my phone’s operating system. Now constantly glitching, hmm 🤔 I’m shocked!",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2632",
+        "customerText": "And why is my music NEVER in my control center?!",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2642",
+        "customerText": "still no reliable Bluetooth on my iPhone 8+.",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2648",
+        "customerText": "do you have any apps for epilepsy so I can detect my seizures thanks in advance",
+        "assignedIntent": "other_unclear"
+      },
+      {
+        "tweetId": "2650",
+        "customerText": "really needs to fix this update. My phone has never been slower, for real.",
+        "assignedIntent": "other_unclear"
+      }
+    ],
+    "battery_power": [
+      {
+        "tweetId": "767",
+        "customerText": "I just need to do something about the battery life because it sucks ass",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "1761",
+        "customerText": "iOS 11 is killing my battery . Fix it.",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "2616",
+        "customerText": "why is my battery life short? I updated to 11.1, my battery is poor. Wife didn’t she likes her battery life",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "2628",
+        "customerText": "Question- my iPhone6 dies very quick (have to charge it 3 times a day) my iPhone5 battery was faulty. Could this be the same?",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "3767",
+        "customerText": "I’m no expert in battery life but 40% doesn’t go to 7% in 5minutes",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "4871",
+        "customerText": "Really considering getting a new kind of phone since my iPhone dies with 90% while using my camera 😤",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "4901",
+        "customerText": "Please fix the battery issues in Ios 11!",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "4915",
+        "customerText": "Don’t complain a lot about but when battery iphone goes down 50% after using your phone for 30 minutes ..... Problems since update 11",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "4917",
+        "customerText": ". why my iPhone keep dying at 30% quit playing games I'm not getting no new damn phone or iPhone x",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "6934",
+        "customerText": "after the new apple updates: the battery life is really go fast and the WiFi is always on! #newappleupdates",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "9160",
+        "customerText": "I got my phone yesterday and it’s already not charging thanks 🙃",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "9827",
+        "customerText": "Damn the new emojis . Will my battery still go from 65% to 40% after one snap?",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "11144",
+        "customerText": "love how my computer charger just stopped working for literally no reason at all. thanks you’ve really done it for me this time, sweetie",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "11630",
+        "customerText": "I just wanted to let you know that the new update is crap and it wastes my battery more than ever before.",
+        "assignedIntent": "battery_power"
+      },
+      {
+        "tweetId": "12010",
+        "customerText": "so IOS 11 reduced avg battery life from 240 minutes to 96?? Seriously I would rather have my batter explode and get a new one...",
+        "assignedIntent": "battery_power"
+      }
+    ],
+    "keyboard_typing": [
+      {
+        "tweetId": "714",
+        "customerText": "Hey and anyone else who upgraded to ios11.1, are y’all having issues with capital “I” in the Mail app? As it puts in “A”?",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "719",
+        "customerText": "Tf is wrong with my keyboard",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "730",
+        "customerText": "Hello, internet. Can someone explain why this symbol keeps appearing on my phone and when I try to type the letter I? Also",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "1755",
+        "customerText": "Why does my I not work ?! please fix this!!!",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "1759",
+        "customerText": "Why is “I” keep changing to this and how do I stop it🤦🏽♀ #anybody",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "3773",
+        "customerText": "iOS 11.1 - keyboard lag. 🤨",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "4882",
+        "customerText": "tell me why I’I’ve updated my phone twice and I can’t type letter I without getting a letter A and a question mark",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "5825",
+        "customerText": "excuse me, can someone explain to me why when I type an “I” alone I get an A and a question mark???????",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "5839",
+        "customerText": "Just updated to iOS 11.2 and my keyboard is completely screwed up and glitchy now 🤦♂",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "8561",
+        "customerText": "hey what’s going on with the letter I . When i start to. Type this happens below",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "9152",
+        "customerText": "Hey , what’s up with this new autocorrect? Happening on iPhone 7 Plus and iPhone 7.",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "9176",
+        "customerText": "the new update is making my phone so funky. Check out the emoji and the letter I. Is there a fix?",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "9178",
+        "customerText": "what’s up with typing the letter I ... it wants to be an A and a box with a question mark",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "9187",
+        "customerText": "hey apple ! What is going on with the iPhones ?? Every time I type the letter “I” I get a symbol. Which you see right now!",
+        "assignedIntent": "keyboard_typing"
+      },
+      {
+        "tweetId": "9193",
+        "customerText": "Ayo fix this whole question mark box ting dem shits annoying.",
+        "assignedIntent": "keyboard_typing"
+      }
+    ],
+    "audio_media": [
+      {
+        "tweetId": "765",
+        "customerText": "After update #ios1103 no spotify on my lock screen?",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "1781",
+        "customerText": "why can’t I change ringer volume with the buttons? Whose dumb idea was it to change that and how do they still have a job?",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "2682",
+        "customerText": "ios 11.0.3 on 6s. Cannot adjust alarm volume so waking up all in my house and neighbours despite ringer being set to minimum!",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "4879",
+        "customerText": "I can’t download songs. Progress icon keeps spinning. On both data + WiFi. Stream works though. Can’t add songs to playlists.",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "11101",
+        "customerText": "music and podcast “skip” around like a CD, then distorts and clears up in few seconds, only happens after iOS 11",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "14326",
+        "customerText": "Updated my phone last night & now its stuck in headphone mode, cant hear anything on video, FaceTime & call sound goes in&out",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "17305",
+        "customerText": "how come when I am listening to my music keeps pausing by itself????? I’m sorry I listen to Spotify and not Apple Music but Spotify is simply better. I’m sick of your shit Apple",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "18833",
+        "customerText": "I’m still waiting when will fix #applemusic bug of iOS 11. On the main screen when music is playing time is not counting. Does anyone else has the same problem?",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "21155",
+        "customerText": "Day 6 in the iTunes Lockout. I cannot get help or explanation. Cannot download apps, update them or play music on my iPhone. I bet some angry employee locked a thousand accounts and now won't pick up at 1-866-9703764 #BadApple",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "23122",
+        "customerText": "you guys are terrible back in October you said you’d send me something so I could send in my AirPods for repair since they didn’t work when I bought them. You never sent them to me at fort sill. Thanks!",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "31962",
+        "customerText": "AirPods are connected but don’t play audio anymore any troubleshooting tips?",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "33351",
+        "customerText": "Why am I loosing songs I’ve downloaded on Apple Music. It won’t let me download them again either. Greyed our on playlists too",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "35213",
+        "customerText": "Hola/Hello! I can use the AirPods witch Bluetooth audio transmisor? Any model? This no...",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "37662",
+        "customerText": "my bose headphone controls don’t seem to be working since I updated to iOS 11 any idea why?",
+        "assignedIntent": "audio_media"
+      },
+      {
+        "tweetId": "38648",
+        "customerText": "Either or needs to get their shit together my music keeps pausing when I get a snap notification",
+        "assignedIntent": "audio_media"
+      }
+    ],
+    "display_hardware": [
+      {
+        "tweetId": "756",
+        "customerText": "MY HOME BUTTON DOESN’T WORK #IOS11",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "5821",
+        "customerText": "Dear this new update sucks ,I have too many problems with my phone now ! Blurry screen , black screen , frozen phone !",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "11134",
+        "customerText": "My Touch ID failed when I restarted my phone. Now it’s not working at all",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "18872",
+        "customerText": "the screen on our iPad Pro has stopped working 😔. I've read a few articles about weak screens on some models - is there anywhere I can check the model number, or will it be a £400 repair bill? Thanks",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "31905",
+        "customerText": "Iphone 8, ios 11.0.2. Auto lock function not working properly. Will not lock unless i manually press power button. On for hours.",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "31911",
+        "customerText": "After updating to 10.13.1 to fix freeze issues of High Sierra, I went to a complete black screen. Test product before release",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "32433",
+        "customerText": "My iPhone screen glass is completely cracked. Still the touch screen works. Can I change the glass alone or the display too?",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "34646",
+        "customerText": "My 6 month old IPhone 6 touch screen is unresponsive. please help!",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "34685",
+        "customerText": "Top 5 things I regret doing in MY LiFE is updating my IOS. Now my Touch ID doesn’t work! Tf",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "35281",
+        "customerText": "why is my alarm sound not working when on silent and volume on lock screen not working after the update??",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "35320",
+        "customerText": "after updating to iOS 11.0.3 my home screen turns black when on a call. What’s the fix? Cust care not helping.",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "42618",
+        "customerText": "my iPhone 8 lock screen music controls always freeze specifically the elapsed time of a song I can still control. Visual bug",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "50805",
+        "customerText": "IOS update causing phone screen to freeze and apps crashing. What’s the remedy?",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "50863",
+        "customerText": "My phone is frozen thanks to the new update. I can't even hard reset it.",
+        "assignedIntent": "display_hardware"
+      },
+      {
+        "tweetId": "51672",
+        "customerText": "this new update is a mess my phone has a frozen notification on the screen and running very unstable. help please",
+        "assignedIntent": "display_hardware"
+      }
+    ],
+    "account_icloud": [
+      {
+        "tweetId": "1764",
+        "customerText": "Hello, I need some help regarding the region change on my Apple ID",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "2635",
+        "customerText": "Just updated iOS on iPhone7, now iCloud backup greyed out, cannot be turned on, says “Last Backup Never”",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "6554",
+        "customerText": "how long does it take usually for account recovery to get back to you? It’s been about a week now.",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "8437",
+        "customerText": "suck! Upgrade phone & I lose my Apple ID. Can’t get new id without old & can’t book Genius bar help appointment without ID!!! #stupid",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "8557",
+        "customerText": "is that safe if we disable passcode for unlock iphone? i mean,is the fingerprint still worked out? i think dat would be enough",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "14337",
+        "customerText": "So over & their awful customer service. Locked out of iCloud for 2 weeks & promised password recovery instructions that never came🖕🏽",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "31935",
+        "customerText": "So at midnight my phone just went blank, spun the wheel,and asked me to enter my passcode ...wtf since os 11 this randomly :(",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "32401",
+        "customerText": "Hey I heard I can change my Apple ID to my email but when I try it says nope. What gives? Spent an hour signing out & in.",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "34624",
+        "customerText": "Is there a way to merge two AppleID’s, so I can use all bought items in one ID and delete the other?",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "36626",
+        "customerText": "Hi there, my iPhone 6S plus can’t do backup for it, not by iCloud and iTunes , any way to fix it ,thanks",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "38891",
+        "customerText": "how can i reset security questions? i face this error: We don't have sufficient information to reset your security questions.",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "43358",
+        "customerText": "locked out of my apple ID bcuz my old phone broke & i had 2 factor authentication on , no one should ever use tht shit",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "43367",
+        "customerText": "Can’t change the Apple ID to .com Website stills shows it is not possible. I used this document:",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "44605",
+        "customerText": "I’m still unable to change my Apple ID from to . I want to use my alias address",
+        "assignedIntent": "account_icloud"
+      },
+      {
+        "tweetId": "44626",
+        "customerText": "help I logged out of my Apple ID account and the verification code is sent to a broken phone????",
+        "assignedIntent": "account_icloud"
+      }
+    ],
+    "connectivity_network": [
+      {
+        "tweetId": "1783",
+        "customerText": "if my words even mean a thing to you; I am an iPhone 7 owner and have updated to your latest software and now am having the most dropped calls in history and glitch’s such as apps randomly opening and more ... #iHelp",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "2659",
+        "customerText": "Is anyone else having problems with there iPhone 7 saying no service?",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "5849",
+        "customerText": "I updated to iOS 11 and my iPhone 6 stopped connecting to wi-fi. Already restored the phone and the network connections",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "13588",
+        "customerText": "Why do I need a sim card when I’m joined to the WiFi? I’m only using this phone to test websites.",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "13933",
+        "customerText": "after updating to ios 11.1 I have no service, displays no service. reset networking settings does nothing",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "25424",
+        "customerText": "Bluetooth connection iPhone X to Infiniti is terrible. Garbled and scratchy cutting in and out >30% of time. Didn't happen W iPhone 6!!",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "36109",
+        "customerText": "Can’t an iPhone 8 connect to a Bluetooth device using NFC?",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "39670",
+        "customerText": "why does my iPhone turn on WiFi and Bluetooth automatically? 😭 #IWantToUseMyData",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "41674",
+        "customerText": "11.1 update broke my wifi it's greyed out i've been waiting on live chat for over 30 minutes..",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "41683",
+        "customerText": "I updated my iOS last night but the Bluetooth connectivity is still not acceptable. My Bluetooth earbuds will not pair. Help!",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "50036",
+        "customerText": "Hey please fix the hotspot glitches for iOS 11",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "52265",
+        "customerText": "Help . My iPhone 6 will connect to unsecured wifi networks but not those requiring a password. “Invalid password” every time. (IOS 11.03).",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "61401",
+        "customerText": ", it's been like this for the past hour. Why won't it just connect to the wifi?",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "92685",
+        "customerText": "Good morning! My iPhone has been unable to join a “captive Wi-Fi network” like you find in many public coffee shops. Can you help?",
+        "assignedIntent": "connectivity_network"
+      },
+      {
+        "tweetId": "97061",
+        "customerText": "why tf does my wifi n bluetooth turn on by its self after I turn it off?",
+        "assignedIntent": "connectivity_network"
+      }
+    ],
+    "apps_appstore": [
+      {
+        "tweetId": "1779",
+        "customerText": "my PHONE app doesn’t work. Thank you for updating my #iPhone to an #ipod",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "1791",
+        "customerText": "why won’t my apps fuccin download or update",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "2645",
+        "customerText": "when will the bug in the calendar app be fixed? I upgraded to iOS 11.1 and it still crashes when iOS 11.03",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "9838",
+        "customerText": "updating xcode via appstore. 7-min remaining 6-hr ago. 1-min rem for over an hour. Why? My net bandwidth is good.",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "11633",
+        "customerText": "Since I updated my iPhone I can’t download apps now. Thanks 🙄🙄🙄",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "14319",
+        "customerText": "My Calendar app doesn’t work at all after iOS 11.1, can’t see other months and it just shuts down, I have an IPhone SE",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "15470",
+        "customerText": ". how about fixing your #podcast app with the next #ios update? It’s gone from bad to worse and I can’t listen to my beloved #arsecast #replyall and #wtf",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "22995",
+        "customerText": "help!! My Mac App Store will not open so I cannot update my 2015 MacBook Pro currently running on OS X Yosemite 10.10.3",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "23086",
+        "customerText": "I decided to download IOS 11. Now I can’t download anything from the App Store. Is this problem being fixed soon? I’ve tried all the options to make it work. #worstdecisionever",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "26684",
+        "customerText": "Teally upset, downloaded latest 11.0 update now apps will not work on iPhone or IPad. Tech support was worthless after 120 minutes tried to blame me! Getting new phone and different notebook. This is outrageous!",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "31884",
+        "customerText": "I can’t download apps from the app store.",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "33349",
+        "customerText": "appstore giving me grief AGAIN trying to update xcode been at '0 bytes of 5G - less than a minute' for hours now.",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "35333",
+        "customerText": "Hello,i have a question but i'm not sure is that possible, we have 150 ipads and we use apple configurator 2 for install apps to devices. First we connect devices to imac then we install with app configurator, can we install apps without connect to imac ? #apple",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "39601",
+        "customerText": "Dear – please do something about #iOS11 on the #iPhone6... it get's damn hot and is terribly slow during #AppStore updates 🔥",
+        "assignedIntent": "apps_appstore"
+      },
+      {
+        "tweetId": "48038",
+        "customerText": "after ios 11.1 update i could not use app store .. always it ask user id password and it has not been accept it",
+        "assignedIntent": "apps_appstore"
+      }
+    ],
+    "billing_subscriptions": [
+      {
+        "tweetId": "9180",
+        "customerText": "I bought an iTunes gift card worth £15 a week ago, and the email still hasn’t come into my inbox to tell me the code. Helpppp",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "12602",
+        "customerText": "Why do you keep charging my card for FREE apps? Im not happy at all.",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "35262",
+        "customerText": "I got refunded for an in app purchase on Monday & got a conformation email, but there’s no sign of it in my account yet...",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "39623",
+        "customerText": "where is all my music that was in my library? and why do i have to renew my subscription?",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "47995",
+        "customerText": "hi there, I need to inquire something regarding he refund of an item",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "61323",
+        "customerText": "I accidentally bought something is there anyway I can get a refund",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "67418",
+        "customerText": "Why is it that i have been waiting for almost a month for a refund of a returned item i paid cash for in the first place? Where is my money?",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "89012",
+        "customerText": "Why doesn't work like they used to? I get a random charge and I'm trying to access my account but it won't accept my password...so i change it.. and it won't accept that password either.. No help from their call in number either..",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "90654",
+        "customerText": "excuse me, I'm got a refund confirmation email but nothing happened. Do I have to do anythings?",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "101304",
+        "customerText": "how do I go about raising a high level complaint please? 4 senior techs couldn’t help fix my problem, now my e mails are being unanswered, want a refund for a product that’s not fit for purpose, have tried everything to fix, thanks.",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "107358",
+        "customerText": "ok... woke up yesterday and my podcast app had changed AGAIN. My subscriptions disappeared, and when it restored all my new subs were gone. Also the Listen Now is in NO order whatsoever. How can I get my old app back?",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "109046",
+        "customerText": "why have you taken my Apple subscription twice within two days?",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "120642",
+        "customerText": "UK user here. Having an absolute NIGHTMARE accessing my iTunes subscriptions. My Netflix account is connected to my Apple ID and I want to cancel/amend it, and it's showing up as totally blank on my iTunes page. PLEASE ADVISE ASAP. Getting very frustrated.",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "145186",
+        "customerText": "can i refund an album i bought 3 years ago?",
+        "assignedIntent": "billing_subscriptions"
+      },
+      {
+        "tweetId": "148191",
+        "customerText": "Am finding it impossible to cancel my subscription, it is stuck in a loop, can you PM me please? Thanks",
+        "assignedIntent": "billing_subscriptions"
+      }
+    ],
+    "software_update": [
+      {
+        "tweetId": "27508",
+        "customerText": "Unable to update apps when connected to WiFi.",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "32412",
+        "customerText": "pls let folks downgrade to ios 10.3.3, been an apple fanboy but iOS 11 is the worst i cant put up with this glitchy OS anymore",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "33398",
+        "customerText": "Update failed continuously please help #apple #appleindia",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "36070",
+        "customerText": "Can you help me update to iOS 11.1 it says \"verifying update\" and then error every time I try to install it.",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "50089",
+        "customerText": "Can't update iPhone software, restarted phone and reconnected internet still not working",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "92527",
+        "customerText": "been trying to get help on the website for hours. No response and nobody free to chat to. I can't update my phone and I think it has a virus. Any help?",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "94737",
+        "customerText": "So i got a email to update my payment method, i keep trying & reset my iPhone to do this but it keeps saying try again later it cannot update. Any Suggestions 🤷🏽♂",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "94755",
+        "customerText": "love deleting 80% of my phone contents to install IOS 11 and waiting 5 hours just for it to fail, nice one",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "103157",
+        "customerText": "I cannot update my phone to iOS 11 I keep getting an error occurred while trying to install the download I've tried restarting force restart cleared at least 5gb of space what now",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "154483",
+        "customerText": "can’t update 11.1.2",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "161253",
+        "customerText": "my iPad Pro won’t install IOS 11?",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "164227",
+        "customerText": "Hi! Please help me 🙏🏻 I can't update mi iOS 😔",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "168884",
+        "customerText": "So my husband got me my new #iPhone8Plus but cannot update to latest iOS through set up and iTunes is freezing on the laptop. My iCloud back up is not loading all settings to phone. I’ll end up breaking it due to frustration. Can someone help? #iPhone",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "181374",
+        "customerText": "Hello, I’m iPhone 6s user. Why I can’t downgrade to iOS 10.3.3? I saw from ipsw.me that’s still sign for iPhone 6s.",
+        "assignedIntent": "software_update"
+      },
+      {
+        "tweetId": "199407",
+        "customerText": "Why can’t I download IOS 11.0.2 ?",
+        "assignedIntent": "software_update"
+      }
+    ]
+  }
+}

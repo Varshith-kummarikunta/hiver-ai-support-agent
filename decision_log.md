@@ -45,10 +45,21 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
 
 ---
 
-### Decision 5: Data-Driven 9-Intent Taxonomy Grounded in Empirical Support Cases
+### Decision 5: Data-Driven 9 Technical Intents Grounded in Empirical Support Cases
 - **Context**: Generic benchmark taxonomies (like Banking77 or e-commerce categories) fail on consumer tech support. We required a compact, mutually distinct 6–10 intent taxonomy.
-- **Decision**: Derived 9 core intents directly from empirical n-gram document frequencies across 74,426 initial customer inquiries: `software_update`, `battery_power`, `display_hardware`, `keyboard_typing`, `apps_appstore`, `audio_media`, `account_icloud`, `connectivity_network`, and `billing_subscriptions`.
+- **Decision**: Derived 9 core technical intents directly from empirical n-gram document frequencies across 74,426 initial customer inquiries: `software_update`, `battery_power`, `display_hardware`, `keyboard_typing`, `apps_appstore`, `audio_media`, `account_icloud`, `connectivity_network`, and `billing_subscriptions`.
 - **Alternatives Considered**:
   - 4 broad categories (Hardware, Software, Account, Other): Too broad to provide meaningful historical grounding or specific troubleshooting advice.
   - 20+ granular intents (separating Wi-Fi from Bluetooth, AirPods from EarPods, battery charging from battery drain): Caused high confusion, sparse sample counts, and erratic evaluation boundaries.
-- **Why Rejected**: The 9-intent taxonomy covers 66.6% of all initial inquiries with clear, distinguishable troubleshooting workflows and crisp escalation boundaries.
+- **Why Rejected**: The 9-intent taxonomy covers the genuine technical support issues with clear, distinguishable troubleshooting workflows and crisp escalation boundaries.
+
+---
+
+### Decision 6: Introduction of Explicit Fallback Intent (`other_unclear`) and Negative Guards
+- **Context**: Audit of the initial taxonomy revealed false-positive keyword assignments (e.g. `"£400 repair bill for broken iPad screen"` was incorrectly routed to `billing_subscriptions` due to the isolated word `"bill"`). Furthermore, forcing all 74,426 inquiries into technical buckets contaminated categories with emotional venting (*"Apple sucks"*), retail store hours (*"Are stores open Sunday?"*), and foreign-language tweets.
+- **Decision**:
+  1. Implemented negative exclusion guards (e.g., `"repair bill"`, `"screen repair"`, and carrier bills are explicitly excluded from `billing_subscriptions` and routed to `display_hardware` or `other_unclear`).
+  2. Established an explicit fallback intent: `other_unclear` with `requires_human_review = true`.
+- **Alternatives Considered**:
+  - Forcing every message into one of the 9 technical categories via lowest-distance matching: Creates catastrophic false-positive rates and hallucinations in automated replies.
+- **Why Rejected**: An AI support agent in production must know when it *cannot* answer. Having a dedicated `other_unclear` intent ensures safe human escalation for underspecified, out-of-scope, or retail queries, preserving high reply precision on genuine technical issues.
