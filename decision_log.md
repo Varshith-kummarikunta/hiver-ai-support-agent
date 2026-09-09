@@ -63,3 +63,18 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
 - **Alternatives Considered**:
   - Forcing every message into one of the 9 technical categories via lowest-distance matching: Creates catastrophic false-positive rates and hallucinations in automated replies.
 - **Why Rejected**: An AI support agent in production must know when it *cannot* answer. Having a dedicated `other_unclear` intent ensures safe human escalation for underspecified, out-of-scope, or retail queries, preserving high reply precision on genuine technical issues.
+
+---
+
+### Decision 7: Stratified Sampling of 200 Golden Examples with Independent Blind Annotation
+- **Context**: An evaluation set must be trustworthy, free of circular auto-labelling, and large enough to assess per-class precision and recall without class starvation.
+- **Decision**:
+  1. Sampled exactly 200 initial inquiries using a deterministic Mulberry32 PRNG (seed `20260909`).
+  2. Stratified the sample to ensure every technical intent has 8 to 25 examples for metric calculation, while keeping `other_unclear` as the largest single stratum (40 examples / 20%).
+  3. Deliberately injected 71 ambiguous / boundary cases (35.5%) and short/noisy messages to evaluate classifier resilience.
+  4. Initialized all `humanLabel` fields to `null` to ensure zero fabrication.
+  5. Mandated blind annotation (historical support replies hidden during labeling) to avoid hindsight bias.
+- **Alternatives Considered**:
+  - Uniform random sampling: Over 74% of the golden set would have been `other_unclear`, leaving $\le 1$ example for `billing_subscriptions` and `software_update`, destroying the ability to evaluate technical classifiers.
+  - Automatically populating `humanLabel` from candidate rules: Completely circular and invalidates external benchmark evaluation.
+- **Why Rejected**: A rigorous evaluation benchmark requires non-circular human ground truth and intentional stress-testing on ambiguous boundaries.
