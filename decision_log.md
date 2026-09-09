@@ -127,4 +127,19 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Unbalanced Naive Bayes training with empirical priors: Caused Naive Bayes to overpredict `other_unclear`, dropping Macro F1 below 45%.
 - **Why Rejected**: The pure Node.js implementation achieves ultra-low inference latency (measured mean 0.0720 ms per query across 2,000 runs, ~14.4 ms to evaluate the entire 200-item benchmark), produces deterministic cross-platform results, and illuminates the exact blind spots of classical bag-of-words classifiers (e.g. inability to distinguish temporal update backstories from functional symptoms) that motivate an LLM-based agent.
 
+---
+
+### Decision 11: Lexical BM25 Historical Retrieval, Zero-Leakage Quarantine, and Multi-Response Consolidation
+- **Context**: In Phase 5, we required a deterministic, leakage-safe historical interaction retrieval system to provide real AppleSupport resolution examples as grounding evidence for future agent replies (Phase 6).
+- **Decision**:
+  1. **Algorithmic Selection**: Implemented BM25 with Robertson-Spärck Jones IDF ($\ln((N - df + 0.5)/(df + 0.5) + 1)$) and standard parameters ($k_1 = 1.2$, $b = 0.75$, $\text{minDocFreq} = 2$) in native Node.js.
+  2. **Strict Quarantine**: Loaded all 200 golden evaluation tweet IDs and excluded both the tweet IDs and their associated pairs from `applesupport_pairs.jsonl` (105,742 total pairs - 200 excluded = 105,542 eligible indexed interactions). Verified that zero golden interactions exist in the index or can ever be returned in search results.
+  3. **Multi-Response Consolidation**: Identified 23 customer inquiries that received multiple chronological AppleSupport responses. Rather than dropping secondary replies or artificially splitting conversations, preserved all responses in a `supportResponses` array while exposing the primary response for standard single-turn display.
+  4. **Diagnostic Evaluation Protocol**: Evaluated intent-level Recall@K ($k=1, 3, 5, 10$) across all 200 golden queries against the query's Phase 2 taxonomy intent, disclosing that 196 labels are automatic proposals and 4 are author-reviewed labels.
+- **Alternatives Considered**:
+  - Dense neural vector embeddings (e.g., OpenAI / Gemini embeddings, Pinecone / Milvus): Rejected because external embeddings incur API costs, network latency, non-deterministic similarity drift, and opaque black-box vector scoring. Technical customer support keywords (e.g., "iOS 11.1 letter I bug", "error 3194", "DFU mode") require exact lexical term matching rather than fuzzy semantic similarity.
+  - Using an external full-text search engine (Elasticsearch / Meilisearch): Added complex local runtime dependencies and violated the self-contained Node.js project architecture.
+- **Why Rejected**: The native BM25 engine builds in 15 seconds, occupies 128 MB on disk, executes queries in $<5\text{ ms}$, achieves deterministic cross-platform rankings, and provides authentic, verifiable historical AppleSupport evidence for agent grounding.
+
+
 

@@ -1,4 +1,4 @@
-﻿# Dependencies
+# Dependencies
 node_modules/
 
 # Environment and Secrets
@@ -10,8 +10,9 @@ node_modules/
 data/raw/*
 !data/raw/.gitkeep
 
-# Large processed dumps (>100MB exceeds GitHub hard push limits)
+# Large processed dumps and index files (>100MB exceeds GitHub hard push limits)
 data/processed/*.jsonl
+data/models/applesupport-retrieval-index.json
 
 # Logs
 logs/

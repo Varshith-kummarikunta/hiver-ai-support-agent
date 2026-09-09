@@ -1,0 +1,1425 @@
+{
+  "evaluatedAt": "2026-09-09T18:44:24.940Z",
+  "benchmarkSize": 200,
+  "provenance": {
+    "humanReviewedCount": 4,
+    "aiProposalCount": 196,
+    "disclosure": "This is a diagnostic intent-level retrieval evaluation measuring whether retrieved interactions share the query's Phase 2 taxonomy intent. It is not an independent human-labelled document relevance evaluation."
+  },
+  "indexMetadata": {
+    "totalIndexedInteractions": 105542,
+    "vocabularySize": 14546,
+    "bm25": {
+      "k1": 1.2,
+      "b": 0.75,
+      "minDocFreq": 2
+    }
+  },
+  "metricsSummary": {
+    "k_1": {
+      "k": 1,
+      "intentLevelRecallAtK": 0.6,
+      "intentLevelPrecisionAtK": 0.6,
+      "avgSameIntentHitsInTopK": 0.6,
+      "zeroResultRate": 0,
+      "queriesWithSameIntentHitCount": 120,
+      "totalQueries": 200,
+      "humanSubsetRecall": 0.75,
+      "aiSubsetRecall": 0.5969,
+      "perIntentRecall": {
+        "other_unclear": {
+          "support": 49,
+          "hits": 44,
+          "recallAtK": 0.898
+        },
+        "billing_subscriptions": {
+          "support": 11,
+          "hits": 5,
+          "recallAtK": 0.4545
+        },
+        "display_hardware": {
+          "support": 20,
+          "hits": 11,
+          "recallAtK": 0.55
+        },
+        "connectivity_network": {
+          "support": 18,
+          "hits": 10,
+          "recallAtK": 0.5556
+        },
+        "battery_power": {
+          "support": 26,
+          "hits": 15,
+          "recallAtK": 0.5769
+        },
+        "audio_media": {
+          "support": 21,
+          "hits": 11,
+          "recallAtK": 0.5238
+        },
+        "apps_appstore": {
+          "support": 15,
+          "hits": 4,
+          "recallAtK": 0.2667
+        },
+        "account_icloud": {
+          "support": 17,
+          "hits": 10,
+          "recallAtK": 0.5882
+        },
+        "keyboard_typing": {
+          "support": 15,
+          "hits": 7,
+          "recallAtK": 0.4667
+        },
+        "software_update": {
+          "support": 8,
+          "hits": 3,
+          "recallAtK": 0.375
+        }
+      }
+    },
+    "k_3": {
+      "k": 3,
+      "intentLevelRecallAtK": 0.835,
+      "intentLevelPrecisionAtK": 0.5927,
+      "avgSameIntentHitsInTopK": 1.77,
+      "zeroResultRate": 0,
+      "queriesWithSameIntentHitCount": 167,
+      "totalQueries": 200,
+      "humanSubsetRecall": 0.75,
+      "aiSubsetRecall": 0.8367,
+      "perIntentRecall": {
+        "other_unclear": {
+          "support": 49,
+          "hits": 49,
+          "recallAtK": 1
+        },
+        "billing_subscriptions": {
+          "support": 11,
+          "hits": 8,
+          "recallAtK": 0.7273
+        },
+        "display_hardware": {
+          "support": 20,
+          "hits": 15,
+          "recallAtK": 0.75
+        },
+        "connectivity_network": {
+          "support": 18,
+          "hits": 15,
+          "recallAtK": 0.8333
+        },
+        "battery_power": {
+          "support": 26,
+          "hits": 23,
+          "recallAtK": 0.8846
+        },
+        "audio_media": {
+          "support": 21,
+          "hits": 17,
+          "recallAtK": 0.8095
+        },
+        "apps_appstore": {
+          "support": 15,
+          "hits": 7,
+          "recallAtK": 0.4667
+        },
+        "account_icloud": {
+          "support": 17,
+          "hits": 16,
+          "recallAtK": 0.9412
+        },
+        "keyboard_typing": {
+          "support": 15,
+          "hits": 13,
+          "recallAtK": 0.8667
+        },
+        "software_update": {
+          "support": 8,
+          "hits": 4,
+          "recallAtK": 0.5
+        }
+      }
+    },
+    "k_5": {
+      "k": 5,
+      "intentLevelRecallAtK": 0.885,
+      "intentLevelPrecisionAtK": 0.5707,
+      "avgSameIntentHitsInTopK": 2.85,
+      "zeroResultRate": 0,
+      "queriesWithSameIntentHitCount": 177,
+      "totalQueries": 200,
+      "humanSubsetRecall": 0.75,
+      "aiSubsetRecall": 0.8878,
+      "perIntentRecall": {
+        "other_unclear": {
+          "support": 49,
+          "hits": 49,
+          "recallAtK": 1
+        },
+        "billing_subscriptions": {
+          "support": 11,
+          "hits": 8,
+          "recallAtK": 0.7273
+        },
+        "display_hardware": {
+          "support": 20,
+          "hits": 17,
+          "recallAtK": 0.85
+        },
+        "connectivity_network": {
+          "support": 18,
+          "hits": 15,
+          "recallAtK": 0.8333
+        },
+        "battery_power": {
+          "support": 26,
+          "hits": 23,
+          "recallAtK": 0.8846
+        },
+        "audio_media": {
+          "support": 21,
+          "hits": 21,
+          "recallAtK": 1
+        },
+        "apps_appstore": {
+          "support": 15,
+          "hits": 8,
+          "recallAtK": 0.5333
+        },
+        "account_icloud": {
+          "support": 17,
+          "hits": 17,
+          "recallAtK": 1
+        },
+        "keyboard_typing": {
+          "support": 15,
+          "hits": 14,
+          "recallAtK": 0.9333
+        },
+        "software_update": {
+          "support": 8,
+          "hits": 5,
+          "recallAtK": 0.625
+        }
+      }
+    },
+    "k_10": {
+      "k": 10,
+      "intentLevelRecallAtK": 0.945,
+      "intentLevelPrecisionAtK": 0.5537,
+      "avgSameIntentHitsInTopK": 5.51,
+      "zeroResultRate": 0,
+      "queriesWithSameIntentHitCount": 189,
+      "totalQueries": 200,
+      "humanSubsetRecall": 1,
+      "aiSubsetRecall": 0.9439,
+      "perIntentRecall": {
+        "other_unclear": {
+          "support": 49,
+          "hits": 49,
+          "recallAtK": 1
+        },
+        "billing_subscriptions": {
+          "support": 11,
+          "hits": 9,
+          "recallAtK": 0.8182
+        },
+        "display_hardware": {
+          "support": 20,
+          "hits": 19,
+          "recallAtK": 0.95
+        },
+        "connectivity_network": {
+          "support": 18,
+          "hits": 18,
+          "recallAtK": 1
+        },
+        "battery_power": {
+          "support": 26,
+          "hits": 24,
+          "recallAtK": 0.9231
+        },
+        "audio_media": {
+          "support": 21,
+          "hits": 21,
+          "recallAtK": 1
+        },
+        "apps_appstore": {
+          "support": 15,
+          "hits": 12,
+          "recallAtK": 0.8
+        },
+        "account_icloud": {
+          "support": 17,
+          "hits": 17,
+          "recallAtK": 1
+        },
+        "keyboard_typing": {
+          "support": 15,
+          "hits": 15,
+          "recallAtK": 1
+        },
+        "software_update": {
+          "support": 8,
+          "hits": 5,
+          "recallAtK": 0.625
+        }
+      }
+    }
+  },
+  "exactDuplicateRateTop10": 0.01,
+  "queryLogs": [
+    {
+      "goldenId": "GOLD-001",
+      "customerTweetId": "1724975",
+      "queryText": "We need yet ANOTHER update . My phone running hot like a box Chevy.",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "human_author (Varshith)",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 4,
+        "10": 9
+      },
+      "topResult": {
+        "score": 19.8246,
+        "intent": "other_unclear",
+        "customerTweetId": "2401555",
+        "supportTweetId": "2401554",
+        "customerText": "we need another IOS update, my phone keeps freezing 🙄",
+        "supportResponse": "We'd like to take a look at this with you. Reach out via DM using the link below.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-002",
+      "customerTweetId": "2948279",
+      "queryText": "Help I can’t update my payment method 😕 only appears an error who said “Try late because we can save your payment method”.",
+      "evaluationLabel": "billing_subscriptions",
+      "evaluationLabelSource": "human_author (Varshith)",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "10": 1
+      },
+      "topResult": {
+        "score": 23.0453,
+        "intent": "other_unclear",
+        "customerTweetId": "2493788",
+        "supportTweetId": "2493787",
+        "customerText": "Whys my IPhone asking for a payment method when I try and update my apps ??",
+        "supportResponse": "That's a great question. We're happy to explain. The payment method associated with your Apple ID may be required to update. This article will take you through the steps of changing it or setting it to \"None\":",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-003",
+      "customerTweetId": "487989",
+      "queryText": "Hey fix your shit",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "human_author (Varshith)",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 16.3422,
+        "intent": "other_unclear",
+        "customerTweetId": "2284973",
+        "supportTweetId": "2284972",
+        "customerText": "Hey fix your shit",
+        "supportResponse": "We want your keyboard working for you; we'll do all we can to help. To start, we released iOS 11.1.1 which is meant to address this issue. If you haven't already, let's update with these steps:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-004",
+      "customerTweetId": "2446338",
+      "queryText": "🙃 heeeelp",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "human_author (Varshith)",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 2,
+        "10": 2
+      },
+      "topResult": {
+        "score": 11.4074,
+        "intent": "other_unclear",
+        "customerTweetId": "1296291",
+        "supportTweetId": "1296290",
+        "customerText": "I CAN’T USE THE CAMERA. NO SNAPCHAT, NO INSTAGRAM, NO CAMERA IN GENERAL. HEEEELP 😭",
+        "supportResponse": "We've received your DMs and look forward to working with you there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-005",
+      "customerTweetId": "2313135",
+      "queryText": "The screen on my Mac is black. I can power it on and off but I can’t see anything. What do I do!?!?!?",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 7
+      },
+      "topResult": {
+        "score": 24.0238,
+        "intent": "display_hardware",
+        "customerTweetId": "2313137",
+        "supportTweetId": "2313138",
+        "customerText": "Ok it’s happened again. My Mac book pro has a black screen. I can’t see anything on the display. HELP",
+        "supportResponse": "Thanks for reaching out again. Which year and model of Mac are you using? What troubleshooting have you tried so far?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-006",
+      "customerTweetId": "269520",
+      "queryText": "not sure what happened but after the software update, my iPhone wont send iMessages or connect to internet unless I’m on WiFi",
+      "evaluationLabel": "connectivity_network",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 1,
+        "5": 1,
+        "10": 3
+      },
+      "topResult": {
+        "score": 23.5925,
+        "intent": "other_unclear",
+        "customerTweetId": "2942162",
+        "supportTweetId": "2942161",
+        "customerText": "why my iphone x not getting imessages unless i send them to people first",
+        "supportResponse": "Hey there. We'd like to look into this issue with you. Send us a DM with more details and we'll chat there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-007",
+      "customerTweetId": "548158",
+      "queryText": "my battery life has drastically reduced since the recent update. I used to be so happy that I didn't have to carry chargers to work now I can't make it through the work day! 😡😡😡",
+      "evaluationLabel": "battery_power",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 30.0215,
+        "intent": "battery_power",
+        "customerTweetId": "151429",
+        "supportTweetId": "151428",
+        "customerText": "Battery life on my iPad has been drastically reduced with latest iOS 11.1.2 update",
+        "supportResponse": "Having great battery life is very important. Join us in DM and together we'll look into this issue. Click here:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-008",
+      "customerTweetId": "2307946",
+      "queryText": "I recently created an account but I can’t access the music app, I have deleted it & restarted my phone, yet nothing works",
+      "evaluationLabel": "audio_media",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 1,
+        "10": 4
+      },
+      "topResult": {
+        "score": 23.8005,
+        "intent": "other_unclear",
+        "customerTweetId": "1836195",
+        "supportTweetId": "1836194",
+        "customerText": "I recently upgraded my phone to the newest iOS update and have had nothing but problems. Nothing works!",
+        "supportResponse": "We'd be happy to look into this with you. Let us know in DM what issues you're experiencing and we'll continue from there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-009",
+      "customerTweetId": "123075",
+      "queryText": "Worked fine 2 houers ago",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 9
+      },
+      "topResult": {
+        "score": 12.963,
+        "intent": "other_unclear",
+        "customerTweetId": "1423459",
+        "supportTweetId": "1423457",
+        "customerText": "are there any changes or issues with payment service? My method keeps being rejected. It worked perfectly fine a week ago.",
+        "supportResponse": "Thanks for reaching out. There hasn't been any changes. We recommend the steps here: Keep us posted.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-010",
+      "customerTweetId": "2051785",
+      "queryText": "GUI bug in iOS 11 Appstore still hasn't been fixed.",
+      "evaluationLabel": "apps_appstore",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "10": 1
+      },
+      "topResult": {
+        "score": 24.0199,
+        "intent": "other_unclear",
+        "customerTweetId": "346527",
+        "supportTweetId": "346526",
+        "customerText": "3 YEARS later, and this bug still hasn't been fixed",
+        "supportResponse": "Does this happen in all of your message threads? Let us know in a DM.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-011",
+      "customerTweetId": "2593018",
+      "queryText": "if one were to have dropped his or her phone in tartar sauce and messed up the speaker, could he or she get a new phone for free? Thanks, asking for a friend.",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 9
+      },
+      "topResult": {
+        "score": 21.3236,
+        "intent": "other_unclear",
+        "customerTweetId": "287473",
+        "supportTweetId": "287476",
+        "customerText": "But I have my friend his phone is also factory unlock but he can still use it...",
+        "supportResponse": "Let's look into this together. Join us in DM so we can better assist you:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-012",
+      "customerTweetId": "2033566",
+      "queryText": "hey guys! I cant update any app. Sometimes it just wont download since the iOS 11 update. Data/wifi works well. Help!",
+      "evaluationLabel": "apps_appstore",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 3,
+        "10": 4
+      },
+      "topResult": {
+        "score": 24.5989,
+        "intent": "apps_appstore",
+        "customerTweetId": "2310917",
+        "supportTweetId": "2310916",
+        "customerText": "Help!! I cant start download anything on , even I cant update app.. just loading only.. iphone 7 plus ios 11.1.1",
+        "supportResponse": "We’re here to help. Let’s team up in DM and we’ll do our best to assist you.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-013",
+      "customerTweetId": "1689344",
+      "queryText": "I literally entered my password correctly to sign into iCloud online and I’ve been locked out of my account - why ??",
+      "evaluationLabel": "account_icloud",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 8
+      },
+      "topResult": {
+        "score": 24.891,
+        "intent": "account_icloud",
+        "customerTweetId": "958215",
+        "supportTweetId": "958214",
+        "customerText": "why is your account recovery process so ridiculous? I entered my password *correctly* thrice and it’s given me this rubbish.",
+        "supportResponse": "We'd like to help with this. Can you let us know in a DM what process you have done?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-014",
+      "customerTweetId": "152977",
+      "queryText": "please help my iPhone 7 is freezing constantly and keeps going to a black screen forcing a restart feels like every 10 min - what can I do?",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 4,
+        "10": 6
+      },
+      "topResult": {
+        "score": 28.3415,
+        "intent": "display_hardware",
+        "customerTweetId": "511134",
+        "supportTweetId": "511132",
+        "customerText": "iPhone X constantly going into black screen with spinning icon and heating up. What can I do?",
+        "supportResponse": "We want to help with your iPhone X. We know how exciting it is to have a new device and expect it to work as intended. DM us what iOS version you're on and we'll get started.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-015",
+      "customerTweetId": "1230363",
+      "queryText": "hi guys, I can’t change back to the Spanish App Store, it says I have to cancel my music subscription first which I have done",
+      "evaluationLabel": "billing_subscriptions",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 4,
+        "10": 9
+      },
+      "topResult": {
+        "score": 25.7076,
+        "intent": "billing_subscriptions",
+        "customerTweetId": "1354032",
+        "supportTweetId": "1354030",
+        "customerText": "If I cancel my itunes subscription and change to another region/country to DL an app and change back can I still have it back?",
+        "supportResponse": "Hi there. This article will answer your questions about changing your country:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-016",
+      "customerTweetId": "964382",
+      "queryText": "any idea why my ipad screen won’t rotate after the iOS update? The rotate lock isn’t on. Was fine before. Have tried reset.",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 3,
+        "10": 7
+      },
+      "topResult": {
+        "score": 24.7111,
+        "intent": "other_unclear",
+        "customerTweetId": "2042532",
+        "supportTweetId": "2042531",
+        "customerText": "Any idea why my lock screen doesn’t show the time any longer after this new iOS update?",
+        "supportResponse": "Let's work together to get this figured out. Could you confirm what type of device you're using? Tell us via DM.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-017",
+      "customerTweetId": "1658260",
+      "queryText": "What is with the letter A and the question mark in literally every message on everyone’s iPhone MAKE IT STOP",
+      "evaluationLabel": "keyboard_typing",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 21.5755,
+        "intent": "keyboard_typing",
+        "customerTweetId": "1984434",
+        "supportTweetId": "1984433",
+        "customerText": "why is everyone’s iPhone switching “I” to a box with a question mark?",
+        "supportResponse": "If you're having this issue, we'd like to help. Send us a DM using the link below and we'll continue to help.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-018",
+      "customerTweetId": "1765954",
+      "queryText": "I still can't Update",
+      "evaluationLabel": "software_update",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "10": 0
+      },
+      "topResult": {
+        "score": 10.9335,
+        "intent": "other_unclear",
+        "customerTweetId": "2063474",
+        "supportTweetId": "2063473",
+        "customerText": "I still can't get the iOS update..... annoyed",
+        "supportResponse": "We'd be happy to work with you to get your device updated. See: Can you DM us what device you have?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-019",
+      "customerTweetId": "939589",
+      "queryText": "Ever since I downloaded IOS 11 my battery has turned to crap and my phones been getting hot during use. What’s going on ?",
+      "evaluationLabel": "battery_power",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 1,
+        "5": 2,
+        "10": 6
+      },
+      "topResult": {
+        "score": 27.368,
+        "intent": "other_unclear",
+        "customerTweetId": "1655006",
+        "supportTweetId": "1655005",
+        "customerText": "Ever since I downloaded iOS 11.1 my phone has been messing up what’s goin on",
+        "supportResponse": "Here’s what you can do to work around the issue until it’s fixed in a future software update:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-020",
+      "customerTweetId": "48012",
+      "queryText": "the letter i is broken",
+      "evaluationLabel": "keyboard_typing",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 3,
+        "10": 4
+      },
+      "topResult": {
+        "score": 14.0839,
+        "intent": "keyboard_typing",
+        "customerTweetId": "1679924",
+        "supportTweetId": "1679923",
+        "customerText": "why is the letter “I” broken pls explain",
+        "supportResponse": "Here’s what you can do to work around the issue until it’s fixed in a future software update:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-021",
+      "customerTweetId": "301092",
+      "queryText": "Oh this is bullshit",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 4,
+        "10": 9
+      },
+      "topResult": {
+        "score": 16.9276,
+        "intent": "other_unclear",
+        "customerTweetId": "2117312",
+        "supportTweetId": "2117311",
+        "customerText": "Oh and this whole I nonsense is some bullshit.",
+        "supportResponse": "Here’s what you can do to work around the issue until it’s fixed in a future software update:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-022",
+      "customerTweetId": "2756165",
+      "queryText": "my phone is saying my Apple ID is invalid all of a sudden... Can’t update my phone or purchase apps. Please help.",
+      "evaluationLabel": "account_icloud",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 1,
+        "5": 2,
+        "10": 3
+      },
+      "topResult": {
+        "score": 20.876,
+        "intent": "account_icloud",
+        "customerTweetId": "2004990",
+        "supportTweetId": "2004989",
+        "customerText": "why is my Apple ID invalid? I can't listen to my music",
+        "supportResponse": "We understand your concern about your Apple ID. Meet us in DM with your country. We'll look over your options there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-023",
+      "customerTweetId": "2237280",
+      "queryText": "my iPhone is acting really weird. I recently updated to iOS11 and now my ft calls seeing going through. Texts will send duplicates. Any idea why this is happening?",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 4,
+        "10": 7
+      },
+      "topResult": {
+        "score": 24.0416,
+        "intent": "other_unclear",
+        "customerTweetId": "2036339",
+        "supportTweetId": "2036338",
+        "customerText": "Any idea why this is happening?",
+        "supportResponse": "We'd like to look into this issue with you. Tell us more about the Mail issue you're experiencing in DM. We'll go from there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-024",
+      "customerTweetId": "2113872",
+      "queryText": "my iPhone X screen has been unresponsive to touch for nearly 12 hours now. $1,149.99 spent on a phone, that has become paper weight.",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 1,
+        "5": 1,
+        "10": 2
+      },
+      "topResult": {
+        "score": 25.7102,
+        "intent": "display_hardware",
+        "customerTweetId": "2038053",
+        "supportTweetId": "2038052",
+        "customerText": "hey I just got my iPhone X and suddenly my screen has become unresponsive. The touch screen has completely crapped on me",
+        "supportResponse": "What app was in use at the time? Let us know in DM. If it's still not responding, take a look here:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-025",
+      "customerTweetId": "643431",
+      "queryText": "please fix the system! Download update and iPhone is acting crazy. Black screen, extremely slow, apps disappear, & the list goes on.",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 1,
+        "5": 2,
+        "10": 6
+      },
+      "topResult": {
+        "score": 20.874,
+        "intent": "other_unclear",
+        "customerTweetId": "1544088",
+        "supportTweetId": "1544087",
+        "customerText": "please fix this update! My phone is acting crazy! #nothappy #notupgradingmyphone2X",
+        "supportResponse": "Thanks for reaching out! DM us more information on what you're experiencing and we'll start from there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-026",
+      "customerTweetId": "177802",
+      "queryText": "Noticing a trend: First makes iPhone w/ headphones you’re sure to lose. Then, an iOS update that makes it impossible at random times to listen to while in motion. Now, people (not just myself!) find new iOS won’t pair with their speaker. DOES APPLE HATE MUSIC?",
+      "evaluationLabel": "audio_media",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 1,
+        "5": 1,
+        "10": 3
+      },
+      "topResult": {
+        "score": 30.5539,
+        "intent": "other_unclear",
+        "customerTweetId": "1570380",
+        "supportTweetId": "1570376",
+        "customerText": "Anyone else noticing that their iPhone X does not charge while using it?",
+        "supportResponse": "We want to look into this. Can you tell us which steps you've tried so far? This way we won't have you do any steps over again.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-027",
+      "customerTweetId": "2021138",
+      "queryText": "Dear fix this I",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 11.8071,
+        "intent": "other_unclear",
+        "customerTweetId": "1712983",
+        "supportTweetId": "1712982",
+        "customerText": "Dear , please fix this I",
+        "supportResponse": "Here’s what you can do to work around the issue until it’s fixed in a future software update:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-028",
+      "customerTweetId": "618539",
+      "queryText": "Worst #iPhoneUpdate ever! Phone not working properly Battery Can’t rec emails unless i take it off wifi And more 👎🏻",
+      "evaluationLabel": "battery_power",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 2,
+        "5": 2,
+        "10": 4
+      },
+      "topResult": {
+        "score": 20.6793,
+        "intent": "other_unclear",
+        "customerTweetId": "1951435",
+        "supportTweetId": "1951434",
+        "customerText": "11.0.3 is the worst ever! When are you guys fixing it?? My phone is not working properly for a week now",
+        "supportResponse": "We want to help. DM us details of the issues you're having with your iPhone since the update and we'll continue support there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-029",
+      "customerTweetId": "1508731",
+      "queryText": "Fix this glitch dawgs I can’t see the new emojis bro",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 20.0585,
+        "intent": "other_unclear",
+        "customerTweetId": "1980423",
+        "supportTweetId": "1980422",
+        "customerText": "Hey why can’t I see the new emojis?",
+        "supportResponse": "We can certainly help! Which device do you have and what OS version is installed?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-030",
+      "customerTweetId": "1201132",
+      "queryText": "are audio books included in my subscriptions to Apple Music?",
+      "evaluationLabel": "billing_subscriptions",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 2,
+        "10": 3
+      },
+      "topResult": {
+        "score": 16.3178,
+        "intent": "billing_subscriptions",
+        "customerTweetId": "1179735",
+        "supportTweetId": "1179734",
+        "customerText": "YO FOR THE LOVE GOD FIX YOUR FUCKING PODCAST APP. subscriptions are not showing up in my feed. audio randomly pauses.",
+        "supportResponse": "Let's look into this for you. Send us a DM and we can check on available options.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-031",
+      "customerTweetId": "2488716",
+      "queryText": "I’m not 70 years old. I don’t need massive bold letters on the new update using 1/3 of the screen on every app telling me I opened up my messages voicemails inbox or contacts. smh",
+      "evaluationLabel": "apps_appstore",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "10": 0
+      },
+      "topResult": {
+        "score": 20.1436,
+        "intent": "other_unclear",
+        "customerTweetId": "2676071",
+        "supportTweetId": "2676069",
+        "customerText": "Dear I am #iphone4life but why does this update keep telling me I'm not connected to internet and keeps telling me I need to update",
+        "supportResponse": "You've come to the right place. Which iOS version are we working with? That's in Settings > General > About.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-032",
+      "customerTweetId": "1951216",
+      "queryText": "my phone is fine all day then all of a sudden I “don’t have a SIM card”???? Lmao fuck y’all",
+      "evaluationLabel": "connectivity_network",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 2,
+        "10": 3
+      },
+      "topResult": {
+        "score": 24.3357,
+        "intent": "connectivity_network",
+        "customerTweetId": "2729146",
+        "supportTweetId": "2729145",
+        "customerText": "why is my phone saying invalid sim? One min it’s fine, then says no SIM card and now says invalid sim! 😡",
+        "supportResponse": "Hey there! Check out the steps in this article: Join us in DM to let us know if this has helped.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-033",
+      "customerTweetId": "1275090",
+      "queryText": "wanna try fixing the update issue that turns on WiFi whenever it wants? It slows connection down & is annoying. Make an option",
+      "evaluationLabel": "connectivity_network",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "10": 1
+      },
+      "topResult": {
+        "score": 23.8263,
+        "intent": "other_unclear",
+        "customerTweetId": "1015697",
+        "supportTweetId": "1015699",
+        "customerText": "that didn’t really help cuz whenever I turn off the WiFi in my COMMAND CENTER, it just turns back on whenever it wants",
+        "supportResponse": "OK. Let's continue the conversation in DM.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-034",
+      "customerTweetId": "2982003",
+      "queryText": "Hello, how to fix the \"no service\" problem? I already plug and un plug the sim card, airplane mode, and change the card, but still doesnt work sometimes thanks in advance",
+      "evaluationLabel": "connectivity_network",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 2,
+        "5": 3,
+        "10": 6
+      },
+      "topResult": {
+        "score": 21.7152,
+        "intent": "battery_power",
+        "customerTweetId": "2509323",
+        "supportTweetId": "2509322",
+        "customerText": "Did change what airplane mode does?? I put it on ✈ to charge my battery faster but I still received texts. And out of curiosity, I found out I can also SEND texts while still on airplane mode 🤨",
+        "supportResponse": "Thank you for reaching out to us today. While the iPhone was in Airplane mode, was Wi-Fi and cellular data enabled? Did you turn on Airplane mode in Control Center? Please DM us.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-035",
+      "customerTweetId": "1146014",
+      "queryText": "hello, team! I have reset my phone and restored it from iCloud backup but all my music in Apple Music is gone, except for the purchases made from iTunes Store before Apple Music. How do I fix it? iPhone SE 16, iOS 11.0.3",
+      "evaluationLabel": "audio_media",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 3,
+        "10": 3
+      },
+      "topResult": {
+        "score": 27.0802,
+        "intent": "audio_media",
+        "customerTweetId": "667812",
+        "supportTweetId": "667810",
+        "customerText": "I stopped using my Apple Music and now all my iTunes music purchases are gone! From when I the iPhone 3g. Where is my music!",
+        "supportResponse": "Our iTunes Store team may be best equipped to assist you with the issue you described. You can reach out to them here: if you have any other questions please reach out to us in DM.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-036",
+      "customerTweetId": "2427421",
+      "queryText": "Fix my shit asap",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 14.6489,
+        "intent": "other_unclear",
+        "customerTweetId": "2123599",
+        "supportTweetId": "2123598",
+        "customerText": "fix this shit ASAP!!!",
+        "supportResponse": "If you're having issues, we want to help. Tell us more about what's going on and which device it's happening on.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-037",
+      "customerTweetId": "242416",
+      "queryText": "So many problems with the upgrade! CarPlay not working well, can't see anything in settings (white screen). Help!",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 1,
+        "5": 1,
+        "10": 2
+      },
+      "topResult": {
+        "score": 20.5046,
+        "intent": "display_hardware",
+        "customerTweetId": "2806664",
+        "supportTweetId": "2806663",
+        "customerText": "iPad froze on upgrade black apple with white screen. #help",
+        "supportResponse": "We're here for you! Was the update installing over Wi-Fi, or iTunes? Let us know in DM, and we'll continue working there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-038",
+      "customerTweetId": "2639664",
+      "queryText": "So my iPhone won't let me use WiFi, iMessage, FaceTime, App Store, won't let me update it, back it up or reset it, & won't let me log into my Apple ID. I am not happy.",
+      "evaluationLabel": "account_icloud",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 2,
+        "5": 3,
+        "10": 5
+      },
+      "topResult": {
+        "score": 28.056,
+        "intent": "other_unclear",
+        "customerTweetId": "1180666",
+        "supportTweetId": "1180664",
+        "customerText": "it's my imessage, it won't let me log in. help",
+        "supportResponse": "We want to help. What happens when you try to sign in? Receiving any error messages? Also, which iOS version do you have installed?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-039",
+      "customerTweetId": "1605053",
+      "queryText": "okay. seriously. these question mark boxes. fix it. I’m fed up",
+      "evaluationLabel": "keyboard_typing",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 9
+      },
+      "topResult": {
+        "score": 26.0969,
+        "intent": "keyboard_typing",
+        "customerTweetId": "1564003",
+        "supportTweetId": "1564002",
+        "customerText": "I’m sick of these question mark boxes fix this!",
+        "supportResponse": "We can help get that fixed. Try these steps here: Let us know if that works well for you now.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-040",
+      "customerTweetId": "2372212",
+      "queryText": "is icloud down? I can't login at on pc or sign in on a new iphone with multiple accounts.",
+      "evaluationLabel": "account_icloud",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 1,
+        "10": 1
+      },
+      "topResult": {
+        "score": 25.0508,
+        "intent": "other_unclear",
+        "customerTweetId": "109020",
+        "supportTweetId": "109019",
+        "customerText": "is iCloud down? I can't sign in",
+        "supportResponse": "Thanks for reaching out. We don't show an iCloud outage at the moment. We can definitely look into this further. Do you still experience the same behavior after you restart your iPhone? Do you have the same results when you're connected to a cellular network?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-041",
+      "customerTweetId": "2524600",
+      "queryText": "I’d like a refund.",
+      "evaluationLabel": "billing_subscriptions",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 10
+      },
+      "topResult": {
+        "score": 12.3893,
+        "intent": "billing_subscriptions",
+        "customerTweetId": "620128",
+        "supportTweetId": "620127",
+        "customerText": "I got charged for an album I already paid for a long time ago and I’d like a refund please",
+        "supportResponse": "Thanks for reaching out to us. We’ve received your DM and will continue with you there. Our reply will arrive momentarily.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-042",
+      "customerTweetId": "1616666",
+      "queryText": "fix my letter I 😤 please and thank you!!",
+      "evaluationLabel": "keyboard_typing",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 2,
+        "5": 4,
+        "10": 4
+      },
+      "topResult": {
+        "score": 19.1818,
+        "intent": "other_unclear",
+        "customerTweetId": "2212889",
+        "supportTweetId": "2212888",
+        "customerText": "fix the letter after H for us please and Thank You 🙂",
+        "supportResponse": "Here's help with that! iOS 11.1.1 was recently released and it includes a fix for auto-correct issues. Be sure to back up your device prior to updating, and DM us if the issue persists afterwards. How to back up:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-043",
+      "customerTweetId": "823168",
+      "queryText": "hi, whats going on with everything on iOS 11? My battery dies faster, my keyboard freezes sometimes and my apps won’t update",
+      "evaluationLabel": "battery_power",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 4,
+        "10": 8
+      },
+      "topResult": {
+        "score": 23.0386,
+        "intent": "battery_power",
+        "customerTweetId": "1882520",
+        "supportTweetId": "1882519",
+        "customerText": "Whats the point of low battery mode if the shit dies even faster??",
+        "supportResponse": "Battery life is essential for enjoying your iPhone. We'll do all we can to help. To start, let us know what iOS you have in DM:",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-044",
+      "customerTweetId": "2900452",
+      "queryText": "what happened to my music app? why does black screen appears instead of white screen? i can’t get used to it, please fix!",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 2,
+        "10": 7
+      },
+      "topResult": {
+        "score": 49.8726,
+        "intent": "display_hardware",
+        "customerTweetId": "2890779",
+        "supportTweetId": "2890778",
+        "customerText": "what happened to my music app? why do black screen appears instead of white screen when i open my music app? i can’t get used to it, please fix!",
+        "supportResponse": "Thanks for the live video example. Let's see how we can assist. When did this first begin? Which iOS version are you using under Settings > General > About?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-045",
+      "customerTweetId": "1881581",
+      "queryText": "new ios11 has made my iPhone 6s glitchy. The Touch ID doesn’t work as well on it since the update. Can you help?",
+      "evaluationLabel": "display_hardware",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 2,
+        "10": 3
+      },
+      "topResult": {
+        "score": 23.4752,
+        "intent": "display_hardware",
+        "customerTweetId": "2860043",
+        "supportTweetId": "2860041",
+        "customerText": "since updating to 11.1.2 my Touch ID doesn’t work. Please help 🙏🏼 #ios1112 #ios11 #iPhone6s #appleiphone",
+        "supportResponse": "You’re in the right place for help. Give us some details on what happens when you try to use Touch ID, and we’ll work towards a resolution together.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-046",
+      "customerTweetId": "1872232",
+      "queryText": "my iPad Air 2 will not connect to Wifi after I did the update today. It keeps saying wrong password when I try to connect",
+      "evaluationLabel": "connectivity_network",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 1,
+        "5": 1,
+        "10": 5
+      },
+      "topResult": {
+        "score": 26.1086,
+        "intent": "connectivity_network",
+        "customerTweetId": "1838895",
+        "supportTweetId": "1838893",
+        "customerText": "when I try and connect to my phones personal hotspot, it says that the password is wrong on my iPad. Please help!",
+        "supportResponse": "We're here to help! Let us know via DM the type of iPhone and iPad you have, and which iOS is on each, then we can proceed.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-047",
+      "customerTweetId": "2010333",
+      "queryText": "I have iPhone 7 and download apps but they will not upload onto my phone. Yes, I have enough memory.can you help me ?",
+      "evaluationLabel": "apps_appstore",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 0,
+        "5": 1,
+        "10": 3
+      },
+      "topResult": {
+        "score": 24.216,
+        "intent": "audio_media",
+        "customerTweetId": "2062286",
+        "supportTweetId": "2062285",
+        "customerText": "my music doesn’t download onto my phone! I have Apple Music help me and yes I’m using WiFi",
+        "supportResponse": "We're happy to help with any music issue you're having. Go ahead & reach out to us in DM & we'll continue there.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-048",
+      "customerTweetId": "1331958",
+      "queryText": "I'm trying to update my phone but it keeps saying I'm not connected to internet but I'm on my wifi?",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 3,
+        "5": 5,
+        "10": 9
+      },
+      "topResult": {
+        "score": 34.7498,
+        "intent": "other_unclear",
+        "customerTweetId": "1774241",
+        "supportTweetId": "1774240",
+        "customerText": "I’m trying to update my IOS but it keeps saying I’m not connected to the internet but I am!? The WiFi is clearly working help?",
+        "supportResponse": "We'd love to help. DM us at the link below for further assistance.",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-049",
+      "customerTweetId": "1275094",
+      "queryText": "fuckng phone doesn't work so i updated my mac so i can update my phone and now my mac won't connect to the internet fuck u xxxxxxx",
+      "evaluationLabel": "other_unclear",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 1,
+        "3": 2,
+        "5": 3,
+        "10": 6
+      },
+      "topResult": {
+        "score": 23.2226,
+        "intent": "other_unclear",
+        "customerTweetId": "374227",
+        "supportTweetId": "374226",
+        "customerText": "my Mac won’t connect to the internet, I ran diagnostics like 3 times and nothing",
+        "supportResponse": "We can help you with your Mac. Are you trying to connect to Wi-Fi? If you are, have you tried a different network yet?",
+        "allSupportRepliesCount": 1
+      }
+    },
+    {
+      "goldenId": "GOLD-050",
+      "customerTweetId": "699622",
+      "queryText": "Anyone else battery life on the iPhone been absolutely fucked since doing the latest iOS update?",
+      "evaluationLabel": "battery_power",
+      "evaluationLabelSource": "automatic_proposal",
+      "retrievedCounts": {},
+      "hitsByK": {
+        "1": 0,
+        "3": 2,
+        "5": 3,
+        "10": 7
+      },
+      "topResult": {
+        "score": 25.9922,
+        "intent": "other_unclear",
+        "customerTweetId": "1887591",
+        "supportTweetId": "1887590",
+        "customerText": "My iPhone keeps freezing after doing the latest iOS update - anyone else? ?",
+        "supportResponse": "We want to be sure that you get the most out of your iPhone's performance. We can help! DM us and we'll take it from there.",
+        "allSupportRepliesCount": 1
+      }
+    }
+  ]
+}
