@@ -62,9 +62,9 @@ Two baselines were trained on the non-golden corpus ($N=74,226$ interactions) an
 | Metric Dimension | Author Subset ($n=4$) | Automatic Proposals ($n=196$) | Full Benchmark ($N=200$) | Operational Role |
 | :--- | :---: | :---: | :---: | :--- |
 | **Intent Agreement / Accuracy** | 50.00% (2 / 4) | 69.90% (137 / 196) | **69.50%** (139 / 200) | Macro F1: 68.27% \| Weighted F1: 65.05% |
-| **Raw BM25 Corpus Recall@1** | 50.00% (2 / 4) | 60.20% (118 / 196) | **60.00%** (120 / 200) | Top candidate shares intent |
+| **Raw BM25 Corpus Recall@1** | 75.00% (3 / 4) | 59.69% (117 / 196) | **60.00%** (120 / 200) | Top candidate shares intent |
 | **Raw BM25 Corpus Recall@3** | 75.00% (3 / 4) | 83.67% (164 / 196) | **83.50%** (167 / 200) | Top-3 candidates contain intent |
-| **Raw BM25 Corpus Recall@5** | 100.00% (4 / 4) | 88.27% (173 / 196) | **88.50%** (177 / 200) | Standard retrieval pool (105,542 docs) |
+| **Raw BM25 Corpus Recall@5** | 75.00% (3 / 4) | 88.78% (174 / 196) | **88.50%** (177 / 200) | Standard retrieval pool (105,542 docs) |
 | **Raw BM25 Corpus Recall@10** | 100.00% (4 / 4) | 94.39% (185 / 196) | **94.50%** (189 / 200) | Diagnostic retrieval depth |
 | **Post-Filter Prompt Alignment** | Top-1: 75.00% (3/4) | Top-1: 79.08% (155/196) | Top-1: **79.00%** \| Top-3: **80.50%** | Filtered prompt candidates (max 3) |
 | **Routing Decisions** | — | — | **109 Auto (54.5%) / 91 Escalate (45.5%)** | Safe balance of triage vs. routing |
