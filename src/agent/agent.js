@@ -34,6 +34,7 @@ export class SupportAgent {
     this.minConfidence = options.minConfidence ?? parseFloat(process.env.AGENT_MIN_CONFIDENCE || '0.40');
     this.minBm25Score = options.minBm25Score ?? parseFloat(process.env.AGENT_MIN_BM25_SCORE || '5.0');
     this.topK = options.topK ?? parseInt(process.env.AGENT_TOP_K || '5', 10);
+    this.maxReplyChars = options.maxReplyChars ?? parseInt(process.env.AGENT_MAX_REPLY_CHARS || '280', 10);
     
     this.providerName = options.provider || process.env.LLM_PROVIDER || 'gemini';
     this.llmProvider = options.llmProvider || null;
@@ -174,7 +175,9 @@ export class SupportAgent {
     let validation = { isValid: true, violations: [] };
 
     if (rawModelDraft && !draftParseError) {
-      validation = validateAgentDraft(rawModelDraft, evidenceForPrompt);
+      validation = validateAgentDraft(rawModelDraft, evidenceForPrompt, {
+        maxReplyChars: runtimeOptions.maxReplyChars ?? this.maxReplyChars
+      });
     } else if (draftParseError) {
       validation = { isValid: false, violations: [draftParseError] };
     }

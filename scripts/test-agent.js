@@ -358,6 +358,52 @@ async function main() {
     assert.ok(!res.reply.includes('tweet_id'), 'No internal database names');
   });
 
+  // Test 23: Configurable AGENT_MAX_REPLY_CHARS constraint (280 chars)
+  await runAsyncTest('Configurable AGENT_MAX_REPLY_CHARS (280 chars) triggers validation when exceeded', async () => {
+    const longReply = 'A'.repeat(290);
+    mockProvider.setCustomResponder(() => ({
+      intent: 'battery_power',
+      intentConfidence: 0.85,
+      reply: longReply,
+      decision: 'auto_handle',
+      escalationReason: null,
+      evidence: [{ rank: 1, customerTweetId: "1734376", supportTweetId: "1734374", score: 20.75, intent: "battery_power", supportResponseUsed: true }],
+      grounding: { supportedByHistoricalEvidence: true, evidenceSummary: "Battery evidence." }
+    }));
+
+    const res = await agent.processInquiry('my battery is dying fast', { maxReplyChars: 280 });
+    assert.strictEqual(res.decision, 'escalate', 'Must escalate when reply exceeds maxReplyChars');
+    assert.ok(res._internal.validation.violations.some(v => v.includes('exceeds public reply character constraint')));
+  });
+
+  // Test 24: Logger mode separation (production telemetry vs evaluation audit)
+  runTest('Logger cleanly separates production telemetry from evaluation audit mode', () => {
+    const { AgentLogger } = agent.logger.constructor;
+    const prodLogger = new agent.logger.constructor({ mode: 'production' });
+    const evalLogger = new agent.logger.constructor({ mode: 'evaluation' });
+
+    const sampleEntry = {
+      customerText: 'Customer private inquiry text',
+      intent: 'battery_power',
+      intentConfidence: 0.95,
+      finalDecision: 'auto_handle',
+      latencyMs: 15.2,
+      rawModelDraft: { reply: 'Draft text' },
+      apiKey: 'secret_key_123'
+    };
+
+    const prodRecord = prodLogger.log(sampleEntry);
+    assert.strictEqual(prodRecord.logMode, 'production_telemetry');
+    assert.strictEqual(prodRecord.customerText, undefined, 'Production telemetry must omit raw customer text');
+    assert.strictEqual(prodRecord.rawModelDraft, undefined, 'Production telemetry must omit raw model drafts');
+    assert.strictEqual(prodRecord.apiKey, undefined, 'Must never log credentials');
+
+    const evalRecord = evalLogger.log(sampleEntry);
+    assert.strictEqual(evalRecord.logMode, 'evaluation');
+    assert.strictEqual(evalRecord.customerText, 'Customer private inquiry text', 'Evaluation mode must preserve text for Phase 7 analysis');
+    assert.ok(!JSON.stringify(evalRecord).includes('secret_key_123'), 'Secrets must never appear in log output');
+  });
+
   console.log('\n===============================================================');
   console.log(`AGENT TEST SUMMARY: ${passedTests} / ${totalTests} CHECKS PASSED`);
   console.log('===============================================================\n');

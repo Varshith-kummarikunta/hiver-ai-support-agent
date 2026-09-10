@@ -25,7 +25,7 @@ An end-to-end AI support engineering system built on real Twitter customer servi
                ▼                                                           ▼
     [Baseline Classifiers]                                      [Diagnostic Retrieval Eval]
     - Majority Class (Acc: 24.50%)                              - Recall@1: 60.0%
-    - TF-IDF + Naive Bayes (Acc: 70.00%)                         - Recall@5: 88.5%
+    - TF-IDF + Naive Bayes (Acc: 69.50%)                         - Recall@5: 88.5%
                                                                 - Recall@10: 94.5%
 ```
 
@@ -34,10 +34,10 @@ An end-to-end AI support engineering system built on real Twitter customer servi
 ## 📊 Core Empirical Results Across Phases
 
 ### Phase 4: Baseline Classifiers (200-Query Golden Set)
-| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 | Latency |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Majority Class Baseline** | 24.50% | 2.45% | 10.00% | 3.94% | 0.001 ms |
-| **TF-IDF + Naive Bayes Baseline** | **70.00%** | **68.64%** | **66.19%** | **66.97%** | 0.021 ms |
+| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 | Latency |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Majority Class Baseline** | 24.50% | 2.45% | 10.00% | 3.94% | 9.64% | 0.001 ms |
+| **TF-IDF + Naive Bayes Baseline** | **69.50%** | **74.16%** | **74.07%** | **68.27%** | **65.05%** | 0.072 ms |
 
 ### Phase 5: BM25 Historical Retrieval Engine (200-Query Golden Set)
 | Retrieval Metric | Top-1 ($k=1$) | Top-3 ($k=3$) | Top-5 ($k=5$) [Default] | Top-10 ($k=10$) |
@@ -219,5 +219,10 @@ npm run evaluate:retrieval
 - **Dependencies**: Native Node.js `fetch`, `fs`, `readline`, `crypto` for ultra-low latency and zero heavy SDK bloat.
 - **Provider Adapters**: Native REST integrations for Google Gemini (`gemini-2.0-flash`), OpenAI (`gpt-4o-mini`), and `MockProvider` for reproducible offline testing.
 - **Deterministic Business Guardrails**: Business and security rules override generative models to guarantee safe handling of passwords, billing disputes, and hardware repairs.
+- **Configurable Engineering Constraints**:
+  - `AGENT_MIN_CONFIDENCE=0.40`: Minimum Naive Bayes intent score before forcing clarification/escalation.
+  - `AGENT_MIN_BM25_SCORE=5.0`: Minimum BM25 relevance score required for candidate grounding evidence.
+  - `AGENT_TOP_K=5`: Number of historical candidate interactions retrieved.
+  - `AGENT_MAX_REPLY_CHARS=280`: Configurable engineering length limit ensuring concise, high-signal public replies.
 - **Auditability**: Every decision, threshold, and parameter choice is recorded chronologically in [`decision_log.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/decision_log.md).
 

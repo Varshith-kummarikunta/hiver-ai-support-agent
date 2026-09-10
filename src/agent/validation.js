@@ -21,7 +21,7 @@ import { VALID_INTENTS, VALID_DECISIONS } from './schema.js';
  * @param {Array<Object>} evidence - Filtered evidence provided to model
  * @returns {{ isValid: boolean, violations: string[] }}
  */
-export function validateReplyText(reply, evidence = []) {
+export function validateReplyText(reply, evidence = [], options = {}) {
   const violations = [];
 
   if (typeof reply !== 'string' || reply.trim().length === 0) {
@@ -30,12 +30,13 @@ export function validateReplyText(reply, evidence = []) {
 
   const trimmed = reply.trim();
 
-  // 1. Length bounds
+  // 1. Length bounds (configurable engineering constraint)
+  const maxReplyChars = options.maxReplyChars ?? parseInt(process.env.AGENT_MAX_REPLY_CHARS || '280', 10);
   if (trimmed.length < 10) {
     violations.push(`Reply is excessively short (${trimmed.length} chars; minimum: 10)`);
   }
-  if (trimmed.length > 450) {
-    violations.push(`Reply exceeds public Twitter length threshold (${trimmed.length} chars; maximum: 450)`);
+  if (trimmed.length > maxReplyChars) {
+    violations.push(`Reply exceeds public reply character constraint (${trimmed.length} chars; maximum: ${maxReplyChars})`);
   }
 
   // 2. No internal ID leakage
@@ -124,7 +125,7 @@ export function validateReplyText(reply, evidence = []) {
  * @param {Array<Object>} evidence - Filtered historical evidence
  * @returns {{ isValid: boolean, violations: string[] }}
  */
-export function validateAgentDraft(draft, evidence = []) {
+export function validateAgentDraft(draft, evidence = [], options = {}) {
   const violations = [];
 
   if (!draft || typeof draft !== 'object') {
@@ -140,7 +141,7 @@ export function validateAgentDraft(draft, evidence = []) {
   }
 
   // 2. Validate reply text
-  const replyValidation = validateReplyText(draft.reply, evidence);
+  const replyValidation = validateReplyText(draft.reply, evidence, options);
   if (!replyValidation.isValid) {
     violations.push(...replyValidation.violations);
   }
