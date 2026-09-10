@@ -1,6 +1,19 @@
 # AppleSupport Intelligent Customer Support Assistant & Retrieval Engine
 
-An end-to-end AI support engineering system built on real Twitter customer service interactions (`@AppleSupport`), featuring data-driven intent taxonomy, non-leaking evaluation benchmarks, baseline classification models, and a deterministic BM25 historical retrieval engine.
+An end-to-end AI support engineering system built on real Twitter customer service interactions (`@AppleSupport`), featuring a data-driven intent taxonomy, non-leaking evaluation benchmarks, classical baseline models, a deterministic BM25 historical retrieval engine, and a safety-guarded AI support agent.
+
+---
+
+## 🎯 Authoritative Benchmark Headline
+
+> *"On the 200-item quarantined benchmark (4 author-reviewed, 196 automatic proposals), the agent achieves 69.50% intent classification agreement, 88.50% raw BM25 intent Recall@5 across 105,542 historical interactions, and 94.50% strict task correctness, with a 100% deterministic safety/policy gate pass rate."*
+
+> [!IMPORTANT]
+> **Essential Provenance & Metric Disclosure**:
+> - **Evaluation Set Provenance**: The 200-item evaluation set (`data/golden/golden-set.jsonl`) contains **4 independently author-reviewed labels** (verified by Varshith) and **196 automatic taxonomy proposals**. Therefore, classification metrics primarily measure agreement with the project's automatic labeling pipeline rather than certified independent human ground truth.
+> - **Strict Task Correctness ($94.50\%$, $189/200$)**: Requires correct intent classification on all auto-handled queries. All 11 misclassified auto-handled queries (including `GOLD-172`) are strictly scored as **FAILURES (0)**. This measures technical policy compliance, NOT independently human-validated customer satisfaction.
+> - **Safety / Policy Gate Pass Rate ($100.00\%$, $200/200$)**: Measures pipeline safety constraints (non-crashing execution, length $\le 280$, no internal leaks, safe escalation of account mutations), NOT customer problem resolution.
+> - **Offline Judge Sanity Check ($4.339 / 5.0$)**: Generated 100% by local `DeterministicMockJudge`. Real frontier LLM-as-judge benchmarking was **NOT** executed because API keys were unavailable.
 
 ---
 
@@ -36,7 +49,7 @@ An end-to-end AI support engineering system built on real Twitter customer servi
 ### Phase 4: Baseline Classifiers (200-Query Golden Set)
 | Model | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 | Operational Description |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Majority Class Baseline** | 24.50% | 2.45% | 10.00% | 3.94% | 9.64% | Always predicts empirical majority class `other_unclear` (74.50% training share; 49/200 = 24.50% eval share) |
+| **Majority Class Baseline** | 24.50% | 2.45% | 10.00% | 3.94% | 9.64% | Trivial baseline; always predicts empirical majority class `other_unclear` (74.50% training share; 49/200 = 24.50% eval share) |
 | **TF-IDF + Naive Bayes Baseline** | **69.50%** | **74.16%** | **74.07%** | **68.27%** | **65.05%** | Audited statistical baseline (10,373 feature vocabulary) |
 
 ### Phase 5: BM25 Historical Retrieval Engine (200-Query Golden Set)
@@ -52,15 +65,15 @@ An end-to-end AI support engineering system built on real Twitter customer servi
 | Evaluation Metric | Author Subset ($N=4$) | AI Proposals ($N=196$) | Overall Population ($N=200$) | Benchmark Notes |
 | :--- | :---: | :---: | :---: | :--- |
 | **Intent Classification Agreement** | 50.00% (2/4) | 69.90% (137/196) | **69.50%** (139/200) | Macro F1: 68.27% \| Weighted F1: 65.05% |
-| **Raw Corpus BM25 Recall@5** | 75.00% (3/4) | 88.78% (174/196) | **88.50%** (177/200) | Identical to Phase 5 raw retrieval |
-| **Post-Filter Prompt Alignment** | 75.00% (3/4) | 79.08% (155/196) | **79.00%** (158/200) | Filtered prompt candidate (max 3, intent prioritized) |
+| **Raw Corpus BM25 Recall@5** | 75.00% (3/4) | 88.78% (174/196) | **88.50%** (177/200) | Identical to Phase 5 raw retrieval across 105,542 docs |
+| **Post-Filter Prompt Alignment** | 75.00% (3/4) | 79.08% (155/196) | **79.00%** (158/200) | Filtered prompt candidates (max 3, intent prioritized) |
 | **Routing Decision (Auto / Escalate)** | — | — | **54.50% / 45.50%** | 109 Auto-handled / 91 Escalated |
-| **Strict Task Correctness Rate** | **75.00%** (3/4) | **94.90%** (186/196) | **94.50%** (189/200) | Requires correct intent on auto-handled queries |
+| **Strict Task Correctness Rate** | **75.00%** (3/4) | **94.90%** (186/196) | **94.50%** (189/200) | Penalizes 11 misclassified auto-handled queries as FAIL (0) |
 | **Safety / Policy Gate Pass Rate** | **100.00%** (4/4) | **100.00%** (196/196) | **100.00%** (200/200) | $C_{\text{valid}} \land R_{\text{pass}} \land D_{\text{appropriate}} \land Q_{\text{pass}}$ |
 | **Offline Harness Score (1–5)** | 4.330 / 5.0 | 4.340 / 5.0 | **4.339 / 5.0** | Offline rule engine sanity check (real LLM not executed) |
 
 - **Mean Processing Latency**: `~53 ms` per inquiry on CPU in native Node.js.
-- **Authoritative Report**: [`docs/agent-evaluation-report.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/docs/agent-evaluation-report.md).
+- **Authoritative Report**: [`REPORT.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/REPORT.md) and [`docs/agent-evaluation-report.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/docs/agent-evaluation-report.md).
 - **Frozen Judge Rubric**: [`docs/judge-rubric.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/docs/judge-rubric.md).
 
 ---
@@ -173,77 +186,88 @@ Structured Agent Output (Clean public reply + Internal audit trail)
 
 ---
 
-## 🚀 Quickstart & Reproduction
+## 🚀 Quickstart & Rapid Reproduction (< 1 Minute)
+
+The repository is completely self-contained and runnable offline. The compressed BM25 historical retrieval index (`data/models/applesupport-retrieval-index.json.gz`, 18.94 MB) is tracked directly in the repository and decompresses transparently into memory in ~230 ms.
+
+> [!TIP]
+> **No Heavy Downloads Required**: Evaluators do **NOT** need to download or stream the 492 MB raw Kaggle CSV to reproduce the benchmark or run the agent. All models, evaluation datasets, and retrieval indexes are pre-packaged.
 
 ### Prerequisites
 - Node.js `v20.x` or higher
 - Windows / macOS / Linux
 
-### Installation
+### Installation & Verification (< 35 Seconds Total)
 ```bash
+# 1. Clone repository and install minimal dependencies (takes ~5s)
 git clone <repository-url>
 cd "Hiver assignment"
 npm install
+
+# 2. Run all unit and system test suites (100% offline, zero API keys required)
+npm test              # BM25 Retrieval Engine Unit Tests (12/12 Checks Passed, ~3s)
+npm run test:agent    # AI Support Agent & Deterministic Guardrails (24/24 Checks Passed, ~2s)
+npm run test:judge    # LLM-as-Judge Isolation & Rubric Tests (22/22 Checks Passed, ~1s)
+
+# 3. Verify zero golden-set data leakage
+npm run verify:leakage # Asserts 0 golden tweet IDs in retrieval index (4/4 Checks Passed, ~2s)
+
+# 4. Verify ranking and scoring determinism
+npm run verify:determinism # Dual-run test: 0 rank/score mismatches across 1,000 queries (~4s)
+
+# 5. Run end-to-end evaluation benchmark across 200 quarantined queries
+npm run evaluate:agent # Evaluates all 200 queries, writes JSON results & markdown report (~10s)
+
+# 6. Verify all 44 factual claims and metrics byte-for-byte
+node scripts/audit-phase7-facts.js # Automated Fact-Check Audit Engine (44/44 Checks Passed, ~3s)
 ```
 
-### Running the AI Support Agent (Phase 6)
+---
+
+## 🤖 Running the Support Agent Interactively
+
 ```bash
-# 1. Run all automated agent tests (100% offline, zero API keys required)
-npm run test:agent
+# Single query with default mock engine (instant response, ~53 ms)
+node scripts/run-agent.js "my iphone battery is draining very fast after update"
 
-# 2. Run single query via CLI
-node scripts/run-agent.js "my iphone battery is draining very fast"
+# Single query with sensitive account request (triggers deterministic escalation guardrail)
+node scripts/run-agent.js "please refund my last app store subscription charge"
 
-# 3. Run interactive session
+# Interactive multi-query CLI session
 node scripts/run-agent.js --interactive
 
-# 4. Run with offline mock provider
-node scripts/run-agent.js --provider=mock "my screen is freezing on black display"
-```
-
-### Running the End-to-End Evaluation Benchmark (Phase 7)
-```bash
-# 1. Run automated judge unit tests (22 tests verifying rubric scoring, binary flags, and isolation)
-npm run test:judge
-
-# 2. Run complete end-to-end benchmark across all 200 quarantined evaluation queries
-npm run evaluate:agent
-# (Generates data/evaluation/agent-evaluation-results.json and docs/agent-evaluation-report.md)
-```
-
-### Reproducing Retrieval & Baselines (Phases 4-5)
-```bash
-# Run baseline tests and evaluation
-npm run evaluate:baselines
-
-# Build BM25 index (takes ~15s, quarantines 200 golden examples)
-npm run build:retrieval
-
-# Run retrieval unit tests (12 checks)
-npm test
-
-# Verify zero golden leakage authoritatively
-npm run verify:leakage
-
-# Verify dual-run ranking & scoring determinism
-npm run verify:determinism
-
-# Run intent-level diagnostic retrieval evaluation
-npm run evaluate:retrieval
+# Running with live frontier models (optional; requires environment variables)
+export GEMINI_API_KEY="your-gemini-key"
+node scripts/run-agent.js --provider=gemini "how do I reset network settings?"
 ```
 
 ---
 
 ## ⚙️ Tech Stack & Engineering Principles
 
-- **Runtime**: Pure Node.js (v20.20.0), ES Modules (`type: "module"`).
-- **Dependencies**: Native Node.js `fetch`, `fs`, `readline`, `crypto` for ultra-low latency and zero heavy SDK bloat.
-- **Provider Adapters**: Native REST integrations for Google Gemini (`gemini-2.0-flash`), OpenAI (`gpt-4o-mini`), and `MockProvider` for reproducible offline testing.
-- **Deterministic Business Guardrails**: Business and security rules override generative models to guarantee safe handling of passwords, billing disputes, and hardware repairs.
+- **Runtime**: Pure Node.js (v20.20.0), native ES Modules (`type: "module"`).
+- **Dependencies**: Zero external AI orchestration frameworks (no LangChain, no LlamaIndex). Native Node.js `fetch`, `zlib`, `fs`, `readline`, `crypto` for sub-millisecond execution and minimal footprint.
+- **Deterministic Business Guardrails**: Security-critical operations (password resets, refund claims, hardware repair bookings) are governed by deterministic guardrails that strictly override LLM decisions.
 - **Configurable Engineering Constraints**:
-  - `AGENT_MIN_CONFIDENCE=0.40`: Minimum Naive Bayes intent score before forcing clarification/escalation.
-  - `AGENT_MIN_BM25_SCORE=5.0`: Minimum BM25 relevance score required for candidate grounding evidence.
+  - `AGENT_MIN_CONFIDENCE=0.40`: Minimum Naive Bayes intent score before forcing diagnostic escalation.
+  - `AGENT_MIN_BM25_SCORE=5.0`: Minimum BM25 score required for historical candidate grounding evidence.
   - `AGENT_TOP_K=5`: Number of historical candidate interactions retrieved.
-  - `AGENT_MAX_REPLY_CHARS=280`: Configurable engineering length limit ensuring concise, high-signal public replies.
+  - `AGENT_MAX_REPLY_CHARS=280`: Twitter character length limit ensuring concise, actionable public replies.
 - **Auditability**: Every decision, threshold, and parameter choice is recorded chronologically in [`decision_log.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/decision_log.md).
+
+---
+
+## 📚 Citations & Borrowed Material
+
+1. **Primary Dataset**:
+   - Customer Support on Twitter (TWCS), Kaggle Dataset by *Thought Vector* (`thoughtvector/customer-support-on-twitter`). Extracted 105,742 valid customer→support conversation pairs from `@AppleSupport`.
+2. **Information Retrieval & BM25**:
+   - Robertson, S. E., Walker, S., Jones, S., Hancock-Beaulieu, M. M., & Gatford, M. (1994). *Okapi at TREC-3*. NIST Special Publication 500-225. Parameters configured: $k_1 = 1.2$, $b = 0.75$, Robertson-Spärck Jones IDF.
+3. **Statistical Machine Learning & Naive Bayes**:
+   - Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to Information Retrieval*. Cambridge University Press. Sublinear TF scaling ($1 + \ln(\text{tf})$), smoothed IDF, L2 normalization, and log-space Multinomial Naive Bayes with Laplace smoothing ($\alpha = 0.5$).
+4. **Official Domain Knowledge & Escalation URLs**:
+   - Apple Inc. Official Support Portals: `reportaproblem.apple.com` (billing/refunds), `iforgot.apple.com` (Apple ID/password recovery), `getsupport.apple.com` (hardware repairs and Genius Bar appointments).
+5. **Open-Source Tooling**:
+   - `csv-parser` (^3.2.1) for stream processing large CSV files with backpressure.
+   - `dotenv` (^17.4.2) for environment configuration.
 

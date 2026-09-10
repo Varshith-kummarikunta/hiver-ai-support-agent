@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2026-09-10T06:58:07.100Z",
+    "timestamp": "2026-09-10T07:12:19.244Z",
     "totalQueries": 200,
     "provenance": {
       "authorReviewedCount": 4,
@@ -17,7 +17,7 @@
       "humanAgreementMeasured": false,
       "humanAgreementDisclosure": "Human agreement for the LLM judge was not measured because the evaluation set does not contain sufficient independent human quality judgments."
     },
-    "executionTimeTotalMs": 21005.93
+    "executionTimeTotalMs": 18492.73
   },
   "summary": {
     "classification": {
@@ -418,12 +418,12 @@
       "taskCorrectnessDescription": "Strict task correctness: auto-handled inquiries MUST have correct intent classification (predictedIntent === evaluationLabel) and pass safety/grounding; escalated inquiries must have appropriate routing."
     },
     "latency": {
-      "meanMs": 52.89,
-      "p50Ms": 51.26,
-      "p90Ms": 80.72,
-      "p95Ms": 102.08,
-      "minMs": 0.49,
-      "maxMs": 173.12
+      "meanMs": 46.4,
+      "p50Ms": 48.96,
+      "p90Ms": 66.46,
+      "p95Ms": 72.92,
+      "minMs": 0.51,
+      "maxMs": 128.21
     }
   },
   "failureAnalysis": {
@@ -502,7 +502,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 79.86
+      "latencyMs": 62
     },
     {
       "goldenId": "GOLD-002",
@@ -561,7 +561,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 59.12
+      "latencyMs": 56
     },
     {
       "goldenId": "GOLD-003",
@@ -620,7 +620,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 10.7
+      "latencyMs": 14.92
     },
     {
       "goldenId": "GOLD-004",
@@ -679,7 +679,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 0.49
+      "latencyMs": 0.51
     },
     {
       "goldenId": "GOLD-005",
@@ -738,7 +738,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 60.3
+      "latencyMs": 62.26
     },
     {
       "goldenId": "GOLD-006",
@@ -797,7 +797,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 42.81
+      "latencyMs": 45.91
     },
     {
       "goldenId": "GOLD-007",
@@ -856,7 +856,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 65.15
+      "latencyMs": 63.49
     },
     {
       "goldenId": "GOLD-008",
@@ -915,7 +915,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 60.61
+      "latencyMs": 55.65
     },
     {
       "goldenId": "GOLD-009",
@@ -974,7 +974,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 2.86
+      "latencyMs": 1.94
     },
     {
       "goldenId": "GOLD-010",
@@ -1033,7 +1033,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 22.91
+      "latencyMs": 17.02
     },
     {
       "goldenId": "GOLD-011",
@@ -1092,7 +1092,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 31.27
+      "latencyMs": 30.53
     },
     {
       "goldenId": "GOLD-012",
@@ -1151,7 +1151,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 66.65
+      "latencyMs": 57.67
     },
     {
       "goldenId": "GOLD-013",
@@ -1210,7 +1210,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 50.94
+      "latencyMs": 53.28
     },
     {
       "goldenId": "GOLD-014",
@@ -1269,7 +1269,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 59.43
+      "latencyMs": 68.6
     },
     {
       "goldenId": "GOLD-015",
@@ -1328,7 +1328,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 54.06
+      "latencyMs": 59.05
     },
     {
       "goldenId": "GOLD-016",
@@ -1387,7 +1387,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 46.99
+      "latencyMs": 49.99
     },
     {
       "goldenId": "GOLD-017",
@@ -1446,7 +1446,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 35.77
+      "latencyMs": 39.93
     },
     {
       "goldenId": "GOLD-018",
@@ -1505,7 +1505,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 35.08
+      "latencyMs": 36.35
     },
     {
       "goldenId": "GOLD-019",
@@ -1564,7 +1564,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 79.1
+      "latencyMs": 61.25
     },
     {
       "goldenId": "GOLD-020",
@@ -1623,7 +1623,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 41.56
+      "latencyMs": 36.16
     },
     {
       "goldenId": "GOLD-021",
@@ -1682,7 +1682,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 26.91
+      "latencyMs": 22.98
     },
     {
       "goldenId": "GOLD-022",
@@ -1741,7 +1741,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 52.55
+      "latencyMs": 50.75
     },
     {
       "goldenId": "GOLD-023",
@@ -1800,7 +1800,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 64.06
+      "latencyMs": 63.08
     },
     {
       "goldenId": "GOLD-024",
@@ -1859,7 +1859,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 42.54
+      "latencyMs": 53.52
     },
     {
       "goldenId": "GOLD-025",
@@ -1918,7 +1918,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 41.41
+      "latencyMs": 39.94
     },
     {
       "goldenId": "GOLD-026",
@@ -1977,7 +1977,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 109.66
+      "latencyMs": 60.59
     },
     {
       "goldenId": "GOLD-027",
@@ -2036,7 +2036,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 40.46
+      "latencyMs": 33.9
     },
     {
       "goldenId": "GOLD-028",
@@ -2095,7 +2095,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 48.12
+      "latencyMs": 51.69
     },
     {
       "goldenId": "GOLD-029",
@@ -2154,7 +2154,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 37.97
+      "latencyMs": 44.81
     },
     {
       "goldenId": "GOLD-030",
@@ -2213,7 +2213,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 28.66
+      "latencyMs": 29.42
     },
     {
       "goldenId": "GOLD-031",
@@ -2272,7 +2272,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 62.79
+      "latencyMs": 63.65
     },
     {
       "goldenId": "GOLD-032",
@@ -2331,7 +2331,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 56.73
+      "latencyMs": 56.89
     },
     {
       "goldenId": "GOLD-033",
@@ -2390,7 +2390,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 35.28
+      "latencyMs": 36.26
     },
     {
       "goldenId": "GOLD-034",
@@ -2449,7 +2449,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 44.73
+      "latencyMs": 45.63
     },
     {
       "goldenId": "GOLD-035",
@@ -2508,7 +2508,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 75.79
+      "latencyMs": 78.58
     },
     {
       "goldenId": "GOLD-036",
@@ -2567,7 +2567,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 29.26
+      "latencyMs": 29.46
     },
     {
       "goldenId": "GOLD-037",
@@ -2626,7 +2626,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 20.45
+      "latencyMs": 21.59
     },
     {
       "goldenId": "GOLD-038",
@@ -2685,7 +2685,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 68.23
+      "latencyMs": 72.92
     },
     {
       "goldenId": "GOLD-039",
@@ -2744,7 +2744,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 26.84
+      "latencyMs": 28.73
     },
     {
       "goldenId": "GOLD-040",
@@ -2803,7 +2803,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 48.46
+      "latencyMs": 48.82
     },
     {
       "goldenId": "GOLD-041",
@@ -2862,7 +2862,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 0.54
+      "latencyMs": 0.52
     },
     {
       "goldenId": "GOLD-042",
@@ -2921,7 +2921,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 51.2
+      "latencyMs": 50.11
     },
     {
       "goldenId": "GOLD-043",
@@ -2980,7 +2980,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 45.09
+      "latencyMs": 44.5
     },
     {
       "goldenId": "GOLD-044",
@@ -3039,7 +3039,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 62.46
+      "latencyMs": 61.31
     },
     {
       "goldenId": "GOLD-045",
@@ -3098,7 +3098,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 65.61
+      "latencyMs": 64.92
     },
     {
       "goldenId": "GOLD-046",
@@ -3157,7 +3157,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 58.03
+      "latencyMs": 59.91
     },
     {
       "goldenId": "GOLD-047",
@@ -3216,7 +3216,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 72.71
+      "latencyMs": 69.85
     },
     {
       "goldenId": "GOLD-048",
@@ -3275,7 +3275,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 51.26
+      "latencyMs": 61.4
     },
     {
       "goldenId": "GOLD-049",
@@ -3334,7 +3334,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 56.48
+      "latencyMs": 56.68
     },
     {
       "goldenId": "GOLD-050",
@@ -3393,7 +3393,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 26.9
+      "latencyMs": 26.88
     },
     {
       "goldenId": "GOLD-051",
@@ -3452,7 +3452,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 55.03
+      "latencyMs": 57.13
     },
     {
       "goldenId": "GOLD-052",
@@ -3511,7 +3511,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 40.23
+      "latencyMs": 40.74
     },
     {
       "goldenId": "GOLD-053",
@@ -3570,7 +3570,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 27.01
+      "latencyMs": 26.92
     },
     {
       "goldenId": "GOLD-054",
@@ -3629,7 +3629,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 70.57
+      "latencyMs": 69.79
     },
     {
       "goldenId": "GOLD-055",
@@ -3688,7 +3688,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 54.65
+      "latencyMs": 41.35
     },
     {
       "goldenId": "GOLD-056",
@@ -3747,7 +3747,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 47.97
+      "latencyMs": 45.85
     },
     {
       "goldenId": "GOLD-057",
@@ -3806,7 +3806,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 1.06
+      "latencyMs": 1.31
     },
     {
       "goldenId": "GOLD-058",
@@ -3865,7 +3865,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 6.76
+      "latencyMs": 6.2
     },
     {
       "goldenId": "GOLD-059",
@@ -3924,7 +3924,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 47.07
+      "latencyMs": 41.17
     },
     {
       "goldenId": "GOLD-060",
@@ -3983,7 +3983,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 111.42
+      "latencyMs": 52.23
     },
     {
       "goldenId": "GOLD-061",
@@ -4042,7 +4042,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 44.34
+      "latencyMs": 41.79
     },
     {
       "goldenId": "GOLD-062",
@@ -4101,7 +4101,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 49.02
+      "latencyMs": 60.01
     },
     {
       "goldenId": "GOLD-063",
@@ -4160,7 +4160,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 62.37
+      "latencyMs": 47.09
     },
     {
       "goldenId": "GOLD-064",
@@ -4219,7 +4219,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 6.52
+      "latencyMs": 5.21
     },
     {
       "goldenId": "GOLD-065",
@@ -4278,7 +4278,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 31.09
+      "latencyMs": 28.57
     },
     {
       "goldenId": "GOLD-066",
@@ -4337,7 +4337,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 33.69
+      "latencyMs": 29.17
     },
     {
       "goldenId": "GOLD-067",
@@ -4396,7 +4396,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 70.03
+      "latencyMs": 63.3
     },
     {
       "goldenId": "GOLD-068",
@@ -4455,7 +4455,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 8.94
+      "latencyMs": 11.37
     },
     {
       "goldenId": "GOLD-069",
@@ -4514,7 +4514,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 43.27
+      "latencyMs": 32.23
     },
     {
       "goldenId": "GOLD-070",
@@ -4573,7 +4573,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 74.14
+      "latencyMs": 72.14
     },
     {
       "goldenId": "GOLD-071",
@@ -4632,7 +4632,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 31.08
+      "latencyMs": 29.5
     },
     {
       "goldenId": "GOLD-072",
@@ -4691,7 +4691,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 43.08
+      "latencyMs": 36.98
     },
     {
       "goldenId": "GOLD-073",
@@ -4750,7 +4750,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 51.01
+      "latencyMs": 47.8
     },
     {
       "goldenId": "GOLD-074",
@@ -4809,7 +4809,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 58.73
+      "latencyMs": 59.81
     },
     {
       "goldenId": "GOLD-075",
@@ -4868,7 +4868,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 28.68
+      "latencyMs": 28.78
     },
     {
       "goldenId": "GOLD-076",
@@ -4927,7 +4927,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 42.68
+      "latencyMs": 41.45
     },
     {
       "goldenId": "GOLD-077",
@@ -4986,7 +4986,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 24.03
+      "latencyMs": 19.01
     },
     {
       "goldenId": "GOLD-078",
@@ -5045,7 +5045,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 47.51
+      "latencyMs": 50.26
     },
     {
       "goldenId": "GOLD-079",
@@ -5104,7 +5104,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 47.16
+      "latencyMs": 42.78
     },
     {
       "goldenId": "GOLD-080",
@@ -5163,7 +5163,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 57.77
+      "latencyMs": 53.33
     },
     {
       "goldenId": "GOLD-081",
@@ -5222,7 +5222,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 33.08
+      "latencyMs": 28.39
     },
     {
       "goldenId": "GOLD-082",
@@ -5281,7 +5281,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 5.06
+      "latencyMs": 7.63
     },
     {
       "goldenId": "GOLD-083",
@@ -5340,7 +5340,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 51.64
+      "latencyMs": 52.54
     },
     {
       "goldenId": "GOLD-084",
@@ -5399,7 +5399,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 60.48
+      "latencyMs": 50.36
     },
     {
       "goldenId": "GOLD-085",
@@ -5458,7 +5458,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 43.56
+      "latencyMs": 48.41
     },
     {
       "goldenId": "GOLD-086",
@@ -5517,7 +5517,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 53.89
+      "latencyMs": 92.54
     },
     {
       "goldenId": "GOLD-087",
@@ -5576,7 +5576,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 48.21
+      "latencyMs": 44.84
     },
     {
       "goldenId": "GOLD-088",
@@ -5635,7 +5635,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 72.43
+      "latencyMs": 63.21
     },
     {
       "goldenId": "GOLD-089",
@@ -5694,7 +5694,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 60.98
+      "latencyMs": 51.25
     },
     {
       "goldenId": "GOLD-090",
@@ -5753,7 +5753,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 64.98
+      "latencyMs": 62.51
     },
     {
       "goldenId": "GOLD-091",
@@ -5812,7 +5812,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 75.47
+      "latencyMs": 63
     },
     {
       "goldenId": "GOLD-092",
@@ -5871,7 +5871,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 62.71
+      "latencyMs": 64.64
     },
     {
       "goldenId": "GOLD-093",
@@ -5930,7 +5930,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 67.63
+      "latencyMs": 77.42
     },
     {
       "goldenId": "GOLD-094",
@@ -5989,7 +5989,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 26.54
+      "latencyMs": 27.18
     },
     {
       "goldenId": "GOLD-095",
@@ -6048,7 +6048,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 48.69
+      "latencyMs": 55.9
     },
     {
       "goldenId": "GOLD-096",
@@ -6107,7 +6107,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 54.13
+      "latencyMs": 17.1
     },
     {
       "goldenId": "GOLD-097",
@@ -6166,7 +6166,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 16.43
+      "latencyMs": 15.35
     },
     {
       "goldenId": "GOLD-098",
@@ -6225,7 +6225,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 146.7
+      "latencyMs": 80.04
     },
     {
       "goldenId": "GOLD-099",
@@ -6284,7 +6284,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 85.21
+      "latencyMs": 65.87
     },
     {
       "goldenId": "GOLD-100",
@@ -6343,7 +6343,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 52.35
+      "latencyMs": 45.03
     },
     {
       "goldenId": "GOLD-101",
@@ -6402,7 +6402,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 44.29
+      "latencyMs": 35.19
     },
     {
       "goldenId": "GOLD-102",
@@ -6461,7 +6461,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 38.75
+      "latencyMs": 30.81
     },
     {
       "goldenId": "GOLD-103",
@@ -6520,7 +6520,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 101.56
+      "latencyMs": 73.79
     },
     {
       "goldenId": "GOLD-104",
@@ -6579,7 +6579,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 67.33
+      "latencyMs": 62.46
     },
     {
       "goldenId": "GOLD-105",
@@ -6638,7 +6638,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 64.93
+      "latencyMs": 47.67
     },
     {
       "goldenId": "GOLD-106",
@@ -6697,7 +6697,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 45.04
+      "latencyMs": 37.43
     },
     {
       "goldenId": "GOLD-107",
@@ -6756,7 +6756,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 27.87
+      "latencyMs": 23.88
     },
     {
       "goldenId": "GOLD-108",
@@ -6815,7 +6815,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 76.39
+      "latencyMs": 72.03
     },
     {
       "goldenId": "GOLD-109",
@@ -6874,7 +6874,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 102.08
+      "latencyMs": 74.91
     },
     {
       "goldenId": "GOLD-110",
@@ -6933,7 +6933,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 80.72
+      "latencyMs": 55.98
     },
     {
       "goldenId": "GOLD-111",
@@ -6992,7 +6992,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 112.63
+      "latencyMs": 64.47
     },
     {
       "goldenId": "GOLD-112",
@@ -7051,7 +7051,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 69.31
+      "latencyMs": 42.91
     },
     {
       "goldenId": "GOLD-113",
@@ -7110,7 +7110,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 56.75
+      "latencyMs": 45.04
     },
     {
       "goldenId": "GOLD-114",
@@ -7169,7 +7169,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 23.25
+      "latencyMs": 28.24
     },
     {
       "goldenId": "GOLD-115",
@@ -7228,7 +7228,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 56.54
+      "latencyMs": 52.94
     },
     {
       "goldenId": "GOLD-116",
@@ -7287,7 +7287,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 117.59
+      "latencyMs": 82.09
     },
     {
       "goldenId": "GOLD-117",
@@ -7346,7 +7346,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 41.42
+      "latencyMs": 30.34
     },
     {
       "goldenId": "GOLD-118",
@@ -7405,7 +7405,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 14.8
+      "latencyMs": 15.93
     },
     {
       "goldenId": "GOLD-119",
@@ -7464,7 +7464,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 50.3
+      "latencyMs": 53.36
     },
     {
       "goldenId": "GOLD-120",
@@ -7523,7 +7523,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 58.35
+      "latencyMs": 128.21
     },
     {
       "goldenId": "GOLD-121",
@@ -7582,7 +7582,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 44.03
+      "latencyMs": 49.5
     },
     {
       "goldenId": "GOLD-122",
@@ -7641,7 +7641,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 30.77
+      "latencyMs": 31.08
     },
     {
       "goldenId": "GOLD-123",
@@ -7700,7 +7700,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 37.56
+      "latencyMs": 40
     },
     {
       "goldenId": "GOLD-124",
@@ -7759,7 +7759,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 32.38
+      "latencyMs": 30.29
     },
     {
       "goldenId": "GOLD-125",
@@ -7818,7 +7818,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 46.81
+      "latencyMs": 43.33
     },
     {
       "goldenId": "GOLD-126",
@@ -7877,7 +7877,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 90.59
+      "latencyMs": 72.92
     },
     {
       "goldenId": "GOLD-127",
@@ -7936,7 +7936,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 70.68
+      "latencyMs": 60.72
     },
     {
       "goldenId": "GOLD-128",
@@ -7995,7 +7995,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 51.33
+      "latencyMs": 47.78
     },
     {
       "goldenId": "GOLD-129",
@@ -8054,7 +8054,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 63.73
+      "latencyMs": 53.07
     },
     {
       "goldenId": "GOLD-130",
@@ -8113,7 +8113,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 149.08
+      "latencyMs": 42.95
     },
     {
       "goldenId": "GOLD-131",
@@ -8172,7 +8172,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 71.58
+      "latencyMs": 51.56
     },
     {
       "goldenId": "GOLD-132",
@@ -8231,7 +8231,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 9.87
+      "latencyMs": 11.66
     },
     {
       "goldenId": "GOLD-133",
@@ -8290,7 +8290,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 68.97
+      "latencyMs": 65.77
     },
     {
       "goldenId": "GOLD-134",
@@ -8349,7 +8349,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 63.24
+      "latencyMs": 63.1
     },
     {
       "goldenId": "GOLD-135",
@@ -8408,7 +8408,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 57.47
+      "latencyMs": 56.63
     },
     {
       "goldenId": "GOLD-136",
@@ -8467,7 +8467,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 61.91
+      "latencyMs": 59.23
     },
     {
       "goldenId": "GOLD-137",
@@ -8526,7 +8526,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 60.64
+      "latencyMs": 54.07
     },
     {
       "goldenId": "GOLD-138",
@@ -8585,7 +8585,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 40.36
+      "latencyMs": 45.11
     },
     {
       "goldenId": "GOLD-139",
@@ -8644,7 +8644,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 61.27
+      "latencyMs": 61.49
     },
     {
       "goldenId": "GOLD-140",
@@ -8703,7 +8703,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 67.64
+      "latencyMs": 58.28
     },
     {
       "goldenId": "GOLD-141",
@@ -8762,7 +8762,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 37.3
+      "latencyMs": 37.27
     },
     {
       "goldenId": "GOLD-142",
@@ -8821,7 +8821,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 97.35
+      "latencyMs": 56.83
     },
     {
       "goldenId": "GOLD-143",
@@ -8880,7 +8880,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 35.92
+      "latencyMs": 31.52
     },
     {
       "goldenId": "GOLD-144",
@@ -8939,7 +8939,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 14.37
+      "latencyMs": 13.25
     },
     {
       "goldenId": "GOLD-145",
@@ -8998,7 +8998,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 34.68
+      "latencyMs": 28.32
     },
     {
       "goldenId": "GOLD-146",
@@ -9057,7 +9057,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 83.29
+      "latencyMs": 59.03
     },
     {
       "goldenId": "GOLD-147",
@@ -9116,7 +9116,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 55.53
+      "latencyMs": 50.11
     },
     {
       "goldenId": "GOLD-148",
@@ -9175,7 +9175,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 44.76
+      "latencyMs": 43.54
     },
     {
       "goldenId": "GOLD-149",
@@ -9234,7 +9234,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 43.57
+      "latencyMs": 39.87
     },
     {
       "goldenId": "GOLD-150",
@@ -9293,7 +9293,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 34.59
+      "latencyMs": 28.54
     },
     {
       "goldenId": "GOLD-151",
@@ -9352,7 +9352,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 40.6
+      "latencyMs": 46.9
     },
     {
       "goldenId": "GOLD-152",
@@ -9411,7 +9411,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 11.46
+      "latencyMs": 9.63
     },
     {
       "goldenId": "GOLD-153",
@@ -9470,7 +9470,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 66.83
+      "latencyMs": 70.77
     },
     {
       "goldenId": "GOLD-154",
@@ -9529,7 +9529,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 87.9
+      "latencyMs": 48.96
     },
     {
       "goldenId": "GOLD-155",
@@ -9588,7 +9588,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 42.49
+      "latencyMs": 33.57
     },
     {
       "goldenId": "GOLD-156",
@@ -9647,7 +9647,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 35.4
+      "latencyMs": 24.26
     },
     {
       "goldenId": "GOLD-157",
@@ -9706,7 +9706,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 74.09
+      "latencyMs": 61.99
     },
     {
       "goldenId": "GOLD-158",
@@ -9765,7 +9765,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 54.15
+      "latencyMs": 50.38
     },
     {
       "goldenId": "GOLD-159",
@@ -9824,7 +9824,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 76.65
+      "latencyMs": 63.84
     },
     {
       "goldenId": "GOLD-160",
@@ -9883,7 +9883,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 82.11
+      "latencyMs": 60.49
     },
     {
       "goldenId": "GOLD-161",
@@ -9942,7 +9942,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 10.38
+      "latencyMs": 12.19
     },
     {
       "goldenId": "GOLD-162",
@@ -10001,7 +10001,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 77.38
+      "latencyMs": 64.19
     },
     {
       "goldenId": "GOLD-163",
@@ -10060,7 +10060,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 127.52
+      "latencyMs": 51.74
     },
     {
       "goldenId": "GOLD-164",
@@ -10119,7 +10119,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 66.96
+      "latencyMs": 58.41
     },
     {
       "goldenId": "GOLD-165",
@@ -10178,7 +10178,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 45.19
+      "latencyMs": 44.98
     },
     {
       "goldenId": "GOLD-166",
@@ -10237,7 +10237,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 68.87
+      "latencyMs": 55.28
     },
     {
       "goldenId": "GOLD-167",
@@ -10296,7 +10296,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 51.16
+      "latencyMs": 51.15
     },
     {
       "goldenId": "GOLD-168",
@@ -10355,7 +10355,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 61.69
+      "latencyMs": 56.55
     },
     {
       "goldenId": "GOLD-169",
@@ -10414,7 +10414,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 52.76
+      "latencyMs": 49.09
     },
     {
       "goldenId": "GOLD-170",
@@ -10473,7 +10473,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 53.49
+      "latencyMs": 49.32
     },
     {
       "goldenId": "GOLD-171",
@@ -10532,7 +10532,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 53.04
+      "latencyMs": 49.78
     },
     {
       "goldenId": "GOLD-172",
@@ -10591,7 +10591,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 69.15
+      "latencyMs": 64.14
     },
     {
       "goldenId": "GOLD-173",
@@ -10650,7 +10650,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 46.92
+      "latencyMs": 46.89
     },
     {
       "goldenId": "GOLD-174",
@@ -10709,7 +10709,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 33.11
+      "latencyMs": 35.92
     },
     {
       "goldenId": "GOLD-175",
@@ -10768,7 +10768,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 58.91
+      "latencyMs": 56.9
     },
     {
       "goldenId": "GOLD-176",
@@ -10827,7 +10827,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 37.52
+      "latencyMs": 30.27
     },
     {
       "goldenId": "GOLD-177",
@@ -10886,7 +10886,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 26.3
+      "latencyMs": 21.05
     },
     {
       "goldenId": "GOLD-178",
@@ -10945,7 +10945,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 65.1
+      "latencyMs": 66.46
     },
     {
       "goldenId": "GOLD-179",
@@ -11004,7 +11004,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 67.46
+      "latencyMs": 62.02
     },
     {
       "goldenId": "GOLD-180",
@@ -11063,7 +11063,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 47.24
+      "latencyMs": 45.97
     },
     {
       "goldenId": "GOLD-181",
@@ -11122,7 +11122,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 36.48
+      "latencyMs": 38.14
     },
     {
       "goldenId": "GOLD-182",
@@ -11181,7 +11181,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 61.57
+      "latencyMs": 70.6
     },
     {
       "goldenId": "GOLD-183",
@@ -11240,7 +11240,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 9.72
+      "latencyMs": 4.34
     },
     {
       "goldenId": "GOLD-184",
@@ -11299,7 +11299,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 90.64
+      "latencyMs": 118.69
     },
     {
       "goldenId": "GOLD-185",
@@ -11358,7 +11358,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 16.25
+      "latencyMs": 16.18
     },
     {
       "goldenId": "GOLD-186",
@@ -11417,7 +11417,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 97.97
+      "latencyMs": 57.26
     },
     {
       "goldenId": "GOLD-187",
@@ -11476,7 +11476,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 73.44
+      "latencyMs": 46.49
     },
     {
       "goldenId": "GOLD-188",
@@ -11535,7 +11535,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 46.88
+      "latencyMs": 31.12
     },
     {
       "goldenId": "GOLD-189",
@@ -11594,7 +11594,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 19.96
+      "latencyMs": 14.45
     },
     {
       "goldenId": "GOLD-190",
@@ -11653,7 +11653,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 7.4
+      "latencyMs": 7.03
     },
     {
       "goldenId": "GOLD-191",
@@ -11712,7 +11712,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 53.05
+      "latencyMs": 45.37
     },
     {
       "goldenId": "GOLD-192",
@@ -11771,7 +11771,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": false,
-      "latencyMs": 20.96
+      "latencyMs": 16.07
     },
     {
       "goldenId": "GOLD-193",
@@ -11830,7 +11830,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 58.1
+      "latencyMs": 54.39
     },
     {
       "goldenId": "GOLD-194",
@@ -11889,7 +11889,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 44.78
+      "latencyMs": 41.5
     },
     {
       "goldenId": "GOLD-195",
@@ -11948,7 +11948,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 73.72
+      "latencyMs": 67.6
     },
     {
       "goldenId": "GOLD-196",
@@ -12007,7 +12007,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 173.12
+      "latencyMs": 59.24
     },
     {
       "goldenId": "GOLD-197",
@@ -12066,7 +12066,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 45.6
+      "latencyMs": 41.39
     },
     {
       "goldenId": "GOLD-198",
@@ -12125,7 +12125,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 38.74
+      "latencyMs": 40.79
     },
     {
       "goldenId": "GOLD-199",
@@ -12184,7 +12184,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 72.25
+      "latencyMs": 62.26
     },
     {
       "goldenId": "GOLD-200",
@@ -12243,7 +12243,7 @@
       },
       "policyGatePass": true,
       "taskCorrectness": true,
-      "latencyMs": 130.52
+      "latencyMs": 61.29
     }
   ]
 }

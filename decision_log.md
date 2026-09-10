@@ -199,6 +199,23 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Fabricating Cohen's Kappa or Annotator Agreement: Strictly rejected under zero-fabrication research standards.
 - **Why Rejected**: The frozen rubric, strict Boolean success definition, and transparent provenance tracking ensure that our evaluation results are verifiable, reproducible, and impervious to methodological criticism.
 
+---
+
+### Decision 14: Decoupled Strict Task Correctness and Compressed Asset Persistence for Instant Zero-Download Reproducibility
+- **Context**: During the Phase 7 audit, two critical engineering and evaluation considerations emerged:
+  1. *Metric Ambiguity*: The original 4-way conjunction evaluated whether the pipeline executed safely within confidence and safety bounds ($C_{\text{valid}} \land R_{\text{pass}} \land D_{\text{appropriate}} \land Q_{\text{pass}}$). However, for `GOLD-172`, the agent predicted `account_icloud` (conf: $0.7393$) instead of `display_hardware` and auto-handled. Under the safety gate, it passed because confidence $\ge 0.40$ and no runtime safety violations occurred. However, auto-handling under the wrong intent is an objective resolution failure.
+  2. *Evaluation Portability*: The full 105,542-interaction BM25 index measures 134.3 MB uncompressed, exceeding GitHub's 100 MB per-file push limit. Gitignoring the index would force reviewers to download the 492 MB raw CSV and run the 70-second streaming pipeline before running any evaluation.
+- **Decision**:
+  1. Decoupled evaluation into two distinct, non-overlapping metrics:
+     - **Safety / Policy Gate Pass Rate ($100.00\%$)**: Verifies that the pipeline never crashes, never exceeds 280 characters, never leaks internal IDs/scores, and safely escalates account-action requests.
+     - **Strict Task Correctness Rate ($94.50\%$, $189/200$)**: Strictly penalizes all 11 auto-handled misclassifications (including `GOLD-172`) as failures ($0$), requiring `predictedIntent === evaluationLabel` for every auto-handled interaction.
+  2. Implemented transparent gzip compression and streaming decompression in `src/retrieval/index.js` and `src/agent/agent.js`. Compressed `applesupport-retrieval-index.json` to `applesupport-retrieval-index.json.gz` (18.94 MB, well below GitHub limits). The loader checks for the uncompressed JSON first; if absent, it decompresses the gzipped archive in memory in 230 ms.
+- **Alternatives Considered**:
+  - Masking auto-handled misclassifications as "customer success": Rejected as scientifically misleading.
+  - Requiring Git LFS or external S3/Drive downloads: Adds fragile network dependencies, API tokens, and potential broken links for reviewers.
+  - Subsampling the retrieval index to $<100$ MB: Degrades Recall@K metrics and alters empirical retrieval results.
+- **Why Rejected**: Dual-metric separation provides absolute transparency regarding pipeline safety vs. resolution accuracy. The 18.9 MB committed archive guarantees 100% reproducible execution for any evaluator within seconds of cloning, without downloading external multi-hundred-megabyte datasets.
+
 
 
 

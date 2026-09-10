@@ -11,6 +11,7 @@
  */
 
 import fs from 'fs';
+import zlib from 'zlib';
 import { BM25Engine } from './bm25.js';
 
 export class RetrievalIndex {
@@ -100,11 +101,16 @@ export function saveIndex(index, filePath) {
  * @returns {RetrievalIndex}
  */
 export function loadIndex(filePath) {
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Retrieval index not found at path: ${filePath}`);
+  let raw;
+  if (fs.existsSync(filePath)) {
+    raw = fs.readFileSync(filePath, 'utf8');
+  } else if (fs.existsSync(filePath + '.gz')) {
+    const compressed = fs.readFileSync(filePath + '.gz');
+    raw = zlib.gunzipSync(compressed).toString('utf8');
+  } else {
+    throw new Error(`Retrieval index not found at path: ${filePath} (or ${filePath}.gz)`);
   }
 
-  const raw = fs.readFileSync(filePath, 'utf8');
   const data = JSON.parse(raw);
 
   const engine = BM25Engine.fromJSON(data.engine);

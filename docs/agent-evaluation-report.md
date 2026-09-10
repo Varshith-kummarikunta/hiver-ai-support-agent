@@ -1,6 +1,6 @@
 # AppleSupport AI Customer Support Agent: End-to-End Evaluation & Benchmark Report (Phase 7)
 
-**Evaluation Date**: 2026-09-10T06:58:07.100Z  
+**Evaluation Date**: 2026-09-10T07:12:19.244Z  
 **Total Quarantined Benchmark Population**: 200 customer inquiries  
 **Target Organization**: AppleSupport on Twitter/X  
 **Execution Mode**: Offline Deterministic Engine & Rule-Based Test Harness (`rule-based-v1`)  
@@ -290,11 +290,11 @@ Five target failure cases were audited directly from the golden set and benchmar
 ## 9. Latency and Operational Profile
 
 Measured locally on Node.js 20 execution environment:
-- **Mean Processing Time**: 52.89 ms / inquiry
-- **Median Latency (p50)**: 51.26 ms
-- **90th Percentile (p90)**: 80.72 ms
-- **95th Percentile (p95)**: 102.08 ms
-- **Min / Max Latency**: 0.49 ms / 173.12 ms
+- **Mean Processing Time**: 46.4 ms / inquiry
+- **Median Latency (p50)**: 48.96 ms
+- **90th Percentile (p90)**: 66.46 ms
+- **95th Percentile (p95)**: 72.92 ms
+- **Min / Max Latency**: 0.51 ms / 128.21 ms
 
 ---
 

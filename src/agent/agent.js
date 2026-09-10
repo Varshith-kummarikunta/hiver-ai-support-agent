@@ -66,8 +66,8 @@ export class SupportAgent {
     this.classifier = MultinomialNaiveBayesClassifier.fromJSON(classifierRaw);
 
     // 2. Load Phase 5 BM25 retrieval index
-    if (!fs.existsSync(this.retrievalIndexPath)) {
-      throw new Error(`Retrieval index not found at: ${this.retrievalIndexPath}. Run 'npm run build:retrieval' first.`);
+    if (!fs.existsSync(this.retrievalIndexPath) && !fs.existsSync(this.retrievalIndexPath + '.gz')) {
+      throw new Error(`Retrieval index not found at: ${this.retrievalIndexPath} (or .gz). Run 'npm run build:retrieval' first.`);
     }
     this.retrievalIndex = loadIndex(this.retrievalIndexPath);
 

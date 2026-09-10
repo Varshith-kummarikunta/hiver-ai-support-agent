@@ -21,7 +21,8 @@
     "test:agent": "node scripts/test-agent.js",
     "test:judge": "node scripts/test-judge.js",
     "evaluate": "node scripts/evaluate-agent.js",
-    "evaluate:agent": "node scripts/evaluate-agent.js"
+    "evaluate:agent": "node scripts/evaluate-agent.js",
+    "audit": "node scripts/audit-phase7-facts.js"
   },
   "keywords": [
     "ai-agent",
