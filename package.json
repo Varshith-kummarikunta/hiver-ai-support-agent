@@ -19,7 +19,9 @@
     "verify:determinism": "node scripts/verify-retrieval-determinism.js",
     "agent": "node scripts/run-agent.js",
     "test:agent": "node scripts/test-agent.js",
-    "evaluate": "node scripts/run-evaluation.js"
+    "test:judge": "node scripts/test-judge.js",
+    "evaluate": "node scripts/evaluate-agent.js",
+    "evaluate:agent": "node scripts/evaluate-agent.js"
   },
   "keywords": [
     "ai-agent",

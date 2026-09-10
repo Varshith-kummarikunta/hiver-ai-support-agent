@@ -34,23 +34,34 @@ An end-to-end AI support engineering system built on real Twitter customer servi
 ## 📊 Core Empirical Results Across Phases
 
 ### Phase 4: Baseline Classifiers (200-Query Golden Set)
-| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 | Latency |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Majority Class Baseline** | 24.50% | 2.45% | 10.00% | 3.94% | 9.64% | 0.001 ms |
-| **TF-IDF + Naive Bayes Baseline** | **69.50%** | **74.16%** | **74.07%** | **68.27%** | **65.05%** | 0.072 ms |
+| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 | Operational Description |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Majority Class Baseline** | 24.50% | 2.45% | 10.00% | 3.94% | 9.64% | Always predicts empirical majority class `other_unclear` (74.50% training share; 49/200 = 24.50% eval share) |
+| **TF-IDF + Naive Bayes Baseline** | **69.50%** | **74.16%** | **74.07%** | **68.27%** | **65.05%** | Audited statistical baseline (10,373 feature vocabulary) |
 
 ### Phase 5: BM25 Historical Retrieval Engine (200-Query Golden Set)
 | Retrieval Metric | Top-1 ($k=1$) | Top-3 ($k=3$) | Top-5 ($k=5$) [Default] | Top-10 ($k=10$) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Intent-Level Recall@K** | **60.0%** | **83.5%** | **88.5%** | **94.5%** |
+| **Raw Corpus BM25 Recall@K** | **60.0%** (120/200) | **83.5%** (167/200) | **88.5%** (177/200) | **94.5%** (189/200) |
 | **Avg Same-Intent Hits / Query** | 0.60 / 1 | 1.77 / 3 | **2.85 / 5** | 5.51 / 10 |
 | **Intent Precision@K** | 60.0% | 59.3% | 57.1% | 55.4% |
 | **Author Subset Recall ($N=4$)** | 75.0% | 75.0% | 75.0% | 100.0% |
 | **AI Proposals Recall ($N=196$)** | 59.7% | 83.7% | 88.8% | 94.4% |
 
-- **Zero-Result Rate**: `0.00%` across all 200 evaluation queries.
-- **Exact Text Duplicate Rate**: `1.00%` (2 queries with verbatim customer matches in historical corpus).
-- **Inference Latency**: `< 5 ms` per query on CPU in native Node.js.
+### Phase 7: End-to-End Support Agent Benchmark (200-Query Golden Set)
+| Evaluation Metric | Author Subset ($N=4$) | AI Proposals ($N=196$) | Overall Population ($N=200$) | Benchmark Notes |
+| :--- | :---: | :---: | :---: | :--- |
+| **Intent Classification Agreement** | 50.00% (2/4) | 69.90% (137/196) | **69.50%** (139/200) | Macro F1: 68.27% \| Weighted F1: 65.05% |
+| **Raw Corpus BM25 Recall@5** | 75.00% (3/4) | 88.78% (174/196) | **88.50%** (177/200) | Identical to Phase 5 raw retrieval |
+| **Post-Filter Prompt Alignment** | 75.00% (3/4) | 79.08% (155/196) | **79.00%** (158/200) | Filtered prompt candidate (max 3, intent prioritized) |
+| **Routing Decision (Auto / Escalate)** | — | — | **54.50% / 45.50%** | 109 Auto-handled / 91 Escalated |
+| **Strict Task Correctness Rate** | **75.00%** (3/4) | **94.90%** (186/196) | **94.50%** (189/200) | Requires correct intent on auto-handled queries |
+| **Safety / Policy Gate Pass Rate** | **100.00%** (4/4) | **100.00%** (196/196) | **100.00%** (200/200) | $C_{\text{valid}} \land R_{\text{pass}} \land D_{\text{appropriate}} \land Q_{\text{pass}}$ |
+| **Offline Harness Score (1–5)** | 4.330 / 5.0 | 4.340 / 5.0 | **4.339 / 5.0** | Offline rule engine sanity check (real LLM not executed) |
+
+- **Mean Processing Latency**: `~53 ms` per inquiry on CPU in native Node.js.
+- **Authoritative Report**: [`docs/agent-evaluation-report.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/docs/agent-evaluation-report.md).
+- **Frozen Judge Rubric**: [`docs/judge-rubric.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/docs/judge-rubric.md).
 
 ---
 
@@ -177,7 +188,7 @@ npm install
 
 ### Running the AI Support Agent (Phase 6)
 ```bash
-# 1. Run all 22 automated agent tests (100% offline, zero API keys required)
+# 1. Run all automated agent tests (100% offline, zero API keys required)
 npm run test:agent
 
 # 2. Run single query via CLI
@@ -188,6 +199,16 @@ node scripts/run-agent.js --interactive
 
 # 4. Run with offline mock provider
 node scripts/run-agent.js --provider=mock "my screen is freezing on black display"
+```
+
+### Running the End-to-End Evaluation Benchmark (Phase 7)
+```bash
+# 1. Run automated judge unit tests (22 tests verifying rubric scoring, binary flags, and isolation)
+npm run test:judge
+
+# 2. Run complete end-to-end benchmark across all 200 quarantined evaluation queries
+npm run evaluate:agent
+# (Generates data/evaluation/agent-evaluation-results.json and docs/agent-evaluation-report.md)
 ```
 
 ### Reproducing Retrieval & Baselines (Phases 4-5)

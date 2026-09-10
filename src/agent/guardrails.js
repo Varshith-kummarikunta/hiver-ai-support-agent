@@ -16,19 +16,19 @@
  */
 export function isVagueOrVenting(text) {
   if (!text || typeof text !== 'string') return true;
-  const trimmed = text.trim();
-  if (trimmed.length === 0) return true;
+  const stripped = text.replace(/@\w+/g, '').replace(/https?:\/\/\S+/g, '').trim();
+  if (stripped.length === 0) return true;
 
   // Pure punctuation or emoji
-  if (/^[\p{P}\p{S}\s]+$/u.test(trimmed)) return true;
+  if (/^[\p{P}\p{S}\s]+$/u.test(stripped)) return true;
 
   // Extremely short venting phrases
   const ventingRegex = /^(hey\s+)?(fix\s+(your|this)\s+shit|he+lp(\s+me)?|this\s+is\s+bullshit|ugh+|why\s+apple|what\s+is\s+this|broken|wth|wtf|please\s+help\s*!*)$/i;
-  if (ventingRegex.test(trimmed)) return true;
+  if (ventingRegex.test(stripped)) return true;
 
   // Very short query without any technical keywords
-  if (trimmed.length < 15) {
-    const hasTechTerm = /\b(iphone|ipad|mac|ios|battery|screen|wifi|bluetooth|app|icloud|id|sound|audio|audio|update)\b/i.test(trimmed);
+  if (stripped.length < 15) {
+    const hasTechTerm = /\b(iphone|ipad|mac|ios|battery|screen|wifi|bluetooth|app|icloud|id|sound|audio|update)\b/i.test(stripped);
     if (!hasTechTerm) return true;
   }
 
@@ -52,7 +52,8 @@ export function isAccountMutationRequest(text) {
 
   // 1. Financial / Billing account mutations
   const billingActionPatterns = [
-    /\b(want|need|give me|get|request|process)\s+(a\s+)?refund\b/,
+    /\b(want|need|give me|get|request|process|like|would like|i'?d like|i’d like)\s+(a\s+)?refund\b/,
+    /\ba\s+refund\b/,
     /\brefund\s+(my|this|the)\s+(money|charge|app|purchase|subscription)\b/,
     /\bdispute\s+(this\s+)?charge\b/,
     /\bcharged\s+(me\s+)?twice\b/,
@@ -68,10 +69,11 @@ export function isAccountMutationRequest(text) {
 
   // 2. Account Security & Credential Operations
   const credentialActionPatterns = [
-    /\b(reset|change|forgot)\s+(my\s+)?(apple\s*id\s+)?password\b/,
+    /\b(reset|change|forgot|forgotten)\s+(my\s+)?(apple\s*id\s+)?(password|passcode)\b/,
     /\b(unlock|un-lock)\s+(my\s+)?(apple\s*id|account|ipad|iphone)\b/,
     /\b(apple\s*id|account|device|ipad|iphone)\s+(is\s+)?(disabled|locked|hacked)\b/,
-    /\bactivation\s+lock\s+bypass\b/,
+    /\bactivation\s+lock\b/,
+    /\baccount\s+recovery\b/,
     /\brecover\s+(my\s+)?(account|apple\s*id)\b/
   ];
   for (const pattern of credentialActionPatterns) {

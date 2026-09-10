@@ -36,7 +36,8 @@ export class SupportAgent {
     this.topK = options.topK ?? parseInt(process.env.AGENT_TOP_K || '5', 10);
     this.maxReplyChars = options.maxReplyChars ?? parseInt(process.env.AGENT_MAX_REPLY_CHARS || '280', 10);
     
-    this.providerName = options.provider || process.env.LLM_PROVIDER || 'gemini';
+    const defaultProvider = process.env.GEMINI_API_KEY ? 'gemini' : (process.env.OPENAI_API_KEY ? 'openai' : 'mock');
+    this.providerName = options.provider || process.env.LLM_PROVIDER || defaultProvider;
     this.llmProvider = options.llmProvider || null;
     this.llmOptions = {
       provider: this.providerName,
