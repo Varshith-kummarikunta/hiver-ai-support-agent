@@ -141,5 +141,36 @@ This log tracks non-obvious engineering, product, data, and evaluation decisions
   - Using an external full-text search engine (Elasticsearch / Meilisearch): Added complex local runtime dependencies and violated the self-contained Node.js project architecture.
 - **Why Rejected**: The native BM25 engine builds in 15 seconds, occupies 128 MB on disk, executes queries in $<5\text{ ms}$, achieves deterministic cross-platform rankings, and provides authentic, verifiable historical AppleSupport evidence for agent grounding.
 
+---
+
+### Decision 12: Hybrid Deterministic-Generative Support Agent Architecture, Strict Evidence Filtering, and Deterministic Escalation Guardrails
+- **Context**: In Phase 6, we required an end-to-end customer support agent for AppleSupport that ingests customer messages and outputs predicted intent, confidence, retrieved evidence, grounded draft replies, auto-handle vs. escalate decisions, and grounding summaries.
+- **Decision**:
+  1. **Hybrid Deterministic-Generative Pipeline**:
+     - Retained the trained Phase 4 TF-IDF + Naive Bayes classifier as the upstream intent classifier rather than delegating intent categorization to the LLM. This preserves deterministic reproducibility, sub-millisecond classification latency, and clear alignment with our 10-intent taxonomy.
+     - Positioned the Phase 5 BM25 retrieval index (105,542 quarantined interactions) as the sole grounding evidence source. The LLM is explicitly instructed to base advice on historical evidence and prohibited from inventing policies or URLs.
+  2. **Substance-Based Evidence Filtering**:
+     - Avoided brittle hardcoded score cutoffs by implementing configurable evidence filtering (`AGENT_MIN_BM25_SCORE`, default 5.0) based on positive score, substantive historical response length/quality, and same-intent matching.
+     - Retained divergent candidates when top hits conflict, enabling the agent to recognize disagreement rather than manufacturing artificial consensus.
+  3. **Zero-Key Testability & Abstract Provider Adapter**:
+     - Built an abstract adapter pattern supporting **Gemini** (`gemini-2.0-flash`), **OpenAI** (`gpt-4o-mini`), and an offline **Mock** provider using native Node 20 `fetch`.
+     - Zero external SDK dependencies; 100% of automated unit tests run offline with `MockProvider`, requiring zero API keys and incurring zero API costs.
+     - Built resilient error handling: missing API keys or API timeouts return structured escalation results with clear diagnostic notes rather than crashing.
+  4. **Deterministic Escalation Guardrails & Domain Policy**:
+     - Implemented 10 deterministic guardrails that strictly override LLM decisions:
+       - **Account Mutations**: Requests for password resets, account recovery, refund processing, charge disputes, or physical repair scheduling strictly escalate to verified human support/official Apple portals.
+       - **Informational vs. Action Distinctions**: Routine informational billing questions (e.g., viewing subscriptions) and hardware troubleshooting (e.g., screen freeze forced restarts) can be auto-handled when strong evidence exists.
+       - **Vagueness & Venting**: Short venting queries lacking technical symptoms strictly escalate with requests for diagnostic details.
+       - **Confidence & Evidence Sufficiency**: Queries with intent confidence $<0.40$ (configurable via `AGENT_MIN_CONFIDENCE`) or insufficient/conflicting BM25 evidence strictly escalate.
+  5. **Post-Generation Safety & Grounding Validation**:
+     - Verified strict schema compliance and audited draft replies: rejects text leaking internal IDs (`GOLD-xxx`, raw tweet IDs), BM25 scores, prompt leakage ("As an AI"), invented URLs, or false action claims ("I have refunded your card").
+     - Separated public customer-facing `reply` from internal audit telemetry: preserved `rawModelDraft`, validation outcomes, and guardrail override tags under `_internal` for Phase 7 error analysis.
+- **Alternatives Considered**:
+  - LLM-as-Classifier: High token cost, 1–2s latency per classification, and non-deterministic drift across runs.
+  - Pure LLM Decision Making: LLMs frequently exhibit overconfidence on account-related operations, attempting to simulate actions (e.g., "I have reset your password") they cannot safely perform.
+  - Blanket Escalation of all Billing or Hardware queries: Over-escalates routine informational inquiries with abundant historical troubleshooting documentation.
+- **Why Rejected**: The hybrid architecture guarantees deterministic safety boundaries, zero-leakage testability, and verifiable grounding while leveraging LLMs exclusively for empathetic, natural language synthesis.
+
+
 
 

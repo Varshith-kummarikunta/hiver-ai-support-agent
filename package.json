@@ -18,6 +18,7 @@
     "verify:leakage": "node scripts/verify-retrieval-leakage.js",
     "verify:determinism": "node scripts/verify-retrieval-determinism.js",
     "agent": "node scripts/run-agent.js",
+    "test:agent": "node scripts/test-agent.js",
     "evaluate": "node scripts/run-evaluation.js"
   },
   "keywords": [

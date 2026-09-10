@@ -98,13 +98,66 @@ An end-to-end AI support engineering system built on real Twitter customer servi
 │   ├── inspect-retrieval.js   # CLI inspector for interactive queries
 │   ├── test-retrieval.js      # 12 automated unit & quality tests
 │   ├── verify-retrieval-leakage.js # Authority leakage verification
-│   └── verify-retrieval-determinism.js # Dual-run ranking & scoring check
+│   ├── verify-retrieval-determinism.js # Dual-run ranking & scoring check
+│   ├── run-agent.js           # CLI runner for AppleSupport AI Agent
+│   └── test-agent.js          # 22 automated agent unit tests (zero-key offline mock)
 ├── src/
-│   ├── classification/        # Tokenizer, TF-IDF, Naive Bayes, Evaluator
+│   ├── agent/                 # Agent orchestrator, LLM adapters, schema, prompt, guardrails
+│   ├── baselines/             # TF-IDF, Naive Bayes, Majority classifier, metrics
 │   └── retrieval/             # BM25 engine & search index manager
 ├── decision_log.md            # Comprehensive chronological engineering log
 ├── package.json               # Node.js dependencies & run scripts
 └── README.md
+```
+
+---
+
+## 🤖 Phase 6: AI Support Agent Architecture
+
+```
+Incoming Customer Inquiry
+          │
+          ▼
+1. Deterministic Intent Classification (Phase 4 TF-IDF + Naive Bayes)
+   Output: predictedIntent, intentConfidence
+          │
+          ▼
+2. Historical BM25 Retrieval (Phase 5 Inverted Index, Top-5)
+   Output: 5 Quarantined Historical Interactions
+          │
+          ▼
+3. Evidence Filtering & Substance Verification
+   - Filters out non-substantive or low-scoring responses (AGENT_MIN_BM25_SCORE)
+   - Prioritizes same-intent grounding interactions
+   - Preserves divergent candidates when ambiguity exists
+          │
+          ▼
+4. Pre-Generation Deterministic Guardrails
+   - Account mutations (password resets, refunds, repairs) → Force ESCALATE
+   - Vague venting in other_unclear ("fix this shit") → Force ESCALATE
+   - Low confidence (< AGENT_MIN_CONFIDENCE) → Force ESCALATE
+   - Insufficient or conflicting evidence → Force ESCALATE
+          │
+          ▼
+5. LLM Response Generation (Gemini / OpenAI / Offline Mock)
+   - Uses strict AppleSupport Twitter persona
+   - Grounded strictly in supplied historical evidence
+   - Prohibits invented URLs, policies, or action claims
+          │
+          ▼
+6. Post-Generation Safety & Grounding Validation
+   - Audits draft reply: zero internal IDs, zero BM25 scores, zero prompt leakage
+   - Audits action claims: rejects "I have refunded / reset your password"
+   - Audits schema and decision consistency
+          │
+          ▼
+7. Final Decision & Harmonization Policy
+   - If validation fails or API fails → Force ESCALATE
+   - If pre-guardrail triggered → Force ESCALATE
+   - All checks passed → AUTO-HANDLE
+          │
+          ▼
+Structured Agent Output (Clean public reply + Internal audit trail)
 ```
 
 ---
@@ -122,40 +175,49 @@ cd "Hiver assignment"
 npm install
 ```
 
-### Reproducing Retrieval Engine (Phase 5)
+### Running the AI Support Agent (Phase 6)
 ```bash
-# 1. Build BM25 Index (takes ~15s, quarantines 200 golden examples)
-npm run build:retrieval
+# 1. Run all 22 automated agent tests (100% offline, zero API keys required)
+npm run test:agent
 
-# 2. Run Quality & Integrity Unit Tests (12 checks)
-npm test
+# 2. Run single query via CLI
+node scripts/run-agent.js "my iphone battery is draining very fast"
 
-# 3. Verify Zero-Leakage Authoritatively
-npm run verify:leakage
+# 3. Run interactive session
+node scripts/run-agent.js --interactive
 
-# 4. Verify Dual-Run Ranking & Scoring Determinism
-npm run verify:determinism
-
-# 5. Run Intent-Level Diagnostic Evaluation
-npm run evaluate:retrieval
+# 4. Run with offline mock provider
+node scripts/run-agent.js --provider=mock "my screen is freezing on black display"
 ```
 
-### Interactive Query Inspection
-Query the historical retrieval engine directly from the command line:
+### Reproducing Retrieval & Baselines (Phases 4-5)
 ```bash
-node scripts/inspect-retrieval.js "my iphone battery is draining very fast"
-node scripts/inspect-retrieval.js "forgot my icloud password and locked out"
-node scripts/inspect-retrieval.js "airpods sound only coming out of one ear"
+# Run baseline tests and evaluation
+npm run evaluate:baselines
+
+# Build BM25 index (takes ~15s, quarantines 200 golden examples)
+npm run build:retrieval
+
+# Run retrieval unit tests (12 checks)
+npm test
+
+# Verify zero golden leakage authoritatively
+npm run verify:leakage
+
+# Verify dual-run ranking & scoring determinism
+npm run verify:determinism
+
+# Run intent-level diagnostic retrieval evaluation
+npm run evaluate:retrieval
 ```
 
 ---
 
-## ⚙️ Tech Stack & Engineering Decisions
+## ⚙️ Tech Stack & Engineering Principles
 
-- **Runtime**: Pure Node.js (v20.20.0), CommonJS modules.
-- **Dependencies**: Native Node.js `fs`, `readline`, `crypto` for high performance.
-- **Algorithms**:
-  - BM25 with Robertson-Spärck Jones IDF: $\text{IDF}(q) = \ln\left(\frac{N - df + 0.5}{df + 0.5} + 1\right)$
-  - Parameters: $k_1 = 1.2$, $b = 0.75$, $\text{minDocFreq} = 2$.
-  - Domain-aware Apple tokenization preserving hardware version numbers (`ios11.1.2`, `iphone7plus`, etc.).
-- **Auditability**: Every decision, threshold, and parameter choice is recorded in [`decision_log.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/decision_log.md).
+- **Runtime**: Pure Node.js (v20.20.0), ES Modules (`type: "module"`).
+- **Dependencies**: Native Node.js `fetch`, `fs`, `readline`, `crypto` for ultra-low latency and zero heavy SDK bloat.
+- **Provider Adapters**: Native REST integrations for Google Gemini (`gemini-2.0-flash`), OpenAI (`gpt-4o-mini`), and `MockProvider` for reproducible offline testing.
+- **Deterministic Business Guardrails**: Business and security rules override generative models to guarantee safe handling of passwords, billing disputes, and hardware repairs.
+- **Auditability**: Every decision, threshold, and parameter choice is recorded chronologically in [`decision_log.md`](file:///c:/Users/varsh/OneDrive/Desktop/Hiver%20assignment/decision_log.md).
+
