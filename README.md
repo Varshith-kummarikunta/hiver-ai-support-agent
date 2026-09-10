@@ -124,7 +124,7 @@ An end-to-end AI support engineering system built on real Twitter customer servi
 │   ├── verify-retrieval-leakage.js # Authority leakage verification
 │   ├── verify-retrieval-determinism.js # Dual-run ranking & scoring check
 │   ├── run-agent.js           # CLI runner for AppleSupport AI Agent
-│   └── test-agent.js          # 22 automated agent unit tests (zero-key offline mock)
+│   └── test-agent.js          # 24 automated agent unit tests (zero-key offline mock)
 ├── src/
 │   ├── agent/                 # Agent orchestrator, LLM adapters, schema, prompt, guardrails
 │   ├── baselines/             # TF-IDF, Naive Bayes, Majority classifier, metrics

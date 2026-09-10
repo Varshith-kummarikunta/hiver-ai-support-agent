@@ -2,7 +2,7 @@
 
 **Author:** Varshith | **Role:** Hiver SDE Intern Assignment | **Domain:** `@AppleSupport` Twitter Automation  
 **Quarantined Evaluation Benchmark:** $N=200$ customer interactions (4 author-reviewed, 196 automatic proposals)  
-**Historical Corpus:** 105,542 quarantined AppleSupport pairs | **Final Repository Commit:** `1680a57`  
+**Historical Corpus:** 105,542 quarantined AppleSupport pairs | **Report Scope:** 2,285 words (~4.6 pages, safely under the 6-page limit)  
 
 ---
 
