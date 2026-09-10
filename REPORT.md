@@ -2,14 +2,14 @@
 
 **Author:** Varshith | **Role:** Hiver SDE Intern Assignment | **Domain:** `@AppleSupport` Twitter Automation  
 **Quarantined Evaluation Benchmark:** $N=200$ customer interactions (4 author-reviewed, 196 automatic proposals)  
-**Historical Corpus:** 105,542 quarantined AppleSupport pairs | **Baseline Commit:** `e64722e`  
+**Historical Corpus:** 105,542 quarantined AppleSupport pairs | **Final Repository Commit:** `1680a57`  
 
 ---
 
 ## Executive Summary & Authoritative Headline
 
 > **Authoritative Benchmark Headline:**  
-> *"On the 200-item quarantined benchmark (4 author-reviewed, 196 automatic proposals), the agent achieves 69.50% intent classification agreement (matching the trained TF-IDF + Naive Bayes baseline and outperforming the 24.50% majority baseline), 88.50% raw BM25 intent Recall@5 across 105,542 historical interactions, and 94.50% strict task correctness, with a 100% deterministic safety/policy gate pass rate, operating deterministically offline at ~46 ms latency."*
+> *"On the 200-item quarantined benchmark (4 author-reviewed, 196 automatic proposals), the agent achieves 69.50% intent classification agreement (matching the trained TF-IDF + Naive Bayes baseline and outperforming the 24.50% majority baseline), 88.50% raw BM25 intent Recall@5 across 105,542 historical interactions, and 94.50% strict task correctness, with a 100% deterministic safety/policy gate pass rate, operating deterministically offline at ~53 ms latency."*
 
 **Essential Provenance & Interpretation Context:**  
 The evaluation benchmark contains **4 author-reviewed labels** and **196 automatic taxonomy proposals**. Classification metrics measure concordance with the project's automated labeling rules, not certified human consensus. **Strict Task Correctness ($94.50\%$, $189/200$)** strictly penalizes all 11 misclassified auto-handled interactions (including `GOLD-172`) as failures ($0$); it reflects technical policy compliance, NOT independently human-validated customer satisfaction. The **100% Safety / Policy Gate Pass Rate** verifies non-crashing execution and safe escalation of account mutations, not customer problem resolution. The **4.339/5** score is an offline `DeterministicMockJudge` test-harness sanity check; real frontier LLM-as-judge benchmarking was **not** executed.
@@ -37,7 +37,7 @@ A production-grade tier-1 support agent must satisfy five strict criteria:
 
 | Feature / Architecture | Why It Was NOT Built | Better Alternative Implemented |
 | :--- | :--- | :--- |
-| **Dense Vector DB (Pinecone / Chroma)** | Tech support queries (*"error 3194"*, *"DFU mode"*, *"letter I bug"*) depend on exact lexical tokens. Neural embeddings introduce semantic drift, opaque scoring, heavy runtime dependencies, and high latency. | Native BM25 inverted index ($k_1=1.2, b=0.75$). Self-contained in Node.js, 18.9 MB compressed footprint, $<5\text{ ms}$ query latency, and 100% deterministic ranking. |
+| **Dense Vector DB (Pinecone / Chroma)** | Tech support queries (*"error 3194"*, *"DFU mode"*, *"letter I bug"*) depend on exact lexical tokens. Neural embeddings introduce semantic drift, opaque scoring, heavy runtime dependencies, and high latency. | Native BM25 inverted index ($k_1=1.2, b=0.75$). Self-contained in Node.js, 18.9 MB compressed footprint, ~53 ms mean processing latency per inquiry in the offline local benchmark, and 100% deterministic ranking. |
 | **Unconstrained LLM Decision-Making** | Generative models exhibit overconfidence on account actions, generating false promises (*"I have issued a refund"*). | Deterministic business guardrails strictly override LLM decisions for password resets, billing disputes, and hardware repair bookings. |
 | **Autonomous Account Action Execution** | Executing live mutations from unauthenticated public tweets is an unacceptable security vulnerability. | Strict routing to authenticated official Apple portals or human tier-2 agents. |
 | **Multi-Agent Conversational Swarms** | Tier-1 social support is a single-turn triage channel. Multi-agent swarms introduce non-deterministic latency and token costs without grounding data. | Single-turn high-precision pipeline with structured diagnostic escalation when context is missing. |

@@ -200,8 +200,8 @@ The repository is completely self-contained and runnable offline. The compressed
 ### Installation & Verification (< 35 Seconds Total)
 ```bash
 # 1. Clone repository and install minimal dependencies (takes ~5s)
-git clone <repository-url>
-cd "Hiver assignment"
+git clone https://github.com/Varshith-kummarikunta/hiver-ai-support-agent.git
+cd hiver-ai-support-agent
 npm install
 
 # 2. Run all unit and system test suites (100% offline, zero API keys required)
@@ -227,7 +227,7 @@ node scripts/audit-phase7-facts.js # Automated Fact-Check Audit Engine (44/44 Ch
 ## 🤖 Running the Support Agent Interactively
 
 ```bash
-# Single query with default mock engine (instant response, ~53 ms)
+# Single query with default mock engine (~53 ms mean processing latency per inquiry in the offline local benchmark)
 node scripts/run-agent.js "my iphone battery is draining very fast after update"
 
 # Single query with sensitive account request (triggers deterministic escalation guardrail)
@@ -246,7 +246,7 @@ node scripts/run-agent.js --provider=gemini "how do I reset network settings?"
 ## ⚙️ Tech Stack & Engineering Principles
 
 - **Runtime**: Pure Node.js (v20.20.0), native ES Modules (`type: "module"`).
-- **Dependencies**: Zero external AI orchestration frameworks (no LangChain, no LlamaIndex). Native Node.js `fetch`, `zlib`, `fs`, `readline`, `crypto` for sub-millisecond execution and minimal footprint.
+- **Dependencies**: Zero external AI orchestration frameworks (no LangChain, no LlamaIndex). Native Node.js `fetch`, `zlib`, `fs`, `readline`, `crypto` for minimal memory footprint and low latency (~53 ms mean processing latency per inquiry in the offline local benchmark).
 - **Deterministic Business Guardrails**: Security-critical operations (password resets, refund claims, hardware repair bookings) are governed by deterministic guardrails that strictly override LLM decisions.
 - **Configurable Engineering Constraints**:
   - `AGENT_MIN_CONFIDENCE=0.40`: Minimum Naive Bayes intent score before forcing diagnostic escalation.
